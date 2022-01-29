@@ -26,16 +26,9 @@ export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
   console.log(colorMode)
-  const logo = useColorModeValue(["blackAlpha.800", "whiteAlpha.700"])
-  const bg = useColorModeValue(["whiteAlpha.400", "red"])
+  const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.700")
+  const bgColor = useColorModeValue("gray.200", "whiteAlpha/.600")
 
-  /*
-     <Box>
-              <IconButton rounded={60} size={"sm"} aria-label="Toggle Mode" onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </IconButton>
-            </Box>
-  */
   return (
     <>
       <Head>
@@ -44,15 +37,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex maxW="auto"
-        bg={"teal.900"}
+        bg={bgColor}
         minH={"4rem"}
         h={"4rem", "4rem", "5rem"}
         justifyContent="space-around"
         alignItems="center"
+
       >
         <Heading
           _hover={{ cursor: "pointer" }}
           fontSize={["1rem", "1.2rem"]}
+          color={logo}
         >
           Pete
         </Heading>
