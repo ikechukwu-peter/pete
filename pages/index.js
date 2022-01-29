@@ -21,13 +21,14 @@ import {
   MoonIcon,
   SunIcon
 } from "@chakra-ui/icons"
-
+// import undraw_developer from '../public/assets/undraw_developer.svg'
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
   console.log(colorMode)
-  const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.700")
-  const bgColor = useColorModeValue("gray.200", "whiteAlpha/.600")
+  const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
+  const bgColor = useColorModeValue("gray.200", "whiteAlpha.50")
+  const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
 
   return (
     <>
@@ -42,6 +43,9 @@ export default function Home() {
         h={"4rem", "4rem", "5rem"}
         justifyContent="space-around"
         alignItems="center"
+        fontFamily="Source Sans Pro"
+        fontWeight="600"
+
 
       >
         <Heading
@@ -64,20 +68,105 @@ export default function Home() {
             <Link
               href="#"
               px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
             >About me</Link>
             <Link
               href="#"
-             px={"2rem", ".6rem", "1rem", "2rem"}
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
             >Projects</Link>
             <Link
-             px={"2rem", ".6rem", "1rem", "2rem"}
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
               href="#">Services</Link>
             <Link
-             px={"2rem", ".6rem", "1rem", "2rem"}
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
               href="#">
               Skills</Link>
             <Link
-             px={"2rem", ".6rem", "1rem", "2rem"}
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
               href="#">
               Articles</Link>
           </Box>
@@ -102,7 +191,7 @@ export default function Home() {
               aria-label="Toggle Mode"
               onClick={toggleColorMode}
               zIndex="21"
-              ml={{base: "null", sm: "null", md: "1rem", lg: "3rem"}}
+              ml={{ base: "null", sm: "null", md: "1rem", lg: "3rem" }}
             >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </IconButton>
@@ -149,30 +238,110 @@ export default function Home() {
               h={"100vh"}
             >
 
-              <Link
-                fontSize={".6rem"}
-                href="#"
-                px={"2rem"}
-              >About me</Link>
-              <Link fontSize={".6rem"}
-                href="#"
-                px={"2rem"}
-              >Projects</Link>
-              <Link
-                fontSize={".6rem"}
-                px={"2rem"}
-                href="#">Services</Link>
-              <Link
-                fontSize={".6rem"}
-                px={"2rem"}
-                href="#">
-                Skills</Link>
-              <Link
-                fontSize={".6rem"}
-                px={"2rem"}
-                href="#">
-                Articles
-              </Link>
+<Link
+              href="#"
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+            >About me</Link>
+            <Link
+              href="#"
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+            >Projects</Link>
+            <Link
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              href="#">Services</Link>
+            <Link
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              href="#">
+              Skills</Link>
+            <Link
+              px={"2rem", ".6rem", "1rem", "2rem"}
+              py=".8rem"
+              _hover={{
+                textDecor: "none",
+                bg: { hoverBg },
+                color: { bgColor },
+                bg: "teal.400",
+              }}
+              _focus={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              _active={{
+                textDecor: "none",
+                bg: "none",
+                border: "none"
+              }}
+              href="#">
+              Articles</Link>
             </Box>
           </Flex>
 
