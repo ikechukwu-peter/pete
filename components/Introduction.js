@@ -10,7 +10,6 @@ import {
     Link,
     IconButton,
     Button,
-    Image as ChakraImage,
     useColorMode,
     useColorModeValue,
     DarkMode
@@ -24,15 +23,14 @@ export default function Introduction() {
         <Box bg={introBg}>
             <Container maxW={["container.base", "container.base", "container.sm", "container.md"]}>
                 <Flex fontFamily="Source Sans Pro"
-                justifyContent="space-evenly"
-                alignItems="center"
-                width={["80%", "80%", "100%", "100%"]}
-                m="auto"
+                    justifyContent="space-evenly"
+                    alignItems="center"
+                    width={["80%", "80%", "100%", "100%"]}
+                    m="auto"
 
                 >
                     <Box d="flex"
-                        alignSelf="center"
-                        justifyContents="center"
+                        justifyContent="center"
                         flexDir="column"
                         w={["80%", "80%", "80%", "100%"]}
                         textAlign="left"
@@ -44,7 +42,7 @@ export default function Introduction() {
                             mt={["2rem", "2rem", "3rem", "4rem"]}
                             mb=".2rem"
                         >
-                            Hello I'm
+                            Hello Im
                         </Text>
                         <Heading fontWeight={600}
                             color={textColor}

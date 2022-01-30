@@ -9,7 +9,7 @@ import {
 import Header from '../components/Header'
 import Introduction from '../components/Introduction'
 import About from '../components/About'
-// import undraw_developer from '../public/assets/undraw_developer.svg'
+
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
