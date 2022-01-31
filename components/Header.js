@@ -1,17 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { useState } from 'react'
 import {
   Flex,
   Box,
-  Container,
-  VStack,
-  HStack,
   Heading,
-  Text,
   Link,
   IconButton,
-  Button,
   useColorMode,
   useColorModeValue
 } from '@chakra-ui/react'

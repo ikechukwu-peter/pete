@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import {
     Flex,
     Box,
@@ -10,7 +9,7 @@ import {
     Link,
     IconButton,
     Button,
-    Image as ChakraImage,
+    Image,
     useColorMode,
     useColorModeValue,
     DarkMode
@@ -24,43 +23,61 @@ export default function About() {
 
     return (
         <Box bg={aboutBg}>
-            <Container maxW={["container.base", "container.base", "container.sm", "container.md"]}>
-                <Flex fontFamily="Source Sans Pro"
-                    justifyContent="space-evenly"
-                    alignItems="center"
-                    width={["80%", "80%", "100%", "100%"]}
-                    m="auto"
-                    flexDir="row-reverse"
-                >
-                    <Box d="flex"
-                        alignSelf="center"
-                        justifyContent="center"
-                        flexDir="column"
-                        w={["80%", "80%", "80%", "100%"]}
-                        textAlign="left"
-                        m="auto"
+            <Flex fontFamily="Source Sans Pro"
+                justifyContent="space-around"
+                alignItems="center"
+                width={["100%", "100%", "100%", "100%"]}
+                flexDirection={["column", "column", "row-reverse", "row-reverse"]}
+                py="5rem"
+                px="2rem"
+            >
+                <Box d="flex"
+                    justifyContent="center"
+                    flexDir="column"
+                    w={["90%", "90%", "50%", "50%"]}
+                    textAlign="left"
 
+                >
+                    <Heading fontWeight={600}
+                        color={abtextColor}
+                        mb=".1rem"
                     >
-                        <Heading fontWeight={600}
-                            color={abtextColor}
-                            mb=".1rem"
-                        >
-                            About me
-                        </Heading>
-                        <Text fontWeight={600}
-                            color={abtextColor}
-                            mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
-                        >
-                            I am Peter, currently located in Lagos, Nigeria.
-                            web developer
-                        </Text>
-                        <Text fontWeight={600}
-                            color={abtextColor}
-                            mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
-                        >
-                            I design great websites, online stores, learning platforms and anything you can imagine on the web.
-                        </Text>
-                        <HStack>
+                        About me
+                    </Heading>
+                    <Text fontWeight={600}
+                        color={abtextColor}
+                        mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
+                    >
+                        I am Peter, currently located in Lagos, Nigeria.
+                        web developer
+                    </Text>
+                    <Text fontWeight={600}
+                        color={abtextColor}
+                        mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
+                    >
+                        I design great websites, online stores, learning platforms and anything you can imagine on the web.
+                    </Text>
+                    <HStack>
+                        <DarkMode>
+                            <Button
+                                size="md"
+                                color="whiteAlpha.900"
+                                bg={"purple.600"}
+                                variant="ghost"
+                                _hover={{
+                                    bg: 'purple.800',
+                                }}
+                                _focus={{
+                                    bg: 'purple.800',
+                                    border: "none"
+                                }}
+                                _active={{
+                                    bg: 'purple.800',
+                                    border: "none"
+                                }}
+                            >
+                                <FaGithub /> Github
+                            </Button>
                             <DarkMode>
                                 <Button
                                     size="md"
@@ -79,51 +96,26 @@ export default function About() {
                                         border: "none"
                                     }}
                                 >
-                                    <FaGithub /> Github
+                                    <BiCloudDownload /> Resume
                                 </Button>
-                                <DarkMode>
-                                    <Button
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.600"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                    >
-                                        <BiCloudDownload /> Resume
-                                    </Button>
-                                </DarkMode>
-
                             </DarkMode>
-                        </HStack>
 
-                    </Box>
-                    <Box w={"40rem"}
-                        bg={"teal.600"}
-                        h={"15rem"}
-                        d={["none", "none", "flex", "flex"]}
+                        </DarkMode>
+                    </HStack>
+
+                </Box>
+                <Box 
+                w={[ "90%", "90%", "50%", "50%"]}
+                    d={["flex", "flex", "flex", "flex"]}
+                    py="2rem"
+                >
+                    <Image src="/about.svg"
+                       w={[ "100%", "100%", "80%", "90%"]}
+                       h={[ "100%", "100%", "100%", "50%"]}
                     >
-
-
-                        {/* <Image src="/assets/undraw_developer.svg"
-                           layout="fill"
-
-
-                        >
-                        </Image> */}
-                    </Box>
-                </Flex>
-
-            </Container>
+                    </Image>
+                </Box>
+            </Flex>
 
         </Box>
 

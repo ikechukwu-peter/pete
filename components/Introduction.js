@@ -1,19 +1,17 @@
 import {
     Flex,
     Box,
-    Container,
-    VStack,
-    HStack,
     Heading,
     Text,
     Link,
     Image,
-    IconButton,
     Button,
-    useColorMode,
     useColorModeValue,
     DarkMode
 } from '@chakra-ui/react'
+
+import Typewriter from 'typewriter-effect';
+
 
 export default function Introduction() {
     const introBg = useColorModeValue("gray.50", "gray.900")
@@ -22,12 +20,14 @@ export default function Introduction() {
 
     return (
         <Box bg={introBg}
-            w="100%"
+            w="100vw"
         >
-            <Flex fontFamily="Source Sans Pro"
-                justifyContent="space-evenly"
-            // alignItems="center"
-            // width={["80%", "80%", "100%", "100%"]}
+            <Flex
+                fontFamily="Source Sans Pro"
+                justifyContent="space-around"
+                alignItems="center"
+                width={["100%", "100%", "100%", "100%"]}
+                py="5rem"
             // m="auto"
 
 
@@ -58,7 +58,14 @@ export default function Introduction() {
                         color={textColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
-                        Full-stack web developer
+                        <Typewriter
+                            options={{
+                                strings: ['Full-stack web developer', 'Frontend + Backend'],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
+
                     </Text>
                     <DarkMode>
                         <Button
@@ -87,10 +94,12 @@ export default function Introduction() {
                 </Box>
                 <Box
                     d={["none", "none", "flex", "flex"]}
+                    w="50%"
                 >
 
-
                     <Image src="/developer.svg"
+                        w="100%"
+                        h="50%"
                     >
                     </Image>
                 </Box>
