@@ -34,7 +34,7 @@ export default function About() {
                 >
                     <Box d="flex"
                         alignSelf="center"
-                        justifyContents="center"
+                        justifyContent="center"
                         flexDir="column"
                         w={["80%", "80%", "80%", "100%"]}
                         textAlign="left"

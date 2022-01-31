@@ -42,7 +42,8 @@ export default function Introduction() {
                             mt={["2rem", "2rem", "3rem", "4rem"]}
                             mb=".2rem"
                         >
-                            Hello Im
+                            {/* "rules": { "react/no-unescaped-entities": 0 } */}
+                                 {" Hello I'm "}
                         </Text>
                         <Heading fontWeight={600}
                             color={textColor}

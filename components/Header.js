@@ -21,7 +21,7 @@ import {
   MoonIcon,
   SunIcon
 } from "@chakra-ui/icons"
-// import undraw_developer from '../public/assets/undraw_developer.svg'
+
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
