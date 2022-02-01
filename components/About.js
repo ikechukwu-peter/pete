@@ -15,7 +15,6 @@ import { FaGithub } from "react-icons/fa"
 export default function About() {
     const aboutBg = useColorModeValue("gray.50", "gray.800")
     const abtextColor = useColorModeValue("gray.600", "whiteAlpha.900")
-    const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
 
     return (
         <Box

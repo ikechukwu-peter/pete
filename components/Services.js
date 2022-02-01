@@ -12,9 +12,7 @@ import {
     SimpleGrid
 } from '@chakra-ui/react'
 
-import { FaGithub } from "react-icons/fa"
-import { FiLink } from "react-icons/fi"
-export default function Projects() {
+export default function Services() {
     const projectsBg = useColorModeValue("gray.50", "gray.900")
     const projecttextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
     const cardBg = useColorModeValue("gray.100", "gray.800")
@@ -178,115 +176,6 @@ export default function Projects() {
                     >
                         <Heading
                             fontSize="1rem"
-                            my="1rem"
-                        >
-                            Wood.in
-                        </Heading>
-                        <Text>
-                            An e-commerce landing page, built with HTML, CSS and Javascript.
-                        </Text>
-                        <HStack
-                            justify={["space-between", "space-between", "normal", "normal"]}
-                            mt={["1rem", "1rem", "1rem", "1rem"]}
-                        >
-                            <DarkMode>
-                                <Link
-                                    href="https://woodin.netlify.app/"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        mr={["0rem", "0rem", "2rem", "3rem"]}
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        leftIcon={<FiLink />}
-                                    >
-                                        Website
-                                    </Button>
-                                </Link>
-
-                            </DarkMode>
-                            <DarkMode
-                            >
-                                <Link
-                                    href="https://github.com/ikechukwu-peter/wood.in"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-
-                                        leftIcon={<FaGithub />}
-                                    >
-                                        Github
-                                    </Button>
-
-                                </Link>
-
-                            </DarkMode>
-
-                        </HStack>
-                    </Box>
-
-                </Box>
-                <Box
-                    bg={cardBg}
-                    height='auto'
-                    transitionProperty='shadow'
-                    transitionProperty='transform'
-                    transitionDuration='2s'
-                    transitionTimingFunction='ease'
-                    _hover={{
-                        transform: "scale(1.1)",
-                        bg: "gray.700",
-                    }}
-                    pb="4rem"
-                >
-                    <Box
-                        d="flex"
-                        flexDirection="column"
-                        alignItems="flex-start"
-                        w={["90%", "86%", "80%", "60%"]}
-                        m="auto"
-                        mt="2rem"
-                    >
-                        <Heading
-                            fontSize="1rem"
                             my="1rem">
                             Crebb
                         </Heading>
@@ -371,116 +260,6 @@ export default function Projects() {
                         </HStack>
                     </Box>
                 </Box>
-           
-                <Box
-                    bg={cardBg}
-                    height='auto'
-                    transitionProperty='shadow'
-                    transitionProperty='transform'
-                    transitionDuration='2s'
-                    transitionTimingFunction='ease'
-                    _hover={{
-                        transform: "scale(1.1)",
-                        bg: "gray.700",
-                    }}
-                    pb="4rem"
-                >
-                    <Box
-                        d="flex"
-                        flexDirection="column"
-                        alignItems="flex-start"
-                        w={["90%", "86%", "80%", "60%"]}
-                        m="auto"
-                        mt="2rem"
-                    >
-                        <Heading
-                            fontSize="1rem"
-                            my="1rem"
-                        >
-                            Pete
-                        </Heading>
-                        <Text>
-                            Ikechukwu Peter's portfolio site, built with NextJS, ReactJS and ChakraUI.
-                        </Text>
-                        <HStack
-                            justify={["space-between", "space-between", "normal", "normal"]}
-                            mt={["1rem", "1rem", "1rem", "1rem"]}
-                        >
-                            <DarkMode>
-                                <Link
-                                    href="https://pete.vercel.app/"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        mr={["0rem", "0rem", "2rem", "3rem"]}
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        leftIcon={<FiLink />}
-                                    >
-                                        Website
-                                    </Button>
-                                </Link>
-
-                            </DarkMode>
-                            <DarkMode
-                            >
-                                <Link
-                                    href="https://github.com/ikechukwu-peter/pete"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-
-                                        leftIcon={<FaGithub />}
-                                    >
-                                        Github
-                                    </Button>
-
-                                </Link>
-
-                            </DarkMode>
-
-                        </HStack>
-                    </Box>
-
-                </Box>
 
             </SimpleGrid>
 
@@ -496,14 +275,6 @@ export default function Projects() {
                     _hover={
                         {
                             textDecor: "none"
-                        }
-                    }
-                    _active={
-                        {
-                            textDecor: "none",
-                            variant: "ghost",
-                            outline: "none",
-                            border: "none"
                         }
                     }
                     _focus={
