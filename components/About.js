@@ -7,18 +7,17 @@ import {
     Link,
     Button,
     Image,
-    useColorModeValue,
     DarkMode
 } from '@chakra-ui/react'
 import { BiCloudDownload } from "react-icons/bi"
 import { FaGithub } from "react-icons/fa"
-export default function About() {
-    const aboutBg = useColorModeValue("gray.50", "gray.800")
-    const abtextColor = useColorModeValue("gray.600", "whiteAlpha.900")
-
+export default function About({
+    darkTextColor,
+    darkBg
+}) {
     return (
         <Box
-            bg={aboutBg}
+            bg={darkBg}
         >
             <Flex fontFamily="Source Sans Pro"
                 justifyContent="space-around"
@@ -39,20 +38,20 @@ export default function About() {
 
                 >
                     <Heading fontWeight={600}
-                        color={abtextColor}
+                        color={darkTextColor}
                         mb="1rem"
                     >
                         About me
                     </Heading>
                     <Text fontWeight={600}
-                        color={abtextColor}
+                        color={darkTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
                         I am Peter, currently located in Lagos, Nigeria.
                         A fullstack web developer.
                     </Text>
                     <Text fontWeight={600}
-                        color={abtextColor}
+                        color={darkTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
                         I design great websites, online stores, learning platforms and anything you can imagine on the web.
@@ -146,6 +145,7 @@ export default function About() {
                     <Image src="/about.svg"
                         w={["100%", "100%", "80%", "90%"]}
                         h={["100%", "100%", "100%", "50%"]}
+                        alt="A man sitting and relaxing"
                     >
                     </Image>
                 </Box>

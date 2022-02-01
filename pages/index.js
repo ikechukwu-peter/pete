@@ -1,8 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { useState } from 'react'
 import {
-  useColorMode,
   useColorModeValue
 } from '@chakra-ui/react'
 
@@ -14,7 +11,20 @@ import Services from '../components/Services'
 import Skills from '../components/Skills'
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const darkBg = useColorModeValue("gray.50", "gray.800")
+  const darkTextColor = useColorModeValue("gray.600", "whiteAlpha.900")
+
+  const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
+  const headBg = useColorModeValue("gray.200", "gray.800")
+  const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
+  const hamburgerNav = useColorModeValue("white", "black")
+  const serviceCardBg = useColorModeValue("gray.50", "gray.900")
+
+
+  const lightBg = useColorModeValue("gray.50", "gray.900")
+  const lightTextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
+  const cardBg = useColorModeValue("gray.100", "gray.800")
+
   return (
     <>
       <Head>
@@ -22,12 +32,36 @@ export default function Home() {
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <Introduction />
-      <About />
-      <Projects />
-      <Services />
-      <Skills />
+      <Header
+        headBg={headBg}
+        logo={logo}
+        hamburgerNav={hamburgerNav}
+        hoverBg={hoverBg}
+        darkTextColor={darkTextColor} />
+      <Introduction
+        lightBg={lightBg}
+        lightTextColor={lightTextColor}
+      />
+      <About
+        darkTextColor={darkTextColor}
+        darkBg={darkBg}
+
+      />
+      <Projects
+        lightBg={lightBg}
+        lightTextColor={lightTextColor}
+        cardBg={cardBg}
+      />
+      <Services
+        darkTextColor={darkTextColor}
+        darkBg={darkBg}
+        serviceCardBg={serviceCardBg}
+      />
+      <Skills
+        lightBg={lightBg}
+        lightTextColor={lightTextColor}
+        cardBg={cardBg}
+      />
 
     </>
   )

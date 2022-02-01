@@ -1,31 +1,26 @@
 import {
     Box,
     Center,
-    HStack,
     Heading,
     Text,
-    Link,
-    Button,
-    Image,
-    useColorModeValue,
-    DarkMode,
     SimpleGrid
 } from '@chakra-ui/react'
 import { AiOutlineLaptop } from 'react-icons/ai'
 import { BsMegaphone, BsPhone } from 'react-icons/bs'
 
-export default function Services() {
-    const serviceBg = useColorModeValue("gray.50", "gray.800")
-    const serviceTextColor = useColorModeValue("gray.600", "whiteAlpha.900")
-    const serviceCardBg = useColorModeValue("gray.50", "gray.900")
+export default function Services({
+    darkTextColor,
+    darkBg,
+    serviceCardBg
 
+}) {
     return (
 
         <Box
-            bg={serviceBg}
+            bg={darkBg}
             w="100vw"
             fontFamily="Source Sans Pro"
-            color={serviceTextColor}
+            color={darkTextColor}
         >
             <Center
                 pt="4rem"
@@ -47,7 +42,6 @@ export default function Services() {
                 <Box
                     bg={serviceCardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -98,7 +92,6 @@ export default function Services() {
                 <Box
                     bg={serviceCardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -147,7 +140,6 @@ export default function Services() {
                 <Box
                     bg={serviceCardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -185,7 +177,7 @@ export default function Services() {
                             fontSize="1rem"
                             my="1rem"
                         >
-                           Semantic Code
+                            Semantic Code
                         </Heading>
                         <Text>
                             Strategy and monitoring for your business, making your website appear better and better in searches.

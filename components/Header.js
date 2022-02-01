@@ -7,7 +7,6 @@ import {
   Link,
   IconButton,
   useColorMode,
-  useColorModeValue
 } from '@chakra-ui/react'
 import {
   HamburgerIcon,
@@ -16,13 +15,14 @@ import {
   SunIcon
 } from "@chakra-ui/icons"
 
-export default function Header() {
+export default function Header({
+  headBg,
+  logo,
+  hamburgerNav,
+  hoverBg,
+  darkTextColor }) {
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
-  const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-  const bgColor = useColorModeValue("gray.200", "gray.800")
-  const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
-  const hamburgerNav = useColorModeValue("white", "black")
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function Header() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex maxW="auto"
-        bg={bgColor}
+        bg={headBg}
         minH={"6rem"}
         h={"4rem", "4rem", "5rem"}
         justifyContent="space-around"
@@ -61,6 +61,7 @@ export default function Header() {
             w={["100%", "100%", "100%", "80%"]}
             justifyContent={"space-around"}
             fontSize={["1rem", "1.2rem"]}
+            color={darkTextColor}
           >
 
             <Link
@@ -70,7 +71,7 @@ export default function Header() {
               _hover={{
                 textDecor: "none",
                 bg: { hoverBg },
-                color: { bgColor },
+                color: { headBg },
                 bg: "purple.500",
               }}
               _focus={{
@@ -91,7 +92,7 @@ export default function Header() {
               _hover={{
                 textDecor: "none",
                 bg: { hoverBg },
-                color: { bgColor },
+                color: { headBg },
                 bg: "purple.500",
               }}
               _focus={{
@@ -110,7 +111,7 @@ export default function Header() {
               py=".8rem"
               _hover={{
                 textDecor: "none",
-                color: { bgColor },
+                color: { headBg },
                 bg: "purple.500",
               }}
               _focus={{
@@ -130,7 +131,7 @@ export default function Header() {
               _hover={{
                 textDecor: "none",
                 bg: { hoverBg },
-                color: { bgColor },
+                color: { headBg },
                 bg: "purple.500",
               }}
               _focus={{
@@ -151,7 +152,7 @@ export default function Header() {
               _hover={{
                 textDecor: "none",
                 bg: { hoverBg },
-                color: { bgColor },
+                color: { headBg },
                 bg: "purple.500",
               }}
               _focus={{
@@ -244,7 +245,7 @@ export default function Header() {
                 _hover={{
                   textDecor: "none",
                   bg: { hoverBg },
-                  color: { bgColor },
+                  color: { headBg },
                   bg: "purple.500",
                 }}
                 _focus={{
@@ -265,7 +266,7 @@ export default function Header() {
                 _hover={{
                   textDecor: "none",
                   bg: { hoverBg },
-                  color: { bgColor },
+                  color: { headBg },
                   bg: "purple.500",
                 }}
                 _focus={{
@@ -285,7 +286,7 @@ export default function Header() {
                 _hover={{
                   textDecor: "none",
                   bg: { hoverBg },
-                  color: { bgColor },
+                  color: { headBg },
                   bg: "purple.500",
                 }}
                 _focus={{
@@ -305,7 +306,7 @@ export default function Header() {
                 _hover={{
                   textDecor: "none",
                   bg: { hoverBg },
-                  color: { bgColor },
+                  color: { headBg },
                   bg: "purple.500",
                 }}
                 _focus={{
@@ -326,7 +327,7 @@ export default function Header() {
                 _hover={{
                   textDecor: "none",
                   bg: { hoverBg },
-                  color: { bgColor },
+                  color: { headBg },
                   bg: "purple.500",
                 }}
                 _focus={{

@@ -7,25 +7,24 @@ import {
     Link,
     Button,
     Image,
-    useColorModeValue,
     DarkMode,
     SimpleGrid
 } from '@chakra-ui/react'
 
 import { FaGithub } from "react-icons/fa"
 import { FiLink } from "react-icons/fi"
-export default function Projects() {
-    const projectsBg = useColorModeValue("gray.50", "gray.900")
-    const projecttextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-    const cardBg = useColorModeValue("gray.100", "gray.800")
-
+export default function Projects({
+    lightBg,
+    lightTextColor,
+    cardBg,
+}) {
     return (
 
         <Box
-            bg={projectsBg}
+            bg={lightBg}
             w="100vw"
             fontFamily="Source Sans Pro"
-            color={projecttextColor}
+            color={lightTextColor}
         >
             <Center
                 pt="4rem"
@@ -46,7 +45,6 @@ export default function Projects() {
                 <Box
                     bg={cardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -159,7 +157,6 @@ export default function Projects() {
                 <Box
                     bg={cardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -269,7 +266,6 @@ export default function Projects() {
                 <Box
                     bg={cardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -374,11 +370,10 @@ export default function Projects() {
                         </HStack>
                     </Box>
                 </Box>
-           
+
                 <Box
                     bg={cardBg}
                     height='auto'
-                    transitionProperty='shadow'
                     transitionProperty='transform'
                     transitionDuration='2s'
                     transitionTimingFunction='ease'
@@ -404,7 +399,7 @@ export default function Projects() {
                             Pete
                         </Heading>
                         <Text>
-                            Ikechukwu Peter's portfolio site, built with NextJS, ReactJS and ChakraUI.
+                            {"Ikechukwu Peter's portfolio site, built with NextJS, ReactJS and ChakraUI."}
                         </Text>
                         <HStack
                             justify={["space-between", "space-between", "normal", "normal"]}

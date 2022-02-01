@@ -2,37 +2,28 @@ import React from 'react'
 import {
     Box,
     Flex,
-    Center,
-    HStack,
     Heading,
     Text,
-    Link,
-    Button,
-    Image,
-    useColorModeValue,
-    DarkMode,
     SimpleGrid,
     Tooltip,
-    VStack,
-    IconButton,
     Icon
 } from '@chakra-ui/react'
 
 import { FaHtml5, FaNodeJs, FaSass } from 'react-icons/fa'
 import { SiCss3, SiJavascript, SiReact, SiTypescript, SiExpress } from 'react-icons/si'
 
-export default function Services() {
-    const skillsBg = useColorModeValue("gray.50", "gray.900")
-    const skillsTextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-    const skillsCardBg = useColorModeValue("gray.100", "gray.800")
-
+export default function Skills({
+    lightBg,
+    lightTextColor,
+    cardBg,
+}) {
     return (
 
         <Box
-            bg={skillsBg}
+            bg={lightBg}
             w="100vw"
             fontFamily="Source Sans Pro"
-            color={skillsTextColor}
+            color={lightTextColor}
         >
 
             <Flex
@@ -57,7 +48,7 @@ export default function Services() {
                     >
                         This skills listed here are not exhausitive and will keep changing but I am very versatile in them for many years now.
                     </Text>
-     
+
                 </Box>
                 <Box
                     w={["100%", "100%", "100%", "50%"]}
@@ -75,10 +66,8 @@ export default function Services() {
                         <Tooltip hasArrow label='HTML' bg='gray.700' color='blackAlpha.800'>
                             <Icon
                                 as={FaHtml5}
-                                w={6}
-                                bg={skillsCardBg}
+                                bg={cardBg}
                                 height='auto'
-                                transitionProperty='shadow'
                                 transitionProperty='transform'
                                 transitionDuration='2s'
                                 transitionTimingFunction='ease'
@@ -94,10 +83,9 @@ export default function Services() {
                         </Tooltip>
 
                         <Icon
-                            as={SiCss3} w={6}
-                            bg={skillsCardBg}
+                            as={SiCss3}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -112,10 +100,9 @@ export default function Services() {
                         />
 
                         <Icon
-                            as={SiJavascript} w={6}
-                            bg={skillsCardBg}
+                            as={SiJavascript}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -130,10 +117,9 @@ export default function Services() {
                         />
 
                         <Icon
-                            as={SiReact} w={6}
-                            bg={skillsCardBg}
+                            as={SiReact}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -148,10 +134,9 @@ export default function Services() {
                         />
 
                         <Icon
-                            as={FaNodeJs} w={6}
-                            bg={skillsCardBg}
+                            as={FaNodeJs}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -166,10 +151,9 @@ export default function Services() {
                         />
 
                         <Icon
-                            as={SiTypescript} w={6}
-                            bg={skillsCardBg}
+                            as={SiTypescript}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -184,10 +168,9 @@ export default function Services() {
                         />
 
                         <Icon
-                            as={FaSass} w={6}
-                            bg={skillsCardBg}
+                            as={FaSass}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
@@ -201,10 +184,9 @@ export default function Services() {
                             color="purple.500"
                         />
                         <Icon
-                            as={SiExpress} w={6}
-                            bg={skillsCardBg}
+                            as={SiExpress}
+                            bg={cardBg}
                             height='auto'
-                            transitionProperty='shadow'
                             transitionProperty='transform'
                             transitionDuration='2s'
                             transitionTimingFunction='ease'

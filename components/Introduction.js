@@ -13,13 +13,12 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect';
 
 
-export default function Introduction() {
-    const introBg = useColorModeValue("gray.50", "gray.900")
-    const textColor = useColorModeValue("gray.600", "whiteAlpha.900")
-    const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
-
+export default function Introduction({
+    lightBg,
+    lightTextColor
+}) {
     return (
-        <Box bg={introBg}
+        <Box bg={lightBg}
             w="100vw"
         >
             <Flex
@@ -42,7 +41,7 @@ export default function Introduction() {
 
                 >
                     <Text fontWeight={800}
-                        color={textColor}
+                        color={lightTextColor}
                         mt={["2rem", "2rem", "3rem", "4rem"]}
                         mb=".2rem"
                     >
@@ -50,13 +49,13 @@ export default function Introduction() {
                         {" Hello I'm "}
                     </Text>
                     <Heading fontWeight={600}
-                        color={textColor}
+                        color={lightTextColor}
                         mb=".1rem"
                     >
                         Ikechukwu Peter
                     </Heading>
                     <Text fontWeight={600}
-                        color={textColor}
+                        color={lightTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
                         <Typewriter
@@ -110,6 +109,7 @@ export default function Introduction() {
                 >
 
                     <Image src="/developer.svg"
+                        alt="A developer writing code"
                         w="100%"
                         h="50%"
                     >
