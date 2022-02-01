@@ -198,6 +198,7 @@ export default function Header() {
           <Flex
             d={["flex", "flex", "flex", "none"]}
             justifyContent={"flex-end"}
+            mr={["1.5rem"]}
           >
             <HamburgerIcon
               fontSize={"1.5rem"}
@@ -219,8 +220,8 @@ export default function Header() {
 
             <Flex
               justifyContent={"flex-end"}
-              mt={"1.8rem"}
-              mr={["2.3rem", "2.6rem", "5.4rem"]}>
+              mt={"2.4rem"}
+              mr={"1.5rem"}>
               <SmallCloseIcon
                 onClick={() => changeDisplay("none")}
                 fontSize={"1.5rem"} />
