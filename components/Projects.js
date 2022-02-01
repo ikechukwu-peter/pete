@@ -56,6 +56,7 @@ export default function Projects() {
                     }}
                     w="100%"
                     pb="4rem"
+                    rounded="xl"
 
                 >
 
@@ -167,6 +168,7 @@ export default function Projects() {
                         bg: "gray.700",
                     }}
                     pb="4rem"
+                    rounded="xl"
                 >
                     <Box
                         d="flex"
@@ -276,6 +278,7 @@ export default function Projects() {
                         bg: "gray.700",
                     }}
                     pb="4rem"
+                    rounded="xl"
                 >
                     <Box
                         d="flex"
@@ -384,6 +387,7 @@ export default function Projects() {
                         bg: "gray.700",
                     }}
                     pb="4rem"
+                    rounded="xl"
                 >
                     <Box
                         d="flex"

@@ -57,6 +57,7 @@ export default function Services() {
                     }}
                     w="100%"
                     pb="2rem"
+                    rounded="xl"
 
                 >
 
@@ -107,6 +108,7 @@ export default function Services() {
                     }}
                     w="100%"
                     pb="2rem"
+                    rounded="xl"
 
                 >
 
@@ -155,6 +157,7 @@ export default function Services() {
                     }}
                     w="100%"
                     pb="2rem"
+                    rounded="xl"
 
                 >
 
