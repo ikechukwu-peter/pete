@@ -9,7 +9,7 @@ import {
     useColorModeValue,
     DarkMode
 } from '@chakra-ui/react'
-
+import { FaWhatsapp } from 'react-icons/fa'
 import Typewriter from 'typewriter-effect';
 
 
@@ -28,6 +28,7 @@ export default function Introduction() {
                 alignItems="center"
                 width={["100%", "100%", "100%", "100%"]}
                 py="5rem"
+                minW="100vw"
             // m="auto"
 
 
@@ -68,27 +69,38 @@ export default function Introduction() {
 
                     </Text>
                     <DarkMode>
-                        <Button
-                            size="md"
-                            w={["50%", "50%", "50%", "60%"]}
-                            color="whiteAlpha.900"
-                            bg={"purple.600"}
-                            variant="ghost"
+                        <Link
+                            href='https://api.whatsapp.com/send/?phone=23409082906878&text=Hello+Ikechukwu+Peter%2C+I+Need+a+website+or+Web-app+&app_absent=0'
+                            isExternal
                             _hover={{
-                                bg: 'purple.800',
+                                textDecor: "none"
                             }}
-                            _focus={{
-                                bg: 'purple.800',
-                                border: "none"
-                            }}
-                            _active={{
-                                bg: 'purple.800',
-                                border: "none"
-                            }}
-                            mb={["2rem", "2rem", "3rem", "4rem"]}
                         >
-                            Hire me
-                        </Button>
+                            <Button
+                                size="md"
+                                w={["50%", "50%", "50%", "60%"]}
+                                color="whiteAlpha.900"
+                                bg={"purple.600"}
+                                variant="ghost"
+                                textDecor="none"
+                                _hover={{
+                                    bg: 'purple.500',
+                                }}
+                                _focus={{
+                                    bg: 'purple.800',
+                                    border: "none"
+                                }}
+                                _active={{
+                                    bg: 'purple.800',
+                                    border: "none"
+                                }}
+                                mb={["2rem", "2rem", "3rem", "4rem"]}
+                                leftIcon={<FaWhatsapp />}
+                            >
+                                WhatsApp
+                            </Button>
+                        </Link>
+
                     </DarkMode>
 
                 </Box>

@@ -33,7 +33,7 @@ export default function Header() {
       </Head>
       <Flex maxW="auto"
         bg={bgColor}
-        minH={"4rem"}
+        minH={"6rem"}
         h={"4rem", "4rem", "5rem"}
         justifyContent="space-around"
         alignItems="center"
@@ -47,6 +47,7 @@ export default function Header() {
           fontSize={["1rem", "1.2rem"]}
           color={logo}
           ml={["1rem", "1rem", "1rem", "3rem"]}
+          w="50%"
         >
           Pete
         </Heading>
@@ -70,7 +71,7 @@ export default function Header() {
                 textDecor: "none",
                 bg: { hoverBg },
                 color: { bgColor },
-                bg: "teal.400",
+                bg: "purple.500",
               }}
               _focus={{
                 textDecor: "none",
@@ -91,7 +92,7 @@ export default function Header() {
                 textDecor: "none",
                 bg: { hoverBg },
                 color: { bgColor },
-                bg: "teal.400",
+                bg: "purple.500",
               }}
               _focus={{
                 textDecor: "none",
@@ -109,9 +110,8 @@ export default function Header() {
               py=".8rem"
               _hover={{
                 textDecor: "none",
-                bg: { hoverBg },
                 color: { bgColor },
-                bg: "teal.400",
+                bg: "purple.500",
               }}
               _focus={{
                 textDecor: "none",
@@ -131,7 +131,7 @@ export default function Header() {
                 textDecor: "none",
                 bg: { hoverBg },
                 color: { bgColor },
-                bg: "teal.400",
+                bg: "purple.500",
               }}
               _focus={{
                 textDecor: "none",
@@ -152,7 +152,7 @@ export default function Header() {
                 textDecor: "none",
                 bg: { hoverBg },
                 color: { bgColor },
-                bg: "teal.400",
+                bg: "purple.500",
               }}
               _focus={{
                 textDecor: "none",
@@ -192,6 +192,7 @@ export default function Header() {
               ml={{ base: "1rem", sm: "1rem", md: "1rem", lg: "1rem" }}
             >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+
             </IconButton>
           </Box>
           <Flex
@@ -243,7 +244,7 @@ export default function Header() {
                   textDecor: "none",
                   bg: { hoverBg },
                   color: { bgColor },
-                  bg: "teal.400",
+                  bg: "purple.500",
                 }}
                 _focus={{
                   textDecor: "none",
@@ -264,7 +265,7 @@ export default function Header() {
                   textDecor: "none",
                   bg: { hoverBg },
                   color: { bgColor },
-                  bg: "teal.400",
+                  bg: "purple.500",
                 }}
                 _focus={{
                   textDecor: "none",
@@ -284,7 +285,7 @@ export default function Header() {
                   textDecor: "none",
                   bg: { hoverBg },
                   color: { bgColor },
-                  bg: "teal.400",
+                  bg: "purple.500",
                 }}
                 _focus={{
                   textDecor: "none",
@@ -304,7 +305,7 @@ export default function Header() {
                   textDecor: "none",
                   bg: { hoverBg },
                   color: { bgColor },
-                  bg: "teal.400",
+                  bg: "purple.500",
                 }}
                 _focus={{
                   textDecor: "none",
@@ -325,7 +326,7 @@ export default function Header() {
                   textDecor: "none",
                   bg: { hoverBg },
                   color: { bgColor },
-                  bg: "teal.400",
+                  bg: "purple.500",
                 }}
                 _focus={{
                   textDecor: "none",
