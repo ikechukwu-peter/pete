@@ -11,38 +11,41 @@ import {
     DarkMode,
     SimpleGrid
 } from '@chakra-ui/react'
+import { AiOutlineLaptop } from 'react-icons/ai'
+import { BsMegaphone, BsPhone } from 'react-icons/bs'
 
 export default function Services() {
-    const projectsBg = useColorModeValue("gray.50", "gray.900")
-    const projecttextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-    const cardBg = useColorModeValue("gray.100", "gray.800")
+    const serviceBg = useColorModeValue("gray.50", "gray.800")
+    const serviceTextColor = useColorModeValue("gray.600", "whiteAlpha.900")
+    const serviceCardBg = useColorModeValue("gray.50", "gray.900")
 
     return (
 
         <Box
-            bg={projectsBg}
+            bg={serviceBg}
             w="100vw"
             fontFamily="Source Sans Pro"
-            color={projecttextColor}
+            color={serviceTextColor}
         >
             <Center
                 pt="4rem"
                 fontSize="2rem"
                 fontWeight={600}
             >
-                Projects
+                Services
             </Center>
 
             <SimpleGrid
-                columns={[1, 1, 2, 2]}
+                columns={[1, 1, 2, 3]}
                 spacing='40px'
                 width={["90%", "95%", "95%", "80%"]}
                 m="auto"
                 pt="2rem"
+                pb="4rem"
 
             >
                 <Box
-                    bg={cardBg}
+                    bg={serviceCardBg}
                     height='auto'
                     transitionProperty='shadow'
                     transitionProperty='transform'
@@ -53,108 +56,46 @@ export default function Services() {
                         bg: "gray.700",
                     }}
                     w="100%"
-                    pb="4rem"
+                    pb="2rem"
 
                 >
 
                     <Box
                         d="flex"
                         flexDirection="column"
-                        alignItems="flex-start"
-                        w={["90%", "86%", "80%", "60%"]}
+                        alignItems="center"
+                        w={["90%", "86%", "80%", "90%"]}
                         m="auto"
                         mt="2rem"
+                        textAlign="center"
 
                     >
+
+                        <Box
+                            color="purple.700"
+                            fontSize="3rem"
+                        >
+                            <AiOutlineLaptop
+
+                            />
+                        </Box>
+
                         <Heading
                             fontSize="1rem"
                             my="1rem"
                         >
-                            Nip
+                            Website Creation
                         </Heading>
                         <Text>
-                            A URL shortening and expanding website, built with NodeJs, Typescript, Pug and CSS.
+                            Development of professional website, web system,
+                            blogs and online stores.
                         </Text>
-                        <HStack
-                            justify={["space-between", "space-between", "normal", "normal"]}
-                            mt={["1rem", "1rem", "1rem", "1rem"]}
-                        >
-                            <DarkMode>
-                                <Link
-                                    href="https://nipurl.herokuapp.com"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        mr={["0rem", "0rem", "2rem", "3rem"]}
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        leftIcon={<FiLink />}
-                                    >
-                                        Website
-                                    </Button>
-                                </Link>
 
-                            </DarkMode>
-                            <DarkMode
-                            >
-                                <Link
-                                    href="https:github.com/ikechukwu-peter/nip"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-
-                                        leftIcon={<FaGithub />}
-                                    >
-                                        Github
-                                    </Button>
-
-                                </Link>
-
-                            </DarkMode>
-
-                        </HStack>
                     </Box>
                 </Box>
+
                 <Box
-                    bg={cardBg}
+                    bg={serviceCardBg}
                     height='auto'
                     transitionProperty='shadow'
                     transitionProperty='transform'
@@ -164,135 +105,93 @@ export default function Services() {
                         transform: "scale(1.1)",
                         bg: "gray.700",
                     }}
-                    pb="4rem"
+                    w="100%"
+                    pb="2rem"
+
                 >
+
                     <Box
                         d="flex"
                         flexDirection="column"
-                        alignItems="flex-start"
-                        w={["90%", "86%", "80%", "60%"]}
+                        alignItems="center"
+                        w={["90%", "86%", "80%", "90%"]}
                         m="auto"
                         mt="2rem"
+                        textAlign="center"
+
                     >
+
+                        <Box
+                            color="purple.700"
+                            fontSize="3rem"
+                        >
+                            <BsPhone
+
+                            />
+                        </Box>
+
                         <Heading
                             fontSize="1rem"
-                            my="1rem">
-                            Crebb
+                            my="1rem"
+                        >
+                            Responsivenes Site
                         </Heading>
                         <Text>
-                            A session booking site built with ReactJs, CSS and Nodejs.
+                            Creation of responsive website for the best viewing at all resolution.
                         </Text>
-                        <HStack
-                            justify={["space-between", "space-between", "normal", "normal"]}
-                            mt={["1rem", "1rem", "1rem", "1rem"]}
+
+                    </Box>
+                </Box>
+                <Box
+                    bg={serviceCardBg}
+                    height='auto'
+                    transitionProperty='shadow'
+                    transitionProperty='transform'
+                    transitionDuration='2s'
+                    transitionTimingFunction='ease'
+                    _hover={{
+                        transform: "scale(1.1)",
+                        bg: "gray.700",
+                    }}
+                    w="100%"
+                    pb="2rem"
+
+                >
+
+                    <Box
+                        d="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        w={["90%", "86%", "80%", "90%"]}
+                        m="auto"
+                        mt="2rem"
+                        textAlign="center"
+
+                    >
+
+                        <Box
+                            color="purple.700"
+                            fontSize="3rem"
                         >
-                            <DarkMode>
-                                <Link
-                                    href="https://crebb.netlify.app"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        mr={["0rem", "0rem", "2rem", "3rem"]}
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        leftIcon={<FiLink />}
-                                    >
-                                        Website
-                                    </Button>
-                                </Link>
+                            <BsMegaphone
 
-                            </DarkMode>
-                            <DarkMode
-                            >
-                                <Link
-                                    href="https:github.com/ikechukwu-peter/crebb"
-                                    isExternal
-                                    _hover={
-                                        {
-                                            textDecor: "none"
-                                        }
-                                    }
-                                >
-                                    <Button
-                                        size="md"
-                                        color="whiteAlpha.900"
-                                        bg={"purple.700"}
-                                        variant="ghost"
-                                        _hover={{
-                                            bg: 'purple.800',
-                                        }}
-                                        _focus={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
-                                        _active={{
-                                            bg: 'purple.800',
-                                            border: "none"
-                                        }}
+                            />
+                        </Box>
 
-                                        leftIcon={<FaGithub />}
-                                    >
-                                        Github
-                                    </Button>
+                        <Heading
+                            fontSize="1rem"
+                            my="1rem"
+                        >
+                           Semantic Code
+                        </Heading>
+                        <Text>
+                            Strategy and monitoring for your business, making your website appear better and better in searches.
+                        </Text>
 
-                                </Link>
-
-                            </DarkMode>
-
-                        </HStack>
                     </Box>
                 </Box>
 
             </SimpleGrid>
-
-            <Center
-                pt="4rem"
-                pb="4rem"
-                fontSize="2rem"
-                fontWeight={600}
-            >
-                <Link
-                    href="https://github.com/ikechukwu-peter?tab=repositories"
-                    isExternal
-                    _hover={
-                        {
-                            textDecor: "none"
-                        }
-                    }
-                    _focus={
-                        {
-                            textDecor: "none",
-                            variant: "ghost",
-                            outline: "none",
-                            border: "none"
-                        }
-                    }
-
-                    color="purple.600"
-                    fontSize="1rem"
-                >
-                    Respositories on Github
-                </Link>
-
-            </Center>
 
         </Box>
 
