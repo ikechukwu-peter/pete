@@ -30,55 +30,55 @@ export default function Contact({
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-if(name, email, subject, message){
+        if (name, email, subject, message) {
 
-    try {
-        setLoading(true)
-        let res = await axios({
-            method: "POST",
-            url: '/api/mail',
-            data: {
-                name,
-                email,
-                subject,
-                message
+            try {
+                setLoading(true)
+                let res = await axios({
+                    method: "POST",
+                    url: '/api/mail',
+                    data: {
+                        name,
+                        email,
+                        subject,
+                        message
+                    }
+                })
+                console.log(res.data)
+                const { hide, hideAfter } = cogoToast.success(`${res.data.success}`, {
+                    onClick: () => {
+                        hide();
+                    },
+                    hideAfter: 5
+                });
+            } catch (error) {
+                console.log(error)
+                let errorResponse = error.response ? error.response.errorMessage : "Check your internet connection"
+
+                const { hide, hideAfter } = cogoToast.error(`${errorResponse}`, {
+                    onClick: () => {
+                        hide();
+                    },
+                    hideAfter: 5
+                });
+
             }
-        })
-        console.log(res.data)
-        const { hide, hideAfter } = cogoToast.success(`${res.data.success}`, {
-            onClick: () => {
-                hide();
-            },
-            hideAfter: 5
-        });
-    } catch (error) {
-        console.log(error)
-        let errorResponse = error.response ? error.response.errorMessage : "Check your internet connection"
+            finally {
+                setLoading(false)
+            }
 
-        const { hide, hideAfter } = cogoToast.error(`${errorResponse}`, {
-            onClick: () => {
-                hide();
-            },
-            hideAfter: 5
-        });
-
-    }
-    finally {
-        setLoading(false)
-    }
-
-}
-else {
-    const { hide, hideAfter } = cogoToast.warn('Fill all the fields.😒', {
-        onClick: () => {
-            hide();
-        },
-        hideAfter: 5
-    }); 
-}
+        }
+        else {
+            const { hide, hideAfter } = cogoToast.warn('Fill all the fields.😒', {
+                onClick: () => {
+                    hide();
+                },
+                hideAfter: 5
+            });
+        }
 
 
-       
+
     }
 
     return (
@@ -101,7 +101,7 @@ else {
                     w={["100%", "100%", "90%", "50%"]}
                     textAlign="center"
                     ml="4rem"
-                    m= "auto"
+                    m="auto"
 
                 >
                     <Heading fontWeight={600}
@@ -133,7 +133,9 @@ else {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
-                            <FormLabel htmlFor='email'>Email address</FormLabel>
+                            <FormLabel htmlFor='email'
+                                mt="1rem"
+                            >Email address</FormLabel>
                             <Input id='email' type='email' placeholder='Enter your email'
                                 _focus={
                                     {
@@ -147,9 +149,13 @@ else {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <FormHelperText>{"We'll never share your email."}</FormHelperText>
+                            <FormHelperText
+                                textAlign="left"
+                            >{"We'll never share your email."}</FormHelperText>
 
-                            <FormLabel htmlFor='subject'>Subject</FormLabel>
+                            <FormLabel htmlFor='subject'
+                                mt="1rem"
+                            >Subject</FormLabel>
                             <Input id='subject' type='text' placeholder='Enter Subject'
                                 _focus={
                                     {
