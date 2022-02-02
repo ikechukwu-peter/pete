@@ -47,7 +47,7 @@ export default function Services({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     w="100%"
                     pb="2rem"
@@ -97,7 +97,7 @@ export default function Services({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     w="100%"
                     pb="2rem"
@@ -145,7 +145,7 @@ export default function Services({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     w="100%"
                     pb="2rem"

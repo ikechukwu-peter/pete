@@ -50,7 +50,7 @@ export default function Projects({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     w="100%"
                     pb="4rem"
@@ -162,7 +162,7 @@ export default function Projects({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     pb="4rem"
                     rounded="xl"
@@ -271,7 +271,7 @@ export default function Projects({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     pb="4rem"
                     rounded="xl"
@@ -379,7 +379,7 @@ export default function Projects({
                     transitionTimingFunction='ease'
                     _hover={{
                         transform: "scale(1.1)",
-                        bg: "gray.700",
+                        // bg: "gray.700",
                     }}
                     pb="4rem"
                     rounded="xl"

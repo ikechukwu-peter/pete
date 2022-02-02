@@ -72,8 +72,8 @@ export default function Skills({
                                 transitionDuration='2s'
                                 transitionTimingFunction='ease'
                                 _hover={{
-                                    transform: "scale(1.1)",
-                                    bg: "gray.700",
+                                    transform: "scale(1.2)",
+                                    // bg: "gray.700",
                                 }}
                                 w={["30%", "35%", "40%", "60%"]}
                                 //  pb="2rem"
@@ -90,8 +90,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -108,7 +108,7 @@ export default function Skills({
                             transitionTimingFunction='ease'
                             _hover={{
                                 transform: "scale(1.1)",
-                                bg: "gray.700",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -124,8 +124,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -141,8 +141,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -158,8 +158,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -175,8 +175,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
@@ -191,8 +191,8 @@ export default function Skills({
                             transitionDuration='2s'
                             transitionTimingFunction='ease'
                             _hover={{
-                                transform: "scale(1.1)",
-                                bg: "gray.700",
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
                             }}
                         w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
