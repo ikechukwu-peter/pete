@@ -16,15 +16,15 @@ export default function Home() {
   const darkTextColor = useColorModeValue("gray.600", "whiteAlpha.900")
 
   const logo = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-  const headBg = useColorModeValue("gray.200", "gray.800")
+  const headBg = useColorModeValue("gray.50", "gray.800")
   const hoverBg = useColorModeValue("blackAlpha.600", "whiteAlpha.600")
   const hamburgerNav = useColorModeValue("white", "black")
-  const serviceCardBg = useColorModeValue("gray.50", "gray.900")
+  const serviceCardBg = useColorModeValue("whiteAlpha.900", "gray.900")
 
 
-  const lightBg = useColorModeValue("gray.50", "gray.900")
+  const lightBg = useColorModeValue("whiteAlpha.50", "gray.900")
   const lightTextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
-  const cardBg = useColorModeValue("gray.100", "gray.800")
+  const cardBg = useColorModeValue("gray.50", "gray.800")
 
  
 
