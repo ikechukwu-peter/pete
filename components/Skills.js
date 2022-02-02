@@ -44,7 +44,7 @@ export default function Skills({
                     </Heading>
                     <Text
                         fontWeight={600}
-                        w={["80%", "80%", "80%", "60%"]}
+                        w={["100%", "100%", "100%", "60%"]}
                     >
                         This skills listed here are not exhausitive and will keep changing but I am very versatile in them for many years now.
                     </Text>
@@ -55,7 +55,7 @@ export default function Skills({
                 >
 
                     <SimpleGrid
-                        columns={[1, 1, 2, 4]}
+                        columns={[2, 2, 2, 4]}
                         spacing='40px'
                         pt="2rem"
                         pb="4rem"
@@ -75,7 +75,7 @@ export default function Skills({
                                     transform: "scale(1.1)",
                                     bg: "gray.700",
                                 }}
-                                w={["30%", "35%", "50%", "60%"]}
+                                w={["30%", "35%", "40%", "60%"]}
                                 //  pb="2rem"
                                 rounded="xl"
                                 color="purple.500"
@@ -93,7 +93,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -110,7 +110,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -127,7 +127,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -144,7 +144,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -161,7 +161,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -178,7 +178,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -194,7 +194,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 bg: "gray.700",
                             }}
-                            w={["30%", "35%", "50%", "60%"]}
+                        w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"

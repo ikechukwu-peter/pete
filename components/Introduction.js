@@ -25,20 +25,17 @@ export default function Introduction({
                 fontFamily="Source Sans Pro"
                 justifyContent="space-around"
                 alignItems="center"
-                width={["100%", "100%", "100%", "100%"]}
+                width={["80%", "80%", "80%", "90%"]}
                 py="5rem"
-                minW="100vw"
-            // m="auto"
-
-
+                m="auto"
             >
                 <Box d="flex"
                     justifyContent="center"
                     flexDir="column"
-                    // w={["80%", "80%", "80%", "100%"]}
+                    w={["100%", "100%", "50%", "50%"]}
                     textAlign="left"
-                // m="auto"
-
+                    ml="4rem"
+                    m="auto"
                 >
                     <Text fontWeight={800}
                         color={lightTextColor}
@@ -77,7 +74,7 @@ export default function Introduction({
                         >
                             <Button
                                 size="md"
-                                w={["50%", "50%", "50%", "60%"]}
+                                w={["50%", "50%", "50%", "40%"]}
                                 color="whiteAlpha.900"
                                 bg={"purple.600"}
                                 variant="ghost"

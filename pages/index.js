@@ -9,6 +9,7 @@ import About from '../components/About'
 import Projects from '../components/Projects'
 import Services from '../components/Services'
 import Skills from '../components/Skills'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const darkBg = useColorModeValue("gray.50", "gray.800")
@@ -24,6 +25,8 @@ export default function Home() {
   const lightBg = useColorModeValue("gray.50", "gray.900")
   const lightTextColor = useColorModeValue("blackAlpha.800", "whiteAlpha.900")
   const cardBg = useColorModeValue("gray.100", "gray.800")
+
+ 
 
   return (
     <>
@@ -61,6 +64,9 @@ export default function Home() {
         lightBg={lightBg}
         lightTextColor={lightTextColor}
         cardBg={cardBg}
+      />
+      <Footer 
+       darkBg={darkBg}
       />
 
     </>

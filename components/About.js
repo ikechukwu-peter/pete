@@ -23,15 +23,15 @@ export default function About({
                 justifyContent="space-around"
                 alignItems="center"
                 width={["100%", "100%", "100%", "90%"]}
-                flexDirection={["column", "column", "row-reverse", "row-reverse"]}
-                py="5rem"
+                flexDirection={["column-reverse", "column-reverse", "row-reverse", "row-reverse"]}
+                py="2rem"
                 px="2rem"
                 m="auto"
             >
                 <Box d="flex"
                     justifyContent="center"
                     flexDir="column"
-                    w={["90%", "90%", "50%", "50%"]}
+                    w={["100%", "100%", "50%", "50%"]}
                     textAlign="left"
                     ml="4rem"
                     m="auto"
@@ -58,7 +58,7 @@ export default function About({
                     </Text>
                     <HStack
                         justify={["space-between", "space-between", "normal", "normal"]}
-                        mt={["2rem", "3rem", "4rem", "6rem"]}
+                        mt={["1rem", "1.5rem", "2rem", "2rem"]}
                     >
                         <DarkMode>
                             <Link
