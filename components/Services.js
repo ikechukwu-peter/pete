@@ -24,7 +24,7 @@ export default function Services({
         >
             <Center
                 pt="4rem"
-                fontSize="2rem"
+                fontSize="3rem"
                 fontWeight={600}
             >
                 Services
@@ -76,12 +76,14 @@ export default function Services({
                         </Box>
 
                         <Heading
-                            fontSize="1rem"
+                             fontSize="1.8rem"
                             my="1rem"
                         >
                             Website Creation
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             Development of professional website, web system,
                             blogs and online stores.
                         </Text>
@@ -126,12 +128,14 @@ export default function Services({
                         </Box>
 
                         <Heading
-                            fontSize="1rem"
+                             fontSize="1.8rem"
                             my="1rem"
                         >
                             Responsivenes Site
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             Creation of responsive website for the best viewing at all resolution.
                         </Text>
 
@@ -174,12 +178,14 @@ export default function Services({
                         </Box>
 
                         <Heading
-                            fontSize="1rem"
+                             fontSize="1.8rem"
                             my="1rem"
                         >
                             Semantic Code
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             Strategy and monitoring for your business, making your website appear better and better in searches.
                         </Text>
 

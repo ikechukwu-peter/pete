@@ -234,6 +234,7 @@ export default function Header({
               flexDir={"column"}
               justifyContent={"space-around"}
               alignItems={"center"}
+              touchAction="none"
               w={"100vw"}
               h={"100vh"}
             >

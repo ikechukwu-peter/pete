@@ -40,10 +40,12 @@ export default function About({
                     <Heading fontWeight={600}
                         color={darkTextColor}
                         mb="1rem"
+                        fontSize={["1.5rem","2rem", "2.5rem", "3rem"]}
                     >
                         About me
                     </Heading>
                     <Text fontWeight={600}
+                        fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
                         color={darkTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
@@ -51,6 +53,7 @@ export default function About({
                         A fullstack web developer.
                     </Text>
                     <Text fontWeight={600}
+                        fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
                         color={darkTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >

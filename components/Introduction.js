@@ -41,6 +41,7 @@ export default function Introduction({
                         color={lightTextColor}
                         mt={["2rem", "2rem", "3rem", "4rem"]}
                         mb=".2rem"
+                        fontSize={["1.5rem","2rem"]}
                     >
                         {/* "rules": { "react/no-unescaped-entities": 0 } */}
                         {" Hello I'm "}
@@ -48,11 +49,13 @@ export default function Introduction({
                     <Heading fontWeight={600}
                         color={lightTextColor}
                         mb=".1rem"
+                        fontSize={["2.1rem","2.5rem"]}
                     >
                         Ikechukwu Peter
                     </Heading>
                     <Box fontWeight={600}
                         color={lightTextColor}
+                        fontSize={["1.2rem","2rem", "2rem", "2rem"]}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
                         <Typewriter

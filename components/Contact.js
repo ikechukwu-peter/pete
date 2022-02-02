@@ -25,7 +25,6 @@ export default function Contact({
     const [subject, setSubject] = useState('')
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
-    const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) => {
@@ -104,7 +103,9 @@ export default function Contact({
                     m="auto"
 
                 >
-                    <Heading fontWeight={600}
+                    <Heading
+                        fontWeight={600}
+                        fontSize="3rem"
                         color={darkTextColor}
                         mb="1rem"
                     >
@@ -119,8 +120,13 @@ export default function Contact({
                             w={["100%", "100%", "100%", "80%"]}
                         >
 
-                            <FormLabel htmlFor='name'>Name</FormLabel>
-                            <Input id='name' type='text' placeholder='Enter your name'
+                            <FormLabel
+
+                           fontSize={["1rem", "1.1rem", "1.4rem", "1.6rem"]}
+                                htmlFor='name'>Name</FormLabel>
+                            <Input
+                                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
+                                id='name' type='text' placeholder='Enter your name'
                                 _focus={
                                     {
                                         borderColor: "purple.700",
@@ -133,10 +139,14 @@ export default function Contact({
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
-                            <FormLabel htmlFor='email'
-                                mt="1rem"
+                            <FormLabel
+                              fontSize={["1rem", "1.1rem", "1.4rem", "1.6rem"]}
+                                htmlFor='email'
+                                mt="2rem"
                             >Email address</FormLabel>
-                            <Input id='email' type='email' placeholder='Enter your email'
+                            <Input
+                                fontSize={["1.1rem", "1.1rem", "1.3rem", "1.3rem"]}
+                                id='email' type='email' placeholder='Enter your email'
                                 _focus={
                                     {
                                         borderColor: "purple.700",
@@ -150,13 +160,18 @@ export default function Contact({
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <FormHelperText
+                                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
                                 textAlign="left"
                             >{"We'll never share your email."}</FormHelperText>
 
-                            <FormLabel htmlFor='subject'
-                                mt="1rem"
+                            <FormLabel
+                             fontSize={["1rem", "1.1rem", "1.4rem", "1.6rem"]}
+                                htmlFor='subject'
+                                mt="2rem"
                             >Subject</FormLabel>
-                            <Input id='subject' type='text' placeholder='Enter Subject'
+                            <Input
+                                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
+                                id='subject' type='text' placeholder='Enter Subject'
                                 _focus={
                                     {
                                         borderColor: "purple.700",
@@ -170,10 +185,11 @@ export default function Contact({
                                 onChange={(e) => setSubject(e.target.value)}
                             />
                             <Textarea
+                                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
                                 mt="1rem"
                                 focusBorderColor="purple.700"
                                 placeholder='Enter your message'
-                                size='sm'
+                                size='md'
                                 resize={"vertical"}
                                 isRequired
                                 value={message}

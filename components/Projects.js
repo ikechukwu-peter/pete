@@ -28,7 +28,7 @@ export default function Projects({
         >
             <Center
                 pt="4rem"
-                fontSize="2rem"
+                fontSize="3rem"
                 fontWeight={600}
             >
                 Projects
@@ -68,12 +68,14 @@ export default function Projects({
 
                     >
                         <Heading
-                            fontSize="1rem"
+                            fontSize="1.8rem"
                             my="1rem"
                         >
                             Nip
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             A URL shortening and expanding website, built with NodeJs, Typescript, Pug and CSS.
                         </Text>
                         <HStack
@@ -176,12 +178,14 @@ export default function Projects({
                         mt="2rem"
                     >
                         <Heading
-                            fontSize="1rem"
+                            fontSize="1.8rem"
                             my="1rem"
                         >
                             Wood.in
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             An e-commerce landing page, built with HTML, CSS and Javascript.
                         </Text>
                         <HStack
@@ -285,11 +289,13 @@ export default function Projects({
                         mt="2rem"
                     >
                         <Heading
-                            fontSize="1rem"
+                            fontSize="1.8rem"
                             my="1rem">
                             Crebb
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             A session booking site built with ReactJs, CSS and Nodejs.
                         </Text>
                         <HStack
@@ -393,12 +399,14 @@ export default function Projects({
                         mt="2rem"
                     >
                         <Heading
-                            fontSize="1rem"
+                            fontSize="1.8rem"
                             my="1rem"
                         >
                             Pete
                         </Heading>
-                        <Text>
+                        <Text
+                            fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
+                        >
                             {"Ikechukwu Peter's portfolio site, built with NextJS, ReactJS and ChakraUI."}
                         </Text>
                         <HStack
@@ -408,7 +416,7 @@ export default function Projects({
                             <DarkMode>
                                 <Link
                                     href="https://pete.vercel.app/"
-                                      _hover={
+                                    _hover={
                                         {
                                             textDecor: "none"
                                         }

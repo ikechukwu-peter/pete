@@ -35,18 +35,21 @@ export default function Skills({
             >
                 <Box
                     w={["100%", "100%", "100%", "50%"]}
+                    color={lightTextColor}
 
                 >
                     <Heading
                         mb="2rem"
+                        fontSize="3rem"
                     >
                         Skills
                     </Heading>
                     <Text
                         fontWeight={600}
                         w={["100%", "100%", "100%", "60%"]}
+                        fontSize={["1.2rem", "1.4rem", "1.4rem", "1.6rem"]}
                     >
-                       The following are skills I have worked with four the past four years and I am very versatile with them.
+                        The following are skills I have worked with four the past four years and I am very versatile with them.
                         However, I am constantly growing and this section will keep updating...😉
                     </Text>
 
@@ -62,24 +65,24 @@ export default function Skills({
                         pb="4rem"
                         placeItems="center"
 
-                    >                      
-                            <Icon
-                                as={FaHtml5}
-                                bg={cardBg}
-                                height='auto'
-                                transitionProperty='transform'
-                                transitionDuration='2s'
-                                transitionTimingFunction='ease'
-                                _hover={{
-                                    transform: "scale(1.2)",
-                                    // bg: "gray.700",
-                                }}
-                                w={["30%", "35%", "40%", "60%"]}
-                                //  pb="2rem"
-                                rounded="xl"
-                                color="purple.500"
-                            />
-                      
+                    >
+                        <Icon
+                            as={FaHtml5}
+                            bg={cardBg}
+                            height='auto'
+                            transitionProperty='transform'
+                            transitionDuration='2s'
+                            transitionTimingFunction='ease'
+                            _hover={{
+                                transform: "scale(1.2)",
+                                // bg: "gray.700",
+                            }}
+                            w={["30%", "35%", "40%", "60%"]}
+                            //  pb="2rem"
+                            rounded="xl"
+                            color="purple.500"
+                        />
+
 
                         <Icon
                             as={SiCss3}
@@ -92,7 +95,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -109,7 +112,7 @@ export default function Skills({
                                 transform: "scale(1.1)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -126,7 +129,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -143,7 +146,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -160,7 +163,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -177,7 +180,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
@@ -193,7 +196,7 @@ export default function Skills({
                                 transform: "scale(1.2)",
                                 // bg: "gray.700",
                             }}
-                        w={["30%", "35%", "40%", "60%"]}
+                            w={["30%", "35%", "40%", "60%"]}
                             //  pb="2rem"
                             rounded="xl"
                             color="purple.500"
