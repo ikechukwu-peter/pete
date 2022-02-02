@@ -46,7 +46,8 @@ export default function Skills({
                         fontWeight={600}
                         w={["100%", "100%", "100%", "60%"]}
                     >
-                        This skills listed here are not exhausitive and will keep changing but I am very versatile in them for many years now.
+                       The following are skills I have worked with four the past four years and I am very versatile with them.
+                        However, I am constantly growing and this section will keep updating...😉
                     </Text>
 
                 </Box>
@@ -61,9 +62,7 @@ export default function Skills({
                         pb="4rem"
                         placeItems="center"
 
-                    >
-
-                        <Tooltip hasArrow label='HTML' bg='gray.700' color='blackAlpha.800'>
+                    >                      
                             <Icon
                                 as={FaHtml5}
                                 bg={cardBg}
@@ -80,7 +79,7 @@ export default function Skills({
                                 rounded="xl"
                                 color="purple.500"
                             />
-                        </Tooltip>
+                      
 
                         <Icon
                             as={SiCss3}

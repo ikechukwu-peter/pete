@@ -51,7 +51,7 @@ export default function Introduction({
                     >
                         Ikechukwu Peter
                     </Heading>
-                    <Text fontWeight={600}
+                    <Box fontWeight={600}
                         color={lightTextColor}
                         mb={["1rem", "1.2rem", "1.4rem", "1.6rem"]}
                     >
@@ -63,7 +63,7 @@ export default function Introduction({
                             }}
                         />
 
-                    </Text>
+                    </Box>
                     <DarkMode>
                         <Link
                             href='https://api.whatsapp.com/send/?phone=23409082906878&text=Hello+Ikechukwu+Peter%2C+I+Need+a+website+or+Web-app+&app_absent=0'

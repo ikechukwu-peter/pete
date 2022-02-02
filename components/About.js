@@ -98,7 +98,7 @@ export default function About({
                         <DarkMode
                         >
                             <Link
-                                href="https://www.canva.com/design/DAExzoOocVc/RjJSWLTGFbCGJCRY1VdhqQ/view?utm_content=DAExzoOocVc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                                href="/Peter_Ikechukwu_CV.pdf"
                                 download="Ikechukwu_Peter_CV"
                                 isExternal
                                 _hover={
