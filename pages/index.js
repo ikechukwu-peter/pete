@@ -9,6 +9,7 @@ import About from '../components/About'
 import Projects from '../components/Projects'
 import Services from '../components/Services'
 import Skills from '../components/Skills'
+import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
 export default function Home() {
@@ -48,7 +49,6 @@ export default function Home() {
       <About
         darkTextColor={darkTextColor}
         darkBg={darkBg}
-
       />
       <Projects
         lightBg={lightBg}
@@ -64,6 +64,10 @@ export default function Home() {
         lightBg={lightBg}
         lightTextColor={lightTextColor}
         cardBg={cardBg}
+      />
+         <Contact
+        darkTextColor={darkTextColor}
+        darkBg={darkBg}
       />
       <Footer 
        darkBg={darkBg}
