@@ -8,7 +8,6 @@ import {
     Input,
     FormControl,
     FormLabel,
-    FormErrorMessage,
     FormHelperText,
     Textarea,
     Spinner,
@@ -31,44 +30,55 @@ export default function Contact({
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        try {
-            setLoading(true)
-            let res = await axios({
-                method: "POST",
-                url: '/api/mail',
-                data: {
-                    name,
-                    email,
-                    subject,
-                    message
-                }
-            })
-            console.log(res.data)
-            const { hide, hideAfter } = cogoToast.success(`${res.data.success}`, {
-                onClick: () => {
-                    hide();
-                },
-                hideAfter: 5
-            });
-        } catch (error) {
-            console.log(error)
-            let errorResponse = error.response ? error.response.errorMessage : "Check your internet connection"
+if(name, email, subject, message){
 
-            const { hide, hideAfter } = cogoToast.success(`${errorResponse}`, {
-                onClick: () => {
-                    hide();
-                },
-                hideAfter: 5
-            });
+    try {
+        setLoading(true)
+        let res = await axios({
+            method: "POST",
+            url: '/api/mail',
+            data: {
+                name,
+                email,
+                subject,
+                message
+            }
+        })
+        console.log(res.data)
+        const { hide, hideAfter } = cogoToast.success(`${res.data.success}`, {
+            onClick: () => {
+                hide();
+            },
+            hideAfter: 5
+        });
+    } catch (error) {
+        console.log(error)
+        let errorResponse = error.response ? error.response.errorMessage : "Check your internet connection"
 
-        }
-        finally {
-            setLoading(false)
-        }
+        const { hide, hideAfter } = cogoToast.error(`${errorResponse}`, {
+            onClick: () => {
+                hide();
+            },
+            hideAfter: 5
+        });
+
+    }
+    finally {
+        setLoading(false)
+    }
+
+}
+else {
+    const { hide, hideAfter } = cogoToast.warn('Fill all the fields.😒', {
+        onClick: () => {
+            hide();
+        },
+        hideAfter: 5
+    }); 
+}
 
 
-
-        console.log("Form submitted")
+       
     }
 
     return (
