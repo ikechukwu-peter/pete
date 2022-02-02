@@ -24,7 +24,7 @@ export default function Introduction({
             >
 
                     <Link
-                        href='https://linkedin.in/peter-ikechukwu'
+                        href='https://linkedin.com/in/peter-ikechukwu'
                         isExternal
                         _hover={
                             {

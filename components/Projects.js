@@ -408,8 +408,7 @@ export default function Projects({
                             <DarkMode>
                                 <Link
                                     href="https://pete.vercel.app/"
-                                    isExternal
-                                    _hover={
+                                      _hover={
                                         {
                                             textDecor: "none"
                                         }
