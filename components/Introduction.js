@@ -20,6 +20,7 @@ export default function Introduction({
     return (
         <Box bg={lightBg}
             w="100vw"
+            id="#introduction"
         >
             <Flex
                 fontFamily="Source Sans Pro"

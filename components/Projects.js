@@ -25,6 +25,7 @@ export default function Projects({
             w="100vw"
             fontFamily="Source Sans Pro"
             color={lightTextColor}
+            id="#projects"
         >
             <Center
                 pt="4rem"

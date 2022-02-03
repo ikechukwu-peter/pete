@@ -24,6 +24,7 @@ export default function Skills({
             w="100vw"
             fontFamily="Source Sans Pro"
             color={lightTextColor}
+            id="#skills"
         >
 
             <Flex

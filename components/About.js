@@ -18,6 +18,7 @@ export default function About({
     return (
         <Box
             bg={darkBg}
+            id="#about"
         >
             <Flex fontFamily="Source Sans Pro"
                 justifyContent="space-around"

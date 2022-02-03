@@ -21,6 +21,7 @@ export default function Services({
             w="100vw"
             fontFamily="Source Sans Pro"
             color={darkTextColor}
+            id="#services"
         >
             <Center
                 pt="4rem"

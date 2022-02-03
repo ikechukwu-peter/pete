@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from "next/router";
 import { useState } from 'react'
 import {
   Flex,
@@ -21,6 +22,7 @@ export default function Header({
   hamburgerNav,
   hoverBg,
   darkTextColor }) {
+
   const { colorMode, toggleColorMode } = useColorMode()
   const [display, changeDisplay] = useState("none")
 
@@ -39,8 +41,6 @@ export default function Header({
         alignItems="center"
         fontFamily="Source Sans Pro"
         fontWeight="600"
-
-
       >
         <Heading
           _hover={{ cursor: "pointer" }}
@@ -65,7 +65,8 @@ export default function Header({
           >
 
             <Link
-              href="#"
+    
+              href="#about"
               px={"2rem", ".6rem", "1rem", "2rem"}
               py=".8rem"
               _hover={{
@@ -86,7 +87,7 @@ export default function Header({
               }}
             >About me</Link>
             <Link
-              href="#"
+              href="#projects"
               px={"2rem", ".6rem", "1rem", "2rem"}
               py=".8rem"
               _hover={{
@@ -124,7 +125,7 @@ export default function Header({
                 bg: "none",
                 border: "none"
               }}
-              href="#">Services</Link>
+              href="#services">Services</Link>
             <Link
               px={"2rem", ".6rem", "1rem", "2rem"}
               py=".8rem"
@@ -144,29 +145,8 @@ export default function Header({
                 bg: "none",
                 border: "none"
               }}
-              href="#">
+              href="#skills">
               Skills</Link>
-            <Link
-              px={"2rem", ".6rem", "1rem", "2rem"}
-              py=".8rem"
-              _hover={{
-                textDecor: "none",
-                bg: { hoverBg },
-                color: { headBg },
-                bg: "purple.500",
-              }}
-              _focus={{
-                textDecor: "none",
-                bg: "none",
-                border: "none"
-              }}
-              _active={{
-                textDecor: "none",
-                bg: "none",
-                border: "none"
-              }}
-              href="#">
-              Articles</Link>
           </Box>
           <Box
             mr={["1.4rem", "1.4rem", "1.4rem", ".1rem"]}
@@ -240,7 +220,7 @@ export default function Header({
             >
 
               <Link
-                href="#"
+                href="#about"
                 px={"2rem", ".6rem", "1rem", "2rem"}
                 py=".8rem"
                 _hover={{
@@ -259,9 +239,10 @@ export default function Header({
                   bg: "none",
                   border: "none"
                 }}
+                onClick={() => changeDisplay("none")}
               >About me</Link>
               <Link
-                href="#"
+                href="#projects"
                 px={"2rem", ".6rem", "1rem", "2rem"}
                 py=".8rem"
                 _hover={{
@@ -280,6 +261,7 @@ export default function Header({
                   bg: "none",
                   border: "none"
                 }}
+                onClick={() => changeDisplay("none")}
               >Projects</Link>
               <Link
                 px={"2rem", ".6rem", "1rem", "2rem"}
@@ -300,7 +282,9 @@ export default function Header({
                   bg: "none",
                   border: "none"
                 }}
-                href="#">Services</Link>
+                href="#services"
+                onClick={() => changeDisplay("none")}
+              >Services</Link>
               <Link
                 px={"2rem", ".6rem", "1rem", "2rem"}
                 py=".8rem"
@@ -320,29 +304,11 @@ export default function Header({
                   bg: "none",
                   border: "none"
                 }}
-                href="#">
+                href="#skills"
+                onClick={() => changeDisplay("none")}
+              >
                 Skills</Link>
-              <Link
-                px={"2rem", ".6rem", "1rem", "2rem"}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  bg: { hoverBg },
-                  color: { headBg },
-                  bg: "purple.500",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none"
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none"
-                }}
-                href="#">
-                Articles</Link>
+
             </Box>
           </Flex>
 
