@@ -44,6 +44,12 @@ export default function Contact({
                     }
                 })
                 console.log(res.data)
+
+                setEmail("")
+                setSubject("")
+                setName("")
+                setMessage("")
+                
                 const { hide, hideAfter } = cogoToast.success(`${res.data.success}`, {
                     onClick: () => {
                         hide();
