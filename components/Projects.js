@@ -120,7 +120,7 @@ export default function Projects({
                             <DarkMode
                             >
                                 <Link
-                                    href="https:github.com/ikechukwu-peter/nip"
+                                    href="https://github.com/ikechukwu-peter/nip"
                                     isExternal
                                     _hover={
                                         {
@@ -340,7 +340,7 @@ export default function Projects({
                             <DarkMode
                             >
                                 <Link
-                                    href="https:github.com/ikechukwu-peter/crebb"
+                                    href="https://github.com/ikechukwu-peter/crebb"
                                     isExternal
                                     _hover={
                                         {

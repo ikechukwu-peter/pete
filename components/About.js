@@ -66,7 +66,7 @@ export default function About({
                     >
                         <DarkMode>
                             <Link
-                                href="https:github.com/ikechukwu-peter"
+                                href="https://github.com/ikechukwu-peter"
                                 isExternal
                                 _hover={
                                     {
