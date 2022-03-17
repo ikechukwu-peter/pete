@@ -36,12 +36,12 @@ export default function About({
                     textAlign="left"
                     ml="4rem"
                     m="auto"
-
+                    data-aos="fade-up"
                 >
                     <Heading fontWeight={600}
                         color={darkTextColor}
                         mb="1rem"
-                        fontSize={["1.5rem","2rem", "2.5rem", "3rem"]}
+                        fontSize={["1.5rem", "2rem", "2.5rem", "3rem"]}
                     >
                         About me
                     </Heading>
@@ -145,6 +145,7 @@ export default function About({
                     w={["90%", "90%", "50%", "50%"]}
                     d={["flex", "flex", "flex", "flex"]}
                     py="2rem"
+                    data-aos="fade-down"
                 >
                     <Image src="/about.svg"
                         w={["100%", "100%", "80%", "90%"]}

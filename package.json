@@ -13,6 +13,7 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@sendgrid/mail": "^7.6.0",
+    "aos": "^2.3.4",
     "axios": "^0.25.0",
     "cogo-toast": "^4.2.3",
     "framer-motion": "^5",

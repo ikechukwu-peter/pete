@@ -10,7 +10,7 @@ export default class Document extends NextDocument {
       <Html lang='en'>
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet" />
-        </Head>
+       </Head>
         <body>
           {/* 👇 Here's the script */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
