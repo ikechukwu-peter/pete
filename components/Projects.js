@@ -20,7 +20,7 @@ export default function Projects({ lightBg, lightTextColor, cardBg }) {
       w="100vw"
       fontFamily="Source Sans Pro"
       color={lightTextColor}
-      id="#projects"
+      id="projects"
     >
       <Center pt="4rem" fontSize="3rem" fontWeight={600}>
         Projects

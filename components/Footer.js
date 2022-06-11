@@ -14,7 +14,7 @@ export default function Introduction({
     return (
         <Box bg={footerBg}
             w="100vw"
-            id="#footer"
+            id="footer"
         >
             <Flex
                 justifyContent="center"

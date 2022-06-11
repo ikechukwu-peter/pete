@@ -89,7 +89,7 @@ export default function Contact({
     return (
         <Box
             bg={darkBg}
-            id="#contact"
+            id="contact"
         >
             <Flex fontFamily="Source Sans Pro"
                 justifyContent="space-around"

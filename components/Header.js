@@ -26,6 +26,34 @@ export default function Header({
   const { colorMode, toggleColorMode } = useColorMode();
   const [display, changeDisplay] = useState("none");
 
+  const scrollToLocation = (e) => {
+    let elem = `${e.target}`;
+    const moveTo = elem.split("#")[1];
+
+    if (moveTo !== "") {
+      let retries = 0;
+      const scroll = () => {
+        retries += 0;
+        if (retries > 50) return;
+        const element = document.getElementById(moveTo);
+        if (element) {
+          setTimeout(
+            () =>
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              }),
+            0
+          );
+        } else {
+          setTimeout(scroll, 100);
+        }
+      };
+      scroll();
+    }
+  };
+
   return (
     <>
       <Head>
@@ -85,6 +113,7 @@ export default function Header({
                 bg: "none",
                 border: "none",
               }}
+              onClick={scrollToLocation}
             >
               About me
             </Link>
@@ -108,6 +137,7 @@ export default function Header({
                 bg: "none",
                 border: "none",
               }}
+              onClick={scrollToLocation}
             >
               Projects
             </Link>
@@ -130,6 +160,7 @@ export default function Header({
                 border: "none",
               }}
               href="#services"
+              onClick={scrollToLocation}
             >
               Services
             </Link>
@@ -153,6 +184,7 @@ export default function Header({
                 border: "none",
               }}
               href="#skills"
+              onClick={scrollToLocation}
             >
               Skills
             </Link>
@@ -240,7 +272,10 @@ export default function Header({
                   bg: "none",
                   border: "none",
                 }}
-                onClick={() => changeDisplay("none")}
+                onClick={(e) => {
+                  scrollToLocation(e);
+                  changeDisplay("none");
+                }}
               >
                 About me
               </Link>
@@ -264,7 +299,10 @@ export default function Header({
                   bg: "none",
                   border: "none",
                 }}
-                onClick={() => changeDisplay("none")}
+                onClick={(e) => {
+                  scrollToLocation(e);
+                  changeDisplay("none");
+                }}
               >
                 Projects
               </Link>
@@ -288,7 +326,10 @@ export default function Header({
                   border: "none",
                 }}
                 href="#services"
-                onClick={() => changeDisplay("none")}
+                onClick={(e) => {
+                  scrollToLocation(e);
+                  changeDisplay("none");
+                }}
               >
                 Services
               </Link>
@@ -312,7 +353,10 @@ export default function Header({
                   border: "none",
                 }}
                 href="#skills"
-                onClick={() => changeDisplay("none")}
+                onClick={(e) => {
+                  scrollToLocation(e);
+                  changeDisplay("none");
+                }}
               >
                 Skills
               </Link>
