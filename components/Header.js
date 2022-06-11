@@ -1,6 +1,6 @@
-import Head from 'next/head'
+import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState } from 'react'
+import { useState } from "react";
 import {
   Flex,
   Box,
@@ -8,23 +8,23 @@ import {
   Link,
   IconButton,
   useColorMode,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 import {
   HamburgerIcon,
   SmallCloseIcon,
   MoonIcon,
-  SunIcon
-} from "@chakra-ui/icons"
+  SunIcon,
+} from "@chakra-ui/icons";
 
 export default function Header({
   headBg,
   logo,
   hamburgerNav,
   hoverBg,
-  darkTextColor }) {
-
-  const { colorMode, toggleColorMode } = useColorMode()
-  const [display, changeDisplay] = useState("none")
+  darkTextColor,
+}) {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const [display, changeDisplay] = useState("none");
 
   return (
     <>
@@ -33,10 +33,11 @@ export default function Header({
         <meta name="description" content="Ikechukwu Peter Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex maxW="auto"
+      <Flex
+        maxW="auto"
         bg={headBg}
         minH={"6rem"}
-        h={"4rem", "4rem", "5rem"}
+        h={["4rem", "4rem", "5rem"]}
         justifyContent="space-around"
         alignItems="center"
         fontFamily="Source Sans Pro"
@@ -57,17 +58,16 @@ export default function Header({
           alignItems="center"
           w={["50%", "50%", "50%", "100%"]}
         >
-          <Box d={["none", "none", "none", "flex"]}
+          <Box
+            d={["none", "none", "none", "flex"]}
             w={["100%", "100%", "100%", "80%"]}
             justifyContent={"space-around"}
             fontSize={["1rem", "1.2rem"]}
             color={darkTextColor}
           >
-
             <Link
-    
               href="#about"
-              px={"2rem", ".6rem", "1rem", "2rem"}
+              px={("2rem", ".6rem", "1rem", "2rem")}
               py=".8rem"
               _hover={{
                 textDecor: "none",
@@ -78,17 +78,19 @@ export default function Header({
               _focus={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
               _active={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
-            >About me</Link>
+            >
+              About me
+            </Link>
             <Link
               href="#projects"
-              px={"2rem", ".6rem", "1rem", "2rem"}
+              px={("2rem", ".6rem", "1rem", "2rem")}
               py=".8rem"
               _hover={{
                 textDecor: "none",
@@ -99,16 +101,18 @@ export default function Header({
               _focus={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
               _active={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
-            >Projects</Link>
+            >
+              Projects
+            </Link>
             <Link
-              px={"2rem", ".6rem", "1rem", "2rem"}
+              px={("2rem", ".6rem", "1rem", "2rem")}
               py=".8rem"
               _hover={{
                 textDecor: "none",
@@ -118,16 +122,19 @@ export default function Header({
               _focus={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
               _active={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
-              href="#services">Services</Link>
+              href="#services"
+            >
+              Services
+            </Link>
             <Link
-              px={"2rem", ".6rem", "1rem", "2rem"}
+              px={("2rem", ".6rem", "1rem", "2rem")}
               py=".8rem"
               _hover={{
                 textDecor: "none",
@@ -138,31 +145,31 @@ export default function Header({
               _focus={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
               _active={{
                 textDecor: "none",
                 bg: "none",
-                border: "none"
+                border: "none",
               }}
-              href="#skills">
-              Skills</Link>
+              href="#skills"
+            >
+              Skills
+            </Link>
           </Box>
-          <Box
-            mr={["1.4rem", "1.4rem", "1.4rem", ".1rem"]}
-          >
+          <Box mr={["1.4rem", "1.4rem", "1.4rem", ".1rem"]}>
             <IconButton
               _focus={{
                 border: "none",
-                outline: "none"
+                outline: "none",
               }}
               _hover={{
                 border: "none",
-                outline: "none"
+                outline: "none",
               }}
               _active={{
                 border: "none",
-                outline: "none"
+                outline: "none",
               }}
               // variant="ghost"
 
@@ -172,8 +179,7 @@ export default function Header({
               onClick={toggleColorMode}
               ml={{ base: "1rem", sm: "1rem", md: "1rem", lg: "1rem" }}
             >
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>
           </Box>
           <Flex
@@ -187,8 +193,8 @@ export default function Header({
             />
           </Flex>
 
-
-          <Flex flexDir={"column"}
+          <Flex
+            flexDir={"column"}
             w={"100vw"}
             h={"100vh"}
             bg={hamburgerNav}
@@ -198,16 +204,12 @@ export default function Header({
             zIndex={20}
             display={display}
           >
-
-            <Flex
-              justifyContent={"flex-end"}
-              mt={"2.4rem"}
-              mr={"1.5rem"}>
+            <Flex justifyContent={"flex-end"} mt={"2.4rem"} mr={"1.5rem"}>
               <SmallCloseIcon
                 onClick={() => changeDisplay("none")}
-                fontSize={"1.5rem"} />
+                fontSize={"1.5rem"}
+              />
             </Flex>
-
 
             <Box
               d={"flex"}
@@ -218,10 +220,9 @@ export default function Header({
               w={"100vw"}
               h={"100vh"}
             >
-
               <Link
                 href="#about"
-                px={"2rem", ".6rem", "1rem", "2rem"}
+                px={("2rem", ".6rem", "1rem", "2rem")}
                 py=".8rem"
                 _hover={{
                   textDecor: "none",
@@ -232,18 +233,20 @@ export default function Header({
                 _focus={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 _active={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 onClick={() => changeDisplay("none")}
-              >About me</Link>
+              >
+                About me
+              </Link>
               <Link
                 href="#projects"
-                px={"2rem", ".6rem", "1rem", "2rem"}
+                px={("2rem", ".6rem", "1rem", "2rem")}
                 py=".8rem"
                 _hover={{
                   textDecor: "none",
@@ -254,17 +257,19 @@ export default function Header({
                 _focus={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 _active={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 onClick={() => changeDisplay("none")}
-              >Projects</Link>
+              >
+                Projects
+              </Link>
               <Link
-                px={"2rem", ".6rem", "1rem", "2rem"}
+                px={("2rem", ".6rem", "1rem", "2rem")}
                 py=".8rem"
                 _hover={{
                   textDecor: "none",
@@ -275,18 +280,20 @@ export default function Header({
                 _focus={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 _active={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 href="#services"
                 onClick={() => changeDisplay("none")}
-              >Services</Link>
+              >
+                Services
+              </Link>
               <Link
-                px={"2rem", ".6rem", "1rem", "2rem"}
+                px={("2rem", ".6rem", "1rem", "2rem")}
                 py=".8rem"
                 _hover={{
                   textDecor: "none",
@@ -297,26 +304,22 @@ export default function Header({
                 _focus={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 _active={{
                   textDecor: "none",
                   bg: "none",
-                  border: "none"
+                  border: "none",
                 }}
                 href="#skills"
                 onClick={() => changeDisplay("none")}
               >
-                Skills</Link>
-
+                Skills
+              </Link>
             </Box>
           </Flex>
-
         </Box>
-
       </Flex>
-
-
     </>
-  )
+  );
 }
