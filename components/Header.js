@@ -232,7 +232,7 @@ export default function Header({
             top={0}
             left={0}
             pos={"fixed"}
-            zIndex={20}
+            zIndex={99999}
             display={display}
           >
             <Flex justifyContent={"flex-end"} mt={"2.4rem"} mr={"1.5rem"}>
