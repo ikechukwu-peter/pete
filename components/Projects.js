@@ -163,7 +163,7 @@ export default function Projects({ lightBg, lightTextColor, cardBg }) {
             >
               <DarkMode>
                 <Link
-                  href="https://woodin.netlify.app/"
+                  href="https://wood-omega.vercel.app/"
                   isExternal
                   _hover={{
                     textDecor: "none",
@@ -258,7 +258,7 @@ export default function Projects({ lightBg, lightTextColor, cardBg }) {
             >
               <DarkMode>
                 <Link
-                  href="https://crebb.netlify.app"
+                  href="https://crebb.vercel.app/"
                   isExternal
                   _hover={{
                     textDecor: "none",
