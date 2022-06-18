@@ -225,7 +225,7 @@ export default function Projects({ lightBg, lightTextColor, cardBg }) {
             </HStack>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           bg={cardBg}
           height="auto"
           transitionProperty="transform"
@@ -319,7 +319,7 @@ export default function Projects({ lightBg, lightTextColor, cardBg }) {
               </DarkMode>
             </HStack>
           </Box>
-        </Box>
+        </Box> */}
 
         <Box
           bg={cardBg}
