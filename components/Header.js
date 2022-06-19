@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Flex,
   Box,
@@ -7,6 +7,17 @@ import {
   Link,
   IconButton,
   useColorMode,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Input,
+  Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -25,38 +36,43 @@ export default function Header({
   const { colorMode, toggleColorMode } = useColorMode();
   const [display, changeDisplay] = useState("none");
 
-  const scrollToLocation = (e) => {
-    let elem = `${e.target}`;
-    const moveTo = elem.split("#")[1];
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
 
-    if (moveTo !== "") {
-      let retries = 0;
-      const scroll = () => {
-        retries += 0;
-        if (retries > 50) return;
-        const element = document.getElementById(moveTo);
-        if (element) {
-          setTimeout(
-            () =>
-              element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-              }),
-            0
-          );
-        } else {
-          setTimeout(scroll, 100);
-        }
-      };
-      scroll();
-    }
-  };
+  const [isTab] = useMediaQuery("(max-width: 768px)");
+
+  // const scrollToLocation = (e) => {
+  //   let elem = `${e.target}`;
+  //   const moveTo = elem.split("#")[1];
+
+  //   if (moveTo !== "") {
+  //     let retries = 0;
+  //     const scroll = () => {
+  //       retries += 0;
+  //       if (retries > 50) return;
+  //       const element = document.getElementById(moveTo);
+  //       if (element) {
+  //         setTimeout(
+  //           () =>
+  //             element.scrollIntoView({
+  //               behavior: "smooth",
+  //               block: "start",
+  //               inline: "nearest",
+  //             }),
+  //           0
+  //         );
+  //       } else {
+  //         setTimeout(scroll, 100);
+  //       }
+  //     };
+  //     scroll();
+  //   }
+  // };
 
   return (
     <>
       <Head>
-        <title>Ikechukwu Peter Portfolio</title>
+        <title>Ikechukwu {"Peter's"} Portfolio</title>
         <meta name="description" content="Ikechukwu Peter Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -76,6 +92,8 @@ export default function Header({
           color={logo}
           ml={["1rem", "1rem", "1rem", "3rem"]}
           w="50%"
+          as={Link}
+          id="#intro"
         >
           Pete
         </Heading>
@@ -112,7 +130,7 @@ export default function Header({
                 bg: "none",
                 border: "none",
               }}
-              onClick={scrollToLocation}
+              // onClick={scrollToLocation}
             >
               About me
             </Link>
@@ -136,7 +154,7 @@ export default function Header({
                 bg: "none",
                 border: "none",
               }}
-              onClick={scrollToLocation}
+              // onClick={scrollToLocation}
             >
               Projects
             </Link>
@@ -159,7 +177,7 @@ export default function Header({
                 border: "none",
               }}
               href="#services"
-              onClick={scrollToLocation}
+              // onClick={scrollToLocation}
             >
               Services
             </Link>
@@ -183,7 +201,7 @@ export default function Header({
                 border: "none",
               }}
               href="#skills"
-              onClick={scrollToLocation}
+              // onClick={scrollToLocation}
             >
               Skills
             </Link>
@@ -213,7 +231,167 @@ export default function Header({
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>
           </Box>
+
           <Flex
+            d={["flex", "flex", "flex", "none"]}
+            justifyContent={"flex-end"}
+            mr={["1.5rem"]}
+            ref={btnRef}
+            onClick={onOpen}
+          >
+            <HamburgerIcon
+              fontSize={"1.5rem"}
+              onClick={() => changeDisplay("flex")}
+            />
+          </Flex>
+
+          {isTab && (
+            <Box display={["flex", "flex", "none", "none"]}>
+              <Drawer
+                isOpen={isOpen}
+                placement="right"
+                onClose={onClose}
+                finalFocusRef={btnRef}
+              >
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerBody>
+                    <Flex direction={"column"} align="center" gap={9} mt={9}>
+                      <Link
+                        href="#about"
+                        fontWeight={700}
+                        px={("2rem", ".6rem", "1rem", "2rem")}
+                        py=".8rem"
+                        _hover={{
+                          textDecor: "none",
+                          bg: { hoverBg },
+                          color: { headBg },
+                          bg: "purple.500",
+                        }}
+                        _focus={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        _active={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        onClick={onClose}
+                      >
+                        About me
+                      </Link>
+                      <Link
+                        href="#projects"
+                        fontWeight={700}
+                        px={("2rem", ".6rem", "1rem", "2rem")}
+                        py=".8rem"
+                        _hover={{
+                          textDecor: "none",
+                          bg: { hoverBg },
+                          color: { headBg },
+                          bg: "purple.500",
+                        }}
+                        _focus={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        _active={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        onClick={onClose}
+                      >
+                        Projects
+                      </Link>
+                      <Link
+                        fontWeight={700}
+                        px={("2rem", ".6rem", "1rem", "2rem")}
+                        py=".8rem"
+                        _hover={{
+                          textDecor: "none",
+                          bg: { hoverBg },
+                          color: { headBg },
+                          bg: "purple.500",
+                        }}
+                        _focus={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        _active={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        href="#services"
+                        onClick={onClose}
+                      >
+                        Services
+                      </Link>
+                      <Link
+                        fontWeight={700}
+                        px={("2rem", ".6rem", "1rem", "2rem")}
+                        py=".8rem"
+                        _hover={{
+                          textDecor: "none",
+                          bg: { hoverBg },
+                          color: { headBg },
+                          bg: "purple.500",
+                        }}
+                        _focus={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        _active={{
+                          textDecor: "none",
+                          bg: "none",
+                          border: "none",
+                        }}
+                        href="#skills"
+                        onClick={onClose}
+                      >
+                        Skills
+                      </Link>
+                    </Flex>
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+            </Box>
+          )}
+
+          {/* <Flex
+            flexDir={"column"}
+            w={"100vw"}
+            h={"100vh"}
+            bg={hamburgerNav}
+            top={0}
+            left={0}
+            pos={"fixed"}
+            zIndex={99999}
+            display={display}
+          >
+            <Flex justifyContent={"flex-end"} mt={"2.4rem"} mr={"1.5rem"}>
+              <SmallCloseIcon
+                onClick={() => changeDisplay("none")}
+                fontSize={"1.5rem"}
+              />
+            </Flex>
+          </Flex> */}
+        </Box>
+      </Flex>
+    </>
+  );
+}
+
+/**
+ * 
+ * <Flex
             d={["flex", "flex", "flex", "none"]}
             justifyContent={"flex-end"}
             mr={["1.5rem"]}
@@ -272,7 +450,7 @@ export default function Header({
                   border: "none",
                 }}
                 onClick={(e) => {
-                  scrollToLocation(e);
+                  // scrollToLocation(e);
                   changeDisplay("none");
                 }}
               >
@@ -299,7 +477,7 @@ export default function Header({
                   border: "none",
                 }}
                 onClick={(e) => {
-                  scrollToLocation(e);
+                  // scrollToLocation(e);
                   changeDisplay("none");
                 }}
               >
@@ -326,7 +504,7 @@ export default function Header({
                 }}
                 href="#services"
                 onClick={(e) => {
-                  scrollToLocation(e);
+                  // scrollToLocation(e);
                   changeDisplay("none");
                 }}
               >
@@ -353,7 +531,7 @@ export default function Header({
                 }}
                 href="#skills"
                 onClick={(e) => {
-                  scrollToLocation(e);
+                  // scrollToLocation(e);
                   changeDisplay("none");
                 }}
               >
@@ -361,8 +539,5 @@ export default function Header({
               </Link>
             </Box>
           </Flex>
-        </Box>
-      </Flex>
-    </>
-  );
-}
+ * 
+ */

@@ -102,7 +102,7 @@ export default function About({
                         <DarkMode
                         >
                             <Link
-                                href="/Peter_Ikechukwu_CV.pdf"
+                                href="/Ikechukwu Peter's Resume.pdf"
                                 download="Ikechukwu_Peter_CV"
                                 isExternal
                                 _hover={
