@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 
 export default function Blog() {
   return (
     <>
       <Head>
-        <title>Ikechukwu Peter Portfolio || About Me</title>
+        <title>Ikechukwu Peter Portfolio || Blog</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
