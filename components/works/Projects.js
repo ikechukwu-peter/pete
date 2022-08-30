@@ -13,22 +13,41 @@ import { BsBook } from "react-icons/bs";
 
 const projects = [
   {
-    cover: "/dev_pete.png",
+    cover: "/webzerve.png",
+    title: "Webzerve",
+    url: "https://webzerve.vercel.app",
+    tools: "NodeJs, TypeScript, NextJs",
+  },
+  {
+    cover: "/weaverbuxx.png",
+    title: "Weaverbuxx",
+    url: "https://weaverbuxx.com",
+    tools: "NodeJs, TypeScript, , NextJs",
+  },
+  {
+    cover: "/webzerve.png",
+    title: "Portfolio ",
+    url: "https://pete.vercel.com",
+    tools: "NextJs, ChakraUI",
+  },
+  {
+    cover: "/webzerve.png",
     title: "Nip ",
     url: "https://nipurl.herokuapp.com",
     tools: "NodeJs, TypeScript",
   },
   {
-    cover: "/dev_pete.png",
+    cover: "/hqistore.png",
     title: "HQI Store",
     url: "https://hqistore.com",
     tools: "NodeJs, TypeScript, ReactJs, Redux",
   },
+
   {
-    cover: "/dev_pete.png",
-    title: "Webzerve",
-    url: "https://webzerve.vercel.app",
-    tools: "NodeJs, TypeScript, NextJs, NextJs",
+    cover: "",
+    title: "Woodin",
+    url: "https://wood-omega.vercel.app/",
+    tools: "JavaScript, HTML, CSS",
   },
 ];
 
