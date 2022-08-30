@@ -1,99 +1,64 @@
-import Head from "next/head";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import {
   Flex,
   Box,
   Heading,
-  Link,
   IconButton,
   useColorMode,
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Input,
-  Button,
   useMediaQuery,
+  Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  SmallCloseIcon,
-  MoonIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
-export default function Header({
-  headBg,
-  logo,
-  hamburgerNav,
-  hoverBg,
-  darkTextColor,
-}) {
+const links = [
+  { name: "Home", to: "/" },
+  { name: "Works", to: "works" },
+  { name: "About Me", to: "about" },
+  { name: "Contact", to: "contact" },
+  { name: "Blog", to: "blog" },
+];
+
+export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [display, changeDisplay] = useState("none");
+
+  const { pathname } = useRouter();
+
+  const current = pathname === "/" ? pathname : pathname.split("/")[1];
+  const colorChoice = colorMode === "dark" ? "theme.100" : "theme.500";
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
   const [isTab] = useMediaQuery("(max-width: 768px)");
 
-  // const scrollToLocation = (e) => {
-  //   let elem = `${e.target}`;
-  //   const moveTo = elem.split("#")[1];
-
-  //   if (moveTo !== "") {
-  //     let retries = 0;
-  //     const scroll = () => {
-  //       retries += 0;
-  //       if (retries > 50) return;
-  //       const element = document.getElementById(moveTo);
-  //       if (element) {
-  //         setTimeout(
-  //           () =>
-  //             element.scrollIntoView({
-  //               behavior: "smooth",
-  //               block: "start",
-  //               inline: "nearest",
-  //             }),
-  //           0
-  //         );
-  //       } else {
-  //         setTimeout(scroll, 100);
-  //       }
-  //     };
-  //     scroll();
-  //   }
-  // };
-
   return (
     <>
-      <Head>
-        <title>Ikechukwu {"Peter's"} Portfolio</title>
-        <meta name="description" content="Ikechukwu Peter Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Flex
         maxW="auto"
-        bg={headBg}
         minH={"6rem"}
-        h={["4rem", "4rem", "5rem"]}
+        h={["4rem", "4rem", "4rem"]}
         justifyContent="space-around"
         alignItems="center"
-        fontFamily="Source Sans Pro"
         fontWeight="600"
+        bg={useColorModeValue("theme.100", "theme.500")}
       >
         <Heading
-          _hover={{ cursor: "pointer" }}
+          _hover={{ cursor: "pointer", textDecor: "none", color: "theme.300" }}
           fontSize={["1rem", "1.2rem"]}
-          color={logo}
           ml={["1rem", "1rem", "1rem", "3rem"]}
           w="50%"
           as={Link}
-          id="#intro"
+          href="/"
+          textDecor={"none"}
         >
           Pete
         </Heading>
@@ -108,105 +73,36 @@ export default function Header({
             w={["100%", "100%", "100%", "80%"]}
             justifyContent={"space-around"}
             fontSize={["1rem", "1.2rem"]}
-            color={darkTextColor}
           >
-            <Link
-              href="#about"
-              px={("2rem", ".6rem", "1rem", "2rem")}
-              py=".8rem"
-              _hover={{
-                textDecor: "none",
-                bg: { hoverBg },
-                color: { headBg },
-                bg: "purple.500",
-              }}
-              _focus={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              _active={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              // onClick={scrollToLocation}
-            >
-              About me
-            </Link>
-            <Link
-              href="#projects"
-              px={("2rem", ".6rem", "1rem", "2rem")}
-              py=".8rem"
-              _hover={{
-                textDecor: "none",
-                bg: { hoverBg },
-                color: { headBg },
-                bg: "purple.500",
-              }}
-              _focus={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              _active={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              // onClick={scrollToLocation}
-            >
-              Projects
-            </Link>
-            <Link
-              px={("2rem", ".6rem", "1rem", "2rem")}
-              py=".8rem"
-              _hover={{
-                textDecor: "none",
-                color: { headBg },
-                bg: "purple.500",
-              }}
-              _focus={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              _active={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              href="#services"
-              // onClick={scrollToLocation}
-            >
-              Services
-            </Link>
-            <Link
-              px={("2rem", ".6rem", "1rem", "2rem")}
-              py=".8rem"
-              _hover={{
-                textDecor: "none",
-                bg: { hoverBg },
-                color: { headBg },
-                bg: "purple.500",
-              }}
-              _focus={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              _active={{
-                textDecor: "none",
-                bg: "none",
-                border: "none",
-              }}
-              href="#skills"
-              // onClick={scrollToLocation}
-            >
-              Skills
-            </Link>
+            {links.map(({ name, to }, index) => (
+              <NextLink href={to} passHref key={index}>
+                <Link
+                  fontWeight={700}
+                  px={(".2rem", ".2rem", ".5rem", "1rem")}
+                  py=".8rem"
+                  _hover={{
+                    textDecor: "none",
+                    color: "theme.300",
+                  }}
+                  _focus={{
+                    textDecor: "none",
+                    bg: "none",
+                    border: "none",
+                  }}
+                  _active={{
+                    textDecor: "none",
+                    bg: "none",
+                    border: "none",
+                  }}
+                  onClick={onClose}
+                  color={current === to ? "theme.300" : colorChoice}
+                >
+                  {name}
+                </Link>
+              </NextLink>
+            ))}
           </Box>
-          <Box mr={["1.4rem", "1.4rem", "1.4rem", ".1rem"]}>
+          <Box mr={["1.4rem", "1.4rem", "1.4rem", "0rem"]}>
             <IconButton
               _focus={{
                 border: "none",
@@ -220,15 +116,18 @@ export default function Header({
                 border: "none",
                 outline: "none",
               }}
-              // variant="ghost"
-
               rounded={60}
               size={"sm"}
               aria-label="Toggle Mode"
+              color="theme.100"
               onClick={toggleColorMode}
               ml={{ base: "1rem", sm: "1rem", md: "1rem", lg: "1rem" }}
             >
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              {colorMode === "light" ? (
+                <MoonIcon color="theme.300" />
+              ) : (
+                <SunIcon color="theme.300" />
+              )}
             </IconButton>
           </Box>
 
@@ -239,10 +138,7 @@ export default function Header({
             ref={btnRef}
             onClick={onOpen}
           >
-            <HamburgerIcon
-              fontSize={"1.5rem"}
-              onClick={() => changeDisplay("flex")}
-            />
+            <HamburgerIcon fontSize={"1.5rem"} />
           </Flex>
 
           {isTab && (
@@ -252,292 +148,55 @@ export default function Header({
                 placement="right"
                 onClose={onClose}
                 finalFocusRef={btnRef}
+                size={isTab && "md"}
               >
                 <DrawerOverlay />
                 <DrawerContent>
-                  <DrawerCloseButton />
-                  <DrawerBody>
-                    <Flex direction={"column"} align="center" gap={9} mt={9}>
-                      <Link
-                        href="#about"
-                        fontWeight={700}
-                        px={("2rem", ".6rem", "1rem", "2rem")}
-                        py=".8rem"
-                        _hover={{
-                          textDecor: "none",
-                          bg: { hoverBg },
-                          color: { headBg },
-                          bg: "purple.500",
-                        }}
-                        _focus={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        _active={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        onClick={onClose}
-                      >
-                        About me
-                      </Link>
-                      <Link
-                        href="#projects"
-                        fontWeight={700}
-                        px={("2rem", ".6rem", "1rem", "2rem")}
-                        py=".8rem"
-                        _hover={{
-                          textDecor: "none",
-                          bg: { hoverBg },
-                          color: { headBg },
-                          bg: "purple.500",
-                        }}
-                        _focus={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        _active={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        onClick={onClose}
-                      >
-                        Projects
-                      </Link>
-                      <Link
-                        fontWeight={700}
-                        px={("2rem", ".6rem", "1rem", "2rem")}
-                        py=".8rem"
-                        _hover={{
-                          textDecor: "none",
-                          bg: { hoverBg },
-                          color: { headBg },
-                          bg: "purple.500",
-                        }}
-                        _focus={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        _active={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        href="#services"
-                        onClick={onClose}
-                      >
-                        Services
-                      </Link>
-                      <Link
-                        fontWeight={700}
-                        px={("2rem", ".6rem", "1rem", "2rem")}
-                        py=".8rem"
-                        _hover={{
-                          textDecor: "none",
-                          bg: { hoverBg },
-                          color: { headBg },
-                          bg: "purple.500",
-                        }}
-                        _focus={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        _active={{
-                          textDecor: "none",
-                          bg: "none",
-                          border: "none",
-                        }}
-                        href="#skills"
-                        onClick={onClose}
-                      >
-                        Skills
-                      </Link>
+                  <DrawerCloseButton mt="2rem" />
+                  <DrawerBody
+                    bg={colorMode === "dark" ? "theme.500" : "theme.100"}
+                  >
+                    <Flex
+                      direction={"column"}
+                      align="center"
+                      gap={9}
+                      mt={"6rem"}
+                    >
+                      {links.map(({ name, to }, index) => (
+                        <NextLink key={index} href={to}>
+                          <Link
+                            color={current === to ? "theme.300" : colorChoice}
+                            fontWeight={700}
+                            px={("2rem", ".6rem", "1rem", "2rem")}
+                            py=".8rem"
+                            _hover={{
+                              textDecor: "none",
+                              color: "theme.300",
+                            }}
+                            _focus={{
+                              textDecor: "none",
+                              bg: "none",
+                              border: "none",
+                            }}
+                            _active={{
+                              textDecor: "none",
+                              bg: "none",
+                              border: "none",
+                            }}
+                            onClick={onClose}
+                          >
+                            {name}
+                          </Link>
+                        </NextLink>
+                      ))}
                     </Flex>
                   </DrawerBody>
                 </DrawerContent>
               </Drawer>
             </Box>
           )}
-
-          {/* <Flex
-            flexDir={"column"}
-            w={"100vw"}
-            h={"100vh"}
-            bg={hamburgerNav}
-            top={0}
-            left={0}
-            pos={"fixed"}
-            zIndex={99999}
-            display={display}
-          >
-            <Flex justifyContent={"flex-end"} mt={"2.4rem"} mr={"1.5rem"}>
-              <SmallCloseIcon
-                onClick={() => changeDisplay("none")}
-                fontSize={"1.5rem"}
-              />
-            </Flex>
-          </Flex> */}
         </Box>
       </Flex>
     </>
   );
 }
-
-/**
- * 
- * <Flex
-            d={["flex", "flex", "flex", "none"]}
-            justifyContent={"flex-end"}
-            mr={["1.5rem"]}
-          >
-            <HamburgerIcon
-              fontSize={"1.5rem"}
-              onClick={() => changeDisplay("flex")}
-            />
-          </Flex>
-
-          <Flex
-            flexDir={"column"}
-            w={"100vw"}
-            h={"100vh"}
-            bg={hamburgerNav}
-            top={0}
-            left={0}
-            pos={"fixed"}
-            zIndex={99999}
-            display={display}
-          >
-            <Flex justifyContent={"flex-end"} mt={"2.4rem"} mr={"1.5rem"}>
-              <SmallCloseIcon
-                onClick={() => changeDisplay("none")}
-                fontSize={"1.5rem"}
-              />
-            </Flex>
-
-            <Box
-              d={"flex"}
-              flexDir={"column"}
-              justifyContent={"space-around"}
-              alignItems={"center"}
-              touchAction="none"
-              w={"100vw"}
-              h={"100vh"}
-            >
-              <Link
-                href="#about"
-                px={("2rem", ".6rem", "1rem", "2rem")}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  bg: { hoverBg },
-                  color: { headBg },
-                  bg: "purple.500",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                onClick={(e) => {
-                  // scrollToLocation(e);
-                  changeDisplay("none");
-                }}
-              >
-                About me
-              </Link>
-              <Link
-                href="#projects"
-                px={("2rem", ".6rem", "1rem", "2rem")}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  bg: { hoverBg },
-                  color: { headBg },
-                  bg: "purple.500",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                onClick={(e) => {
-                  // scrollToLocation(e);
-                  changeDisplay("none");
-                }}
-              >
-                Projects
-              </Link>
-              <Link
-                px={("2rem", ".6rem", "1rem", "2rem")}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  bg: { hoverBg },
-                  color: { headBg },
-                  bg: "purple.500",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                href="#services"
-                onClick={(e) => {
-                  // scrollToLocation(e);
-                  changeDisplay("none");
-                }}
-              >
-                Services
-              </Link>
-              <Link
-                px={("2rem", ".6rem", "1rem", "2rem")}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  bg: { hoverBg },
-                  color: { headBg },
-                  bg: "purple.500",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                href="#skills"
-                onClick={(e) => {
-                  // scrollToLocation(e);
-                  changeDisplay("none");
-                }}
-              >
-                Skills
-              </Link>
-            </Box>
-          </Flex>
- * 
- */

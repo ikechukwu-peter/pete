@@ -1,15 +1,13 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
-const Introduction = dynamic(() => import("../components/home/Introduction"));
-const Projects = dynamic(() => import("../components/home/Projects"));
-const Services = dynamic(() => import("../components/home/Services"));
+const Projects = dynamic(() => import("../components/works/Projects"));
 
-export default function Home() {
+export default function Works() {
   return (
     <>
       <Head>
-        <title>Ikechukwu Peter Portfolio</title>
+        <title>Ikechukwu Peter Portfolio || Works</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -22,9 +20,7 @@ export default function Home() {
         bg={useColorModeValue("theme.100", "theme.500")}
       >
         <Box w="90%" m="auto">
-          <Introduction />
           <Projects />
-          <Services />
         </Box>
       </Flex>
     </>
