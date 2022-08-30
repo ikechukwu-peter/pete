@@ -25,7 +25,7 @@ const projects = [
     tools: "NodeJs, TypeScript, , NextJs",
   },
   {
-    cover: "/webzerve.png",
+    cover: "/portfolio.png",
     title: "Portfolio ",
     url: "https://pete.vercel.com",
     tools: "NextJs, ChakraUI",
@@ -44,7 +44,7 @@ const projects = [
   },
 
   {
-    cover: "",
+    cover: "portfolio.png",
     title: "Woodin",
     url: "https://wood-omega.vercel.app/",
     tools: "JavaScript, HTML, CSS",
