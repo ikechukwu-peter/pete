@@ -31,7 +31,7 @@ const projects = [
     tools: "NextJs, ChakraUI",
   },
   {
-    cover: "/webzerve.png",
+    cover: "/nip.png",
     title: "Nip ",
     url: "https://nipurl.herokuapp.com",
     tools: "NodeJs, TypeScript",
