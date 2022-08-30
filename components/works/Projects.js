@@ -1,543 +1,133 @@
 import {
   Box,
   Center,
-  HStack,
-  Heading,
   Text,
   Link,
-  Button,
   Image,
-  DarkMode,
   SimpleGrid,
+  Stack,
+  useColorMode,
 } from "@chakra-ui/react";
-import { FaGithub } from "react-icons/fa";
-import { FiLink } from "react-icons/fi";
+import { AiFillEye } from "react-icons/ai";
+import { BsBook } from "react-icons/bs";
 
-export default function Projects({ lightBg, lightTextColor, cardBg }) {
+const projects = [
+  {
+    cover: "/dev_pete.png",
+    title: "Nip ",
+    url: "https://nipurl.herokuapp.com",
+    tools: "NodeJs, TypeScript",
+  },
+  {
+    cover: "/dev_pete.png",
+    title: "HQI Store",
+    url: "https://hqistore.com",
+    tools: "NodeJs, TypeScript, ReactJs, Redux",
+  },
+  {
+    cover: "/dev_pete.png",
+    title: "Webzerve",
+    url: "https://webzerve.vercel.app",
+    tools: "NodeJs, TypeScript, NextJs, NextJs",
+  },
+];
+
+export default function Projects() {
+  const { colorMode } = useColorMode();
+
   return (
-    <Box
-      bg={lightBg}
-      w="100vw"
-      fontFamily="Source Sans Pro"
-      color={lightTextColor}
-      id="projects"
-    >
-      <Center pt="4rem" fontSize="3rem" fontWeight={600}>
-        Projects
+    <Box mt="2rem">
+      <Center>
+        {" "}
+        <Text
+          fontSize={{ base: "1rem", md: "1.5rem" }}
+          fontWeight={600}
+          color="theme.400"
+        >
+          Projects
+        </Text>
       </Center>
 
-      <SimpleGrid
-        columns={[1, 1, 2, 2]}
-        spacing="40px"
-        width={["90%", "95%", "95%", "80%"]}
-        m="auto"
-        pt="2rem"
-      >
-        <Box
-          bg={cardBg}
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-            // bg: "gray.700",
-          }}
-          w="100%"
-          pb="4rem"
-          rounded="xl"
-        >
-          <Box
-            d="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            w={["90%", "86%", "80%", "60%"]}
-            m="auto"
-            mt="2rem"
-          >
-            <Heading fontSize="1.8rem" my="1rem">
-              Nip
-            </Heading>
-            <Text fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}>
-              A URL shortening and expanding website, built with NodeJs,
-              Typescript, Pug and CSS.
-            </Text>
-            <HStack
-              justify={["space-between", "space-between", "normal", "normal"]}
-              mt={["1rem", "1rem", "1rem", "1rem"]}
+      <SimpleGrid columns={[1, 1, 2, 4, 4]} spacing="40px" pt="2rem" pb="4rem">
+        {!!projects?.length &&
+          projects.map(({ cover, title, url, tools }, index) => (
+            <Box
+              key={index}
+              height="auto"
+              transitionProperty="transform"
+              transitionDuration="2s"
+              transitionTimingFunction="ease"
+              _hover={{
+                transform: "scale(1.1)",
+              }}
+              w="100%"
+              rounded="md"
+              border="2px"
+              borderColor={colorMode === "dark" ? "theme.600" : "theme.700"}
             >
-              <DarkMode>
-                <Link
-                  href="https://nipurl.herokuapp.com"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    mr={["0rem", "0rem", "2rem", "3rem"]}
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FiLink />}
-                  >
-                    Website
-                  </Button>
-                </Link>
-              </DarkMode>
-              <DarkMode>
-                <Link
-                  href="https://github.com/ikechukwu-peter/nip"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FaGithub />}
-                  >
-                    Github
-                  </Button>
-                </Link>
-              </DarkMode>
-            </HStack>
-          </Box>
-        </Box>
-        <Box
-          bg={cardBg}
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-            // bg: "gray.700",
-          }}
-          pb="4rem"
-          rounded="xl"
-        >
-          <Box
-            d="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            w={["90%", "86%", "80%", "60%"]}
-            m="auto"
-            mt="2rem"
-          >
-            <Heading fontSize="1.8rem" my="1rem">
-              Wood.in
-            </Heading>
-            <Text fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}>
-              An e-commerce landing page, built with HTML, CSS and Javascript.
-            </Text>
-            <HStack
-              justify={["space-between", "space-between", "normal", "normal"]}
-              mt={["1rem", "1rem", "1rem", "1rem"]}
-            >
-              <DarkMode>
-                <Link
-                  href="https://wood-omega.vercel.app/"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    mr={["0rem", "0rem", "2rem", "3rem"]}
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FiLink />}
-                  >
-                    Website
-                  </Button>
-                </Link>
-              </DarkMode>
-              <DarkMode>
-                <Link
-                  href="https://github.com/ikechukwu-peter/wood.in"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FaGithub />}
-                  >
-                    Github
-                  </Button>
-                </Link>
-              </DarkMode>
-            </HStack>
-          </Box>
-        </Box>
-        {/* <Box
-          bg={cardBg}
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-            // bg: "gray.700",
-          }}
-          pb="4rem"
-          rounded="xl"
-        >
-          <Box
-            d="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            w={["90%", "86%", "80%", "60%"]}
-            m="auto"
-            mt="2rem"
-          >
-            <Heading fontSize="1.8rem" my="1rem">
-              Crebb
-            </Heading>
-            <Text fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}>
-              A session booking site built with ReactJs, CSS and Nodejs.
-            </Text>
-            <HStack
-              justify={["space-between", "space-between", "normal", "normal"]}
-              mt={["1rem", "1rem", "1rem", "1rem"]}
-            >
-              <DarkMode>
-                <Link
-                  href="https://crebb.vercel.app/"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    mr={["0rem", "0rem", "2rem", "3rem"]}
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FiLink />}
-                  >
-                    Website
-                  </Button>
-                </Link>
-              </DarkMode>
-              <DarkMode>
-                <Link
-                  href="https://github.com/ikechukwu-peter/crebb"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FaGithub />}
-                  >
-                    Github
-                  </Button>
-                </Link>
-              </DarkMode>
-            </HStack>
-          </Box>
-        </Box> */}
+              <Box d="flex" flexDirection="column" alignItems="center" w="100%">
+                <Box w="100%">
+                  <Image src={cover} alt={title} lazy />
+                </Box>
+              </Box>
+              <Box
+                bg="theme.600"
+                p="1rem"
+                color={colorMode === "dark" ? "theme.100" : "theme.100"}
+              >
+                <Stack>
+                  <Text>{title}</Text>
 
-        <Box
-          bg={cardBg}
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-            // bg: "gray.700",
-          }}
-          pb="4rem"
-          rounded="xl"
-        >
-          <Box
-            d="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            w={["90%", "86%", "80%", "60%"]}
-            m="auto"
-            mt="2rem"
-          >
-            <Heading fontSize="1.8rem" my="1rem">
-              HQI Store
-            </Heading>
-            <Text fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}>
-              {" An E-commerce store , built  ReactJS and ChakraUI."}
-            </Text>
-            <HStack
-              justify={["space-between", "space-between", "normal", "normal"]}
-              mt={["1rem", "1rem", "1rem", "1rem"]}
-            >
-              <DarkMode>
-                <Link
-                  href="https://hqi-store.vercel.app/"
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    mr={["0rem", "0rem", "2rem", "3rem"]}
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FiLink />}
-                  >
-                    Website
-                  </Button>
-                </Link>
-              </DarkMode>
-              <DarkMode>
-                <Link
-                  href="https://github.com/ikechukwu-peter/hqi-store"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FaGithub />}
-                  >
-                    Github
-                  </Button>
-                </Link>
-              </DarkMode>
-            </HStack>
-          </Box>
-        </Box>
-        <Box
-          bg={cardBg}
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-            // bg: "gray.700",
-          }}
-          pb="4rem"
-          rounded="xl"
-        >
-          <Box
-            d="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-            w={["90%", "86%", "80%", "60%"]}
-            m="auto"
-            mt="2rem"
-          >
-            <Heading fontSize="1.8rem" my="1rem">
-              Pete
-            </Heading>
-            <Text fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}>
-              {
-                "Ikechukwu Peter's portfolio site, built with NextJS, ReactJS and ChakraUI."
-              }
-            </Text>
-            <HStack
-              justify={["space-between", "space-between", "normal", "normal"]}
-              mt={["1rem", "1rem", "1rem", "1rem"]}
-            >
-              <DarkMode>
-                <Link
-                  href="https://pete.vercel.app/"
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    mr={["0rem", "0rem", "2rem", "3rem"]}
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FiLink />}
-                  >
-                    Website
-                  </Button>
-                </Link>
-              </DarkMode>
-              <DarkMode>
-                <Link
-                  href="https://github.com/ikechukwu-peter/pete"
-                  isExternal
-                  _hover={{
-                    textDecor: "none",
-                  }}
-                >
-                  <Button
-                    size="md"
-                    color="whiteAlpha.900"
-                    bg={"purple.700"}
-                    variant="ghost"
-                    _hover={{
-                      bg: "purple.800",
-                    }}
-                    _focus={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    _active={{
-                      bg: "purple.800",
-                      border: "none",
-                    }}
-                    leftIcon={<FaGithub />}
-                  >
-                    Github
-                  </Button>
-                </Link>
-              </DarkMode>
-            </HStack>
-          </Box>
-        </Box>
+                  {/* <Text>{tools}</Text> */}
+                </Stack>
+                <Box>
+                  <Stack direction="row">
+                    <Stack
+                      align={"center"}
+                      justify="center"
+                      direction="row"
+                      as={Link}
+                      _hover={{
+                        textDecor: "none",
+                      }}
+                    >
+                      <BsBook />
+                      <Link
+                        href={title}
+                        isExternal={true}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        Details
+                      </Link>
+                    </Stack>
+                    <Stack
+                      align={"center"}
+                      justify="center"
+                      direction="row"
+                      as={Link}
+                      _hover={{
+                        textDecor: "none",
+                      }}
+                    >
+                      <AiFillEye display={"inline"} />
+                      <Link
+                        href={url}
+                        isExternal={true}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        Live Preview
+                      </Link>
+                    </Stack>
+                  </Stack>
+                </Box>
+              </Box>
+            </Box>
+          ))}
       </SimpleGrid>
-
-      <Center pt="4rem" pb="4rem" fontSize="2rem" fontWeight={600}>
-        <Link
-          href="https://github.com/ikechukwu-peter?tab=repositories"
-          isExternal
-          _hover={{
-            textDecor: "none",
-          }}
-          _active={{
-            textDecor: "none",
-            variant: "ghost",
-            outline: "none",
-            border: "none",
-          }}
-          _focus={{
-            textDecor: "none",
-            variant: "ghost",
-            outline: "none",
-            border: "none",
-          }}
-          color="purple.600"
-          fontSize="1rem"
-        >
-          Respositories on Github
-        </Link>
-      </Center>
     </Box>
   );
 }

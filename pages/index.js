@@ -1,6 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 const Introduction = dynamic(() => import("../components/home/Introduction"));
 const Projects = dynamic(() => import("../components/home/Projects"));
 const Services = dynamic(() => import("../components/home/Services"));
@@ -19,7 +19,7 @@ export default function Home() {
         justify={"center"}
         flex="1"
         w="100%"
-        bg="theme.500"
+        bg={useColorModeValue("theme.100", "theme.500")}
       >
         <Box w="90%" m="auto">
           <Introduction />

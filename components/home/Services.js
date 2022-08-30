@@ -9,9 +9,10 @@ import {
   Stack,
   Button,
   Link,
+  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { AiOutlineLaptop } from "react-icons/ai";
-import { BsMegaphone, BsPhone } from "react-icons/bs";
+import NextLink from "next/link";
 
 const _reasons = [
   {
@@ -38,6 +39,8 @@ const _reasons = [
 ];
 
 export default function Services() {
+  const { colorMode } = useColorMode();
+
   return (
     <Box my="2rem">
       <Center
@@ -81,7 +84,7 @@ export default function Services() {
               </Heading>
               <Text
                 fontSize={["1rem", "1rem", "1rem", "1rem"]}
-                color="theme.700"
+                color={colorMode === "dark" ? "theme.700" : "theme.500"}
               >
                 {text}
               </Text>
@@ -99,7 +102,9 @@ export default function Services() {
         direction={{ base: "column", md: "row" }}
         gap="1rem"
       >
-        <Heading>Interested in working with me?</Heading>
+        <Heading color={useColorModeValue("theme.700")}>
+          Interested in working with me?
+        </Heading>
         <Stack direction={{ base: "column", md: "row" }} spacing="24px">
           <Link
             href="mailto:ikechukwupeter1999@gmail.com"
@@ -124,29 +129,30 @@ export default function Services() {
               Email Me
             </Button>
           </Link>
-          <Link
-            href="works"
-            _hover={{
-              textDecor: "none",
-            }}
-          >
-            <Button
-              transitionProperty="transform"
-              transitionDuration="2s"
-              transitionTimingFunction="ease"
+          <NextLink href="works" passHref>
+            <Link
               _hover={{
-                transform: "scale(1.1)",
                 textDecor: "none",
-                bg: "theme.300",
               }}
-              color="theme.100"
-              bg={"theme.500"}
-              borderWidth="2px"
-              borderColor={"theme.300"}
             >
-              See More Projects
-            </Button>
-          </Link>
+              <Button
+                transitionProperty="transform"
+                transitionDuration="2s"
+                transitionTimingFunction="ease"
+                _hover={{
+                  transform: "scale(1.1)",
+                  textDecor: "none",
+                  bg: "theme.300",
+                }}
+                color="theme.100"
+                bg={"theme.500"}
+                borderWidth="2px"
+                borderColor={"theme.300"}
+              >
+                See More Projects
+              </Button>
+            </Link>
+          </NextLink>
         </Stack>
       </Flex>
     </Box>

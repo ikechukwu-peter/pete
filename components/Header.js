@@ -13,19 +13,27 @@ import {
   useDisclosure,
   useMediaQuery,
   Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const links = [
   { name: "Home", to: "/" },
   { name: "Works", to: "works" },
-  { name: "About me", to: "about" },
+  { name: "About Me", to: "about" },
   { name: "Contact", to: "contact" },
   { name: "Blog", to: "blog" },
 ];
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const { pathname } = useRouter();
+
+  const current = pathname === "/" ? pathname : pathname.split("/")[1];
+  const colorChoice = colorMode === "dark" ? "theme.100" : "theme.500";
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
@@ -41,12 +49,11 @@ export default function Header() {
         justifyContent="space-around"
         alignItems="center"
         fontWeight="600"
-        bg="theme.500"
+        bg={useColorModeValue("theme.100", "theme.500")}
       >
         <Heading
           _hover={{ cursor: "pointer", textDecor: "none", color: "theme.300" }}
           fontSize={["1rem", "1.2rem"]}
-          color="theme.100"
           ml={["1rem", "1rem", "1rem", "3rem"]}
           w="50%"
           as={Link}
@@ -68,31 +75,31 @@ export default function Header() {
             fontSize={["1rem", "1.2rem"]}
           >
             {links.map(({ name, to }, index) => (
-              <Link
-                key={index}
-                href={to}
-                fontWeight={700}
-                px={(".2rem", ".2rem", ".5rem", "1rem")}
-                py=".8rem"
-                _hover={{
-                  textDecor: "none",
-                  color: "theme.300",
-                }}
-                _focus={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                _active={{
-                  textDecor: "none",
-                  bg: "none",
-                  border: "none",
-                }}
-                onClick={onClose}
-                color="theme.100"
-              >
-                {name}
-              </Link>
+              <NextLink href={to} passHref key={index}>
+                <Link
+                  fontWeight={700}
+                  px={(".2rem", ".2rem", ".5rem", "1rem")}
+                  py=".8rem"
+                  _hover={{
+                    textDecor: "none",
+                    color: "theme.300",
+                  }}
+                  _focus={{
+                    textDecor: "none",
+                    bg: "none",
+                    border: "none",
+                  }}
+                  _active={{
+                    textDecor: "none",
+                    bg: "none",
+                    border: "none",
+                  }}
+                  onClick={onClose}
+                  color={current === to ? "theme.300" : colorChoice}
+                >
+                  {name}
+                </Link>
+              </NextLink>
             ))}
           </Box>
           <Box mr={["1.4rem", "1.4rem", "1.4rem", "0rem"]}>
@@ -131,7 +138,7 @@ export default function Header() {
             ref={btnRef}
             onClick={onOpen}
           >
-            <HamburgerIcon color="theme.100" fontSize={"1.5rem"} />
+            <HamburgerIcon fontSize={"1.5rem"} />
           </Flex>
 
           {isTab && (
@@ -146,7 +153,9 @@ export default function Header() {
                 <DrawerOverlay />
                 <DrawerContent>
                   <DrawerCloseButton mt="2rem" />
-                  <DrawerBody>
+                  <DrawerBody
+                    bg={colorMode === "dark" ? "theme.500" : "theme.100"}
+                  >
                     <Flex
                       direction={"column"}
                       align="center"
@@ -154,30 +163,31 @@ export default function Header() {
                       mt={"6rem"}
                     >
                       {links.map(({ name, to }, index) => (
-                        <Link
-                          key={index}
-                          href={to}
-                          fontWeight={700}
-                          px={("2rem", ".6rem", "1rem", "2rem")}
-                          py=".8rem"
-                          _hover={{
-                            textDecor: "none",
-                            color: "theme.300",
-                          }}
-                          _focus={{
-                            textDecor: "none",
-                            bg: "none",
-                            border: "none",
-                          }}
-                          _active={{
-                            textDecor: "none",
-                            bg: "none",
-                            border: "none",
-                          }}
-                          onClick={onClose}
-                        >
-                          {name}
-                        </Link>
+                        <NextLink key={index} href={to}>
+                          <Link
+                            color={current === to ? "theme.300" : colorChoice}
+                            fontWeight={700}
+                            px={("2rem", ".6rem", "1rem", "2rem")}
+                            py=".8rem"
+                            _hover={{
+                              textDecor: "none",
+                              color: "theme.300",
+                            }}
+                            _focus={{
+                              textDecor: "none",
+                              bg: "none",
+                              border: "none",
+                            }}
+                            _active={{
+                              textDecor: "none",
+                              bg: "none",
+                              border: "none",
+                            }}
+                            onClick={onClose}
+                          >
+                            {name}
+                          </Link>
+                        </NextLink>
                       ))}
                     </Flex>
                   </DrawerBody>

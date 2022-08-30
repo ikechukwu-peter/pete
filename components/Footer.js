@@ -1,13 +1,24 @@
-import { Flex, Box, Link, Text, Heading, VStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Link,
+  Text,
+  Heading,
+  VStack,
+  useColorModeValue,
+  useColorMode,
+} from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
 
 export default function Footer() {
+  const { colorMode } = useColorMode();
+
   let date = new Date().getFullYear();
   return (
     <>
-      <Box bg="theme.500">
+      <Box bg={useColorModeValue("theme.100", "theme.500")}>
         <Box w="90%" m="auto">
           <Flex
             justify={"space-between"}
@@ -16,11 +27,14 @@ export default function Footer() {
             <Box py="1rem" textAlign={{ base: "center", md: "left" }}>
               <Heading
                 fontSize={{ base: "1rem", md: "1.2rem" }}
-                color="theme.100"
+                color={colorMode === "dark" ? "theme.100" : "theme.500"}
               >
                 {"Let's Connect"}
               </Heading>
-              <Text color="theme.100" py="1rem">
+              <Text
+                color={colorMode === "dark" ? "theme.100" : "theme.500"}
+                py="1rem"
+              >
                 Visits:{" "}
                 <Text
                   as="span"
@@ -37,7 +51,7 @@ export default function Footer() {
             <Flex
               justifyContent="center"
               alignItems="center"
-              color="gray.50"
+              color={colorMode === "dark" ? "theme.100" : "theme.500"}
               fontSize={["1.2rem", "1.2rem", "1.3rem", "1.5rem"]}
               gap="1rem"
               mb="1rem"
@@ -80,7 +94,11 @@ export default function Footer() {
               </Link>
             </Flex>
           </Flex>
-          <VStack align={"left"} color="theme.100" pb="1rem">
+          <VStack
+            align={"left"}
+            color={colorMode === "dark" ? "theme.100" : "theme.500"}
+            pb="1rem"
+          >
             <Link
               _hover={{
                 textDecor: "none",
@@ -110,8 +128,13 @@ export default function Footer() {
       </Box>
       <Box bg="theme.600">
         <Box w="90%" m="auto">
-          <Flex py="3rem" direction={"row"} justifyContent="space-between">
-            <Text color="theme.100">
+          <Flex
+            py="3rem"
+            direction={{ base: "column", md: "row" }}
+            justifyContent="space-between"
+            gap="1rem"
+          >
+            <Text color="theme.100" textAlign={{ base: "center", md: "left" }}>
               &copy; {date} Peter. All rights reserved.
             </Text>
 

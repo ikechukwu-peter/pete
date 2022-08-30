@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
-import { IconButton, useColorModeValue } from "@chakra-ui/react";
+import { IconButton, useColorMode } from "@chakra-ui/react";
 
 export const ScrollToTop = () => {
-  const darkTextColor = useColorModeValue("gray.600", "whiteAlpha.900");
+  const { colorMode } = useColorMode();
 
   const scrollButton = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +41,7 @@ export const ScrollToTop = () => {
           icon={<BsFillArrowUpCircleFill />}
           size="md"
           colorScheme={"brand.colorScheme"}
-          color={darkTextColor}
+          color={colorMode === "dark" ? "theme.300" : "theme.300"}
           border="2px"
           ref={scrollButton}
           position="fixed"
@@ -50,7 +50,7 @@ export const ScrollToTop = () => {
           bottom="4rem"
           variant={"outline"}
           onClick={handleClick}
-          rounded="xl"
+          rounded="3xl"
           _hover={{
             cursor: "pointer",
           }}

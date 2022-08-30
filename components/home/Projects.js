@@ -12,9 +12,8 @@ import {
   Flex,
   Stack,
 } from "@chakra-ui/react";
-import { FaGithub } from "react-icons/fa";
-import { FiLink } from "react-icons/fi";
 import { AiFillEye } from "react-icons/ai";
+import NextLink from "next/link";
 
 export default function Projects() {
   return (
@@ -27,31 +26,32 @@ export default function Projects() {
         >
           Recent Projects
         </Text>
-        <Link
-          href="works"
-          _hover={{
-            textDecor: "none",
-          }}
-          _focus={{
-            border: "none",
-          }}
-        >
-          <Button
-            color="theme.100"
-            bg={"theme.300"}
+        <NextLink href="works" passHref>
+          <Link
             _hover={{
-              bg: "theme.300",
+              textDecor: "none",
             }}
             _focus={{
-              bg: "theme.300",
-            }}
-            _active={{
-              bg: "theme.300",
+              border: "none",
             }}
           >
-            View More
-          </Button>
-        </Link>
+            <Button
+              color="theme.100"
+              bg={"theme.300"}
+              _hover={{
+                bg: "theme.300",
+              }}
+              _focus={{
+                bg: "theme.300",
+              }}
+              _active={{
+                bg: "theme.300",
+              }}
+            >
+              View More
+            </Button>
+          </Link>
+        </NextLink>
       </Flex>
       <Flex
         justify={"space-between"}

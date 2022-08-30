@@ -19,12 +19,13 @@ import Typewriter from "typewriter-effect";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
+import CountUp from "react-countup";
 
 export default function Introduction() {
   return (
     <>
       <Flex
-        bg="theme.500"
+        bg={useColorModeValue("theme.100", "theme.500")}
         py={{ base: "1rem", md: "4rem" }}
         align={{ base: "center", md: "flex-start" }}
         justify={{ base: "center", md: "space-between" }}
@@ -33,7 +34,7 @@ export default function Introduction() {
         <Box>
           <Text
             fontWeight={800}
-            color="theme.100"
+            bg={useColorModeValue("theme.100", "theme.500")}
             mb=".2rem"
             fontSize={[".8rem", "1rem"]}
             textAlign={{ base: "center", md: "left" }}
@@ -42,7 +43,7 @@ export default function Introduction() {
           </Text>
           <Heading
             fontWeight={600}
-            color="theme.100"
+            bg={useColorModeValue("theme.100", "theme.500")}
             mb=".1rem"
             fontSize={["2.1rem", "2.5rem"]}
             textAlign={{ base: "center", md: "left" }}
@@ -69,7 +70,7 @@ export default function Introduction() {
           <Box>
             <Text
               fontWeight={600}
-              color="theme.700"
+              color={useColorModeValue("theme.500", "theme.700")}
               fontSize={["1rem", "1rem", "1rem", "1.2rem"]}
               py="1rem"
               textAlign={{ base: "center", md: "left" }}
@@ -79,7 +80,7 @@ export default function Introduction() {
             <Text
               fontWeight={600}
               fontSize={[".6rem", ".6rem", ".8rem", "1rem"]}
-              color="theme.700"
+              color={useColorModeValue("theme.500", "theme.700")}
               textAlign={{ base: "center", md: "left" }}
             >
               <Link
@@ -100,7 +101,9 @@ export default function Introduction() {
               fontWeight={700}
               textAlign={{ base: "center", md: "left" }}
             >
-              <Text textAlign={{ base: "center", md: "left" }}>Follow me</Text>
+              <Text textAlign={{ base: "center", md: "left" }}>
+                Follow me on
+              </Text>
               <Link
                 href="https://linkedin.com/in/peter-ikechukwu"
                 isExternal
@@ -246,7 +249,8 @@ export default function Introduction() {
             mb=".3rem"
             fontSize={["1.5rem", "2rem", "2.5rem", "3rem"]}
           >
-            50+
+            <CountUp end={50} />
+            {"+"}
           </Heading>
           <Text
             fontWeight={600}
