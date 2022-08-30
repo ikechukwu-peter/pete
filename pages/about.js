@@ -2,10 +2,10 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 
-const About = dynamic(() => import("../components/about/About"));
+const AboutMe = dynamic(() => import("../components/about/About"));
 const Skills = dynamic(() => import("../components/about/Skills"));
 
-export default function AboutMe() {
+export default function About() {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ export default function AboutMe() {
         bg={useColorModeValue("theme.100", "theme.500")}
       >
         <Box w="90%" m="auto">
-          <About />
+          <AboutMe />
           <Skills />
         </Box>
       </Flex>
