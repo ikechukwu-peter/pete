@@ -2,9 +2,9 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 
-const Contact = dynamic(() => import("../components/contact/Contact"));
+const ContactMe = dynamic(() => import("../components/contact/Contact"));
 
-export default function Contacts() {
+export default function Contact() {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ export default function Contacts() {
         bg={useColorModeValue("theme.400", "theme.400")}
       >
         <Box w="90%" m="auto">
-          <Contact />
+          <ContactMe />
         </Box>
       </Flex>
     </>
