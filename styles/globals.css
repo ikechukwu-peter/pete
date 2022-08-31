@@ -8,6 +8,7 @@ body {
   font-family: "Fraunces", sans-serif !important;
   -webkit-font-smoothing: "Fraunces", sans-serif !important;
   -moz-osx-font-smoothing: "Fraunces", sans-serif !important;
+  background-color: white !important;
 }
 
 a {

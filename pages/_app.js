@@ -17,10 +17,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ChakraProvider theme={theme}>
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
       <ScrollToTop />
-      <Footer />
+      {/* <Footer /> */}
     </ChakraProvider>
   );
 }
