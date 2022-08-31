@@ -44,7 +44,7 @@ const projects = [
   },
 
   {
-    cover: "portfolio.png",
+    cover: "woodin.png",
     title: "Woodin",
     url: "https://wood-omega.vercel.app/",
     tools: "JavaScript, HTML, CSS",
