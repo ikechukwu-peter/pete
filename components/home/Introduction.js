@@ -213,7 +213,7 @@ export default function Introduction() {
             </DarkMode>
           </Flex>
         </Box>
-        <Box d={["none", "none", "flex", "flex"]} w="50%">
+        <Box display={["none", "none", "flex", "flex"]} w="50%">
           <Image
             src="/developer.svg"
             alt="A developer writing code"
