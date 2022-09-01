@@ -22,13 +22,13 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const handleStart = (url) => {
       if (window.Tawk_API) {
-        window.Tawk_API.hideWidget();
+        Tawk_API.hideWidget();
       }
       return url !== router.asPath && setLoading(true);
     };
     const handleComplete = (url) => {
       // return url === router.asPath && setLoading(false);
-      window.Tawk_API.showWidget();
+      Tawk_API.showWidget();
       setLoading(false);
     };
     router.events.on("routeChangeStart", handleStart);

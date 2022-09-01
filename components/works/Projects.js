@@ -63,7 +63,7 @@ export default function Projects() {
   const { colorMode } = useColorMode();
 
   return (
-    <Box mt="2rem">
+    <Box w="100%">
       <Center>
         {" "}
         <Text

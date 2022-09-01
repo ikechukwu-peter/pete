@@ -1,13 +1,11 @@
 import {
   Flex,
   Box,
-  HStack,
   Heading,
   Text,
   Link,
   Button,
-  Image,
-  useColorMode,
+  Image as ChakraImage,
   useColorModeValue,
   Divider,
 } from "@chakra-ui/react";
@@ -15,14 +13,15 @@ import NextLink from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
+import Image from "next/image";
+import profile from "/public/profile.svg";
 
 export default function AboutMe() {
-  const { colorMode } = useColorMode();
   return (
-    <Box mt="4rem">
+    <Box w="100%">
       <Flex
         justifyContent="space-between"
-        alignItems="flex-start"
+        alignItems="center"
         flexDirection={[
           "column-reverse",
           "column-reverse",
@@ -32,7 +31,7 @@ export default function AboutMe() {
         gap={{ base: "2rem", md: "4rem" }}
         w="100%"
       >
-        <Box d="flex" justifyContent="flex-end" flexDir="column">
+        <Box d="flex" justifyContent="flex-end" flexDir="column" w="100%">
           <Heading
             fontWeight={600}
             color={useColorModeValue("theme.500", "theme.100")}
@@ -75,7 +74,13 @@ export default function AboutMe() {
               Send Mail
             </Button>
           </Link>
-          <HStack mt={{ base: "2rem", md: "4rem" }} spacing={"24px"}>
+          <Flex
+            mt={{ base: "2rem", md: "4rem" }}
+            w="100%"
+            gap="1rem"
+            align={"center"}
+            flexWrap="wrap"
+          >
             <NextLink href="works" passHref>
               <Link
                 _hover={{
@@ -133,7 +138,7 @@ export default function AboutMe() {
                 </Button>
               </Link>
             </NextLink>
-          </HStack>
+          </Flex>
           <Flex
             mt="2rem"
             gap="1rem"
@@ -142,57 +147,74 @@ export default function AboutMe() {
             fontWeight={700}
             textAlign={{ base: "center", md: "left" }}
             fontSize={"1.3rem"}
+            w="100%"
+            direction={{ base: "column", md: "row" }}
           >
             <Text textAlign={{ base: "center", md: "left" }}>Follow me on</Text>
-            <Link
-              href="https://linkedin.com/in/peter-ikechukwu"
-              isExternal
-              _hover={{
-                textDecor: "none",
-              }}
-              _focus={{
-                border: "none",
-              }}
+            <Flex
+              align={"center"}
+              color={useColorModeValue("theme.500", "theme.100")}
+              gap="1rem"
             >
-              <ImLinkedin2 />
-            </Link>
-            <Link
-              href="https://github.com/ikechukwu-peter"
-              isExternal
-              _hover={{
-                textDecor: "none",
-              }}
-              _focus={{
-                border: "none",
-              }}
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              href="https://instagram.com/pete_iyke"
-              isExternal
-              _hover={{
-                textDecor: "none",
-              }}
-              _focus={{
-                border: "none",
-              }}
-            >
-              <SiInstagram />
-            </Link>
+              <Link
+                href="https://linkedin.com/in/peter-ikechukwu"
+                isExternal
+                _hover={{
+                  textDecor: "none",
+                }}
+                _focus={{
+                  border: "none",
+                }}
+              >
+                <ImLinkedin2 />
+              </Link>
+              <Link
+                href="https://github.com/ikechukwu-peter"
+                isExternal
+                _hover={{
+                  textDecor: "none",
+                }}
+                _focus={{
+                  border: "none",
+                }}
+              >
+                <FaGithub />
+              </Link>
+              <Link
+                href="https://instagram.com/pete_iyke"
+                isExternal
+                _hover={{
+                  textDecor: "none",
+                }}
+                _focus={{
+                  border: "none",
+                }}
+              >
+                <SiInstagram />
+              </Link>
+            </Flex>
           </Flex>
         </Box>
-        <Box d={["flex", "flex", "flex", "flex"]} w="100%" mb="1rem">
-          <Image src="/profile.svg" alt="A picture of Peter" />
+        <Box d={"block"} w="100%" mb="1rem">
+          <Image
+            layout="responsive"
+            placeholder="empty"
+            src={profile}
+            alt="A picture of Peter"
+            width={"100%"}
+            height={"100%"}
+            as={ChakraImage}
+          />
         </Box>
       </Flex>
       <Divider />
 
-      <Box mt="2rem" p="1rem">
+      <Box mt="2rem" w="100%">
         <Text
           py="1rem"
           color={useColorModeValue("theme.500", "theme.400")}
           fontSize={{ base: "1rem", md: "1.4rem" }}
+          w="100%"
         >
           Hi there! Thanks for visiting my portfolio.
         </Text>
