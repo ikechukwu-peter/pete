@@ -1,5 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
+
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 
 const AboutMe = dynamic(() => import("../components/about/About"), {
@@ -22,6 +23,7 @@ export default function About() {
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <Flex
           direction={"column"}
@@ -37,5 +39,6 @@ export default function About() {
         </Flex>
       </main>
     </Suspense>
+
   );
 }

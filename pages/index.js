@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import {  Flex, useColorModeValue } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 const Loader = dynamic(() => import("../components/loader/Loader"));
 const Introduction = dynamic(() => import("../components/home/Introduction"), {
@@ -42,5 +42,6 @@ export default function Home() {
         </Flex>
       </main>
     </Suspense>
+
   );
 }

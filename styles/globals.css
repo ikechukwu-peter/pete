@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,500;1,9..144,700&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+  font-family: "Fraunces", sans-serif !important;
+  -webkit-font-smoothing: "Fraunces", sans-serif !important;
+  -moz-osx-font-smoothing: "Fraunces", sans-serif !important;
+  background-color: white !important;
 }
 
 a {

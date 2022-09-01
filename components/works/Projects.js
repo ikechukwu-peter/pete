@@ -119,6 +119,18 @@ export default function Projects() {
                       <BsBook />
                       <Text>Details</Text>
                     </Stack>
+                    <Stack align={"center"}>
+                      <BsBook />
+                      <Link
+                        href={title}
+                        isExternal={true}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        Details
+                      </Link>
+                    </Stack>
                     <Stack
                       align={"center"}
                       direction="row"
@@ -131,6 +143,17 @@ export default function Projects() {
                     >
                       <AiFillEye display={"inline"} />
                       <Text>Live Preview</Text>
+
+                      <AiFillEye display={"inline"} />
+                      <Link
+                        href={url}
+                        isExternal={true}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        Live Preview
+                      </Link>
                     </Stack>
                   </Stack>
                 </Box>

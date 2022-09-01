@@ -29,6 +29,7 @@ export default function Blog({ blogs }) {
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <Flex
           direction={"column"}
@@ -43,5 +44,6 @@ export default function Blog({ blogs }) {
         </Flex>
       </main>
     </Suspense>
+
   );
 }

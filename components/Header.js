@@ -18,6 +18,7 @@ import {
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+
 const links = [
   { name: "Home", to: "/" },
   { name: "Works", to: "works" },
@@ -25,6 +26,7 @@ const links = [
   { name: "Contact", to: "contact" },
   { name: "Blog", to: "blog" },
 ];
+
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { pathname } = useRouter();

@@ -1,3 +1,4 @@
+
 import { useRouter } from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
@@ -38,8 +39,6 @@ function MyApp({ Component, pageProps }) {
           <Footer />
         </>
       )}
-    </ChakraProvider>
-  );
-}
-
-export default MyApp;
+      </ChakraProvider>
+  )
+      }

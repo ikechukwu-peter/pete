@@ -1,6 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import {  Flex, useColorModeValue } from "@chakra-ui/react";
 import { Suspense } from "react";
 import Loader from "../components/loader/Loader";
 const Projects = dynamic(() => import("../components/works/Projects"), {
@@ -12,11 +12,13 @@ import styles from "../styles/Home.module.css";
 export default function Works() {
   return (
     <Suspense fallback={<Loader />}>
+
       <Head>
         <title>Ikechukwu Peter Portfolio || Works</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <Flex
           direction={"column"}
@@ -31,5 +33,6 @@ export default function Works() {
         </Flex>
       </main>
     </Suspense>
+
   );
 }
