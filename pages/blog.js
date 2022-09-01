@@ -10,9 +10,7 @@ const Blogs = dynamic(() => import("../components/blog/Blogs"), {
 import styles from "../styles/Home.module.css";
 
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@devpete"
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_MEDIUM_FEED_URL}`);
   const blogs = await res.json();
   return {
     props: {
@@ -44,6 +42,5 @@ export default function Blog({ blogs }) {
         </Flex>
       </main>
     </Suspense>
-
   );
 }

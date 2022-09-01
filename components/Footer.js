@@ -8,12 +8,32 @@ import {
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
+import { useCallback, useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
 import styles from "../styles/Home.module.css";
+import axios from "axios";
 
 export default function Footer() {
+  console.log(process.env.NEXT_PUBLIC_COUNTAPI_KEY);
+  const [visits, setVisits] = useState(0);
+
+  const getNumberOfVisit = useCallback(() => {
+    axios
+      .get(
+        `https://api.countapi.xyz/hit/pete.vercel.app/${process.env.NEXT_PUBLIC_COUNTAPI_KEY}`
+      )
+      .then((result) => {
+        console.log(result);
+        setVisits(result.value);
+      });
+  }, []);
+
+  useEffect(() => {
+    getNumberOfVisit();
+  }, [getNumberOfVisit]);
+
   const { colorMode } = useColorMode();
 
   let date = new Date().getFullYear();
@@ -24,6 +44,7 @@ export default function Footer() {
           <Flex
             justify={"space-between"}
             direction={{ base: "column", md: "row" }}
+            mt="1rem"
           >
             <Box py="1rem" textAlign={{ base: "center", md: "left" }}>
               <Heading
@@ -32,22 +53,24 @@ export default function Footer() {
               >
                 {"Let's Connect"}
               </Heading>
-              <Text
-                color={colorMode === "dark" ? "theme.100" : "theme.500"}
-                py="1rem"
-              >
-                Visits:{" "}
+              {visits > 0 && (
                 <Text
-                  as="span"
-                  px="2"
-                  py="1"
-                  color="theme.500"
-                  rounded={"xl"}
-                  bg="theme.300"
+                  color={colorMode === "dark" ? "theme.100" : "theme.500"}
+                  py="1rem"
                 >
-                  1233
+                  Visits:{" "}
+                  <Text
+                    as="span"
+                    px="2"
+                    py="1"
+                    color="theme.500"
+                    rounded={"xl"}
+                    bg="theme.300"
+                  >
+                    {visits}
+                  </Text>
                 </Text>
-              </Text>
+              )}
             </Box>
             <Flex
               justifyContent="center"

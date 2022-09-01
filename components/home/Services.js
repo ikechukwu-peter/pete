@@ -42,7 +42,7 @@ export default function Services() {
   const { colorMode } = useColorMode();
 
   return (
-    <Box my="2rem">
+    <Box my="2rem" w="100%">
       <Center
         pt="4rem"
         fontSize={{ base: "1rem", md: "2rem", xl: "3rem" }}
