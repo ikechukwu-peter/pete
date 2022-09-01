@@ -21,10 +21,10 @@ import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const links = [
   { name: "Home", to: "/" },
-  { name: "Works", to: "works" },
-  { name: "About Me", to: "about" },
-  { name: "Contact", to: "contact" },
-  { name: "Blog", to: "blog" },
+  { name: "Works", to: "/works" },
+  { name: "About Me", to: "/about" },
+  { name: "Contact", to: "/contact" },
+  { name: "Blog", to: "/blog" },
 ];
 
 export default function Header() {

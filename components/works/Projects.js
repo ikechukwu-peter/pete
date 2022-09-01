@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { AiFillEye } from "react-icons/ai";
 import { BsBook } from "react-icons/bs";
+import NextLink from "next/link";
 
 const projects = [
   {
@@ -104,19 +105,21 @@ export default function Projects() {
                     pt="1rem"
                     align={"left"}
                   >
-                    <Stack
-                      align={"center"}
-                      direction="row"
-                      as={Link}
-                      _hover={{
-                        textDecor: "none",
-                      }}
-                      href={title}
-                      isExternal={true}
-                    >
-                      <BsBook />
-                      <Text>Details</Text>
-                    </Stack>
+                    <NextLink href={"projects/" + title} passHref>
+                      <Stack
+                        align={"center"}
+                        //   justify="center"
+                        direction="row"
+                        as={Link}
+                        isExternal={false}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        <BsBook />
+                        <Text>Details</Text>
+                      </Stack>
+                    </NextLink>
 
                     <Stack
                       align={"center"}

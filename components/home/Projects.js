@@ -1,14 +1,9 @@
 import {
   Box,
-  Center,
-  HStack,
-  Heading,
   Text,
   Link,
   Button,
   Image,
-  DarkMode,
-  SimpleGrid,
   Flex,
   Stack,
   useColorMode,
@@ -118,20 +113,21 @@ export default function Projects() {
                     pt="1rem"
                     align={"left"}
                   >
-                    <Stack
-                      align={"center"}
-                      //   justify="center"
-                      direction="row"
-                      as={Link}
-                      href={title}
-                      isExternal={true}
-                      _hover={{
-                        textDecor: "none",
-                      }}
-                    >
-                      <BsBook />
-                      <Text>Details</Text>
-                    </Stack>
+                    <NextLink href={"projects/" + title} passHref>
+                      <Stack
+                        align={"center"}
+                        //   justify="center"
+                        direction="row"
+                        as={Link}
+                        isExternal={false}
+                        _hover={{
+                          textDecor: "none",
+                        }}
+                      >
+                        <BsBook />
+                        <Text>Details</Text>
+                      </Stack>
+                    </NextLink>
                     <Stack
                       align={"center"}
                       direction="row"

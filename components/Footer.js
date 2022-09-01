@@ -16,7 +16,6 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 
 export default function Footer() {
-  console.log(process.env.NEXT_PUBLIC_COUNTAPI_KEY);
   const [visits, setVisits] = useState(0);
 
   const getNumberOfVisit = useCallback(() => {
