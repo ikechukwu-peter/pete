@@ -1,31 +1,22 @@
 import Head from "next/head";
-import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Suspense } from "react";
+import Loader from "../components/loader/Loader";
+const Projects = dynamic(() => import("../components/works/Projects"), {
+  suspense: true,
+  ssr: true,
+});
 import styles from "../styles/Home.module.css";
-const Loader = dynamic(() => import("../components/loader/Loader"));
-const Introduction = dynamic(() => import("../components/home/Introduction"), {
-  suspense: true,
-  ssr: true,
-});
-const Projects = dynamic(() => import("../components/home/Projects"), {
-  suspense: true,
-  ssr: true,
-});
-const Services = dynamic(() => import("../components/home/Services"), {
-  suspense: true,
-  ssr: true,
-});
-export default function Home() {
+
+export default function Works() {
   return (
     <Suspense fallback={<Loader />}>
       <Head>
-        <title>Ikechukwu Peter Portfolio</title>
+        <title>Ikechukwu Peter Portfolio || Works</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <Flex
           direction={"column"}
@@ -36,9 +27,7 @@ export default function Home() {
           bg={useColorModeValue("theme.100", "theme.500")}
           className={styles.container}
         >
-          <Introduction />
           <Projects />
-          <Services />
         </Flex>
       </main>
     </Suspense>
