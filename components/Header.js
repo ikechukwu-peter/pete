@@ -30,7 +30,7 @@ const links = [
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { pathname } = useRouter();
-  const current = pathname === "/" ? pathname : pathname.split("/")[1];
+
   const colorChoice = colorMode === "dark" ? "theme.100" : "theme.500";
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
@@ -94,7 +94,7 @@ export default function Header() {
                   border: "none",
                 }}
                 onClick={onClose}
-                color={current === to ? "theme.300" : colorChoice}
+                color={pathname === to ? "theme.300" : colorChoice}
               >
                 {name}
               </Link>
@@ -157,7 +157,7 @@ export default function Header() {
                     {links.map(({ name, to }, index) => (
                       <NextLink key={index} href={to}>
                         <Link
-                          color={current === to ? "theme.300" : colorChoice}
+                          color={pathname === to ? "theme.300" : colorChoice}
                           fontWeight={700}
                           px={("2rem", ".6rem", "1rem", "2rem")}
                           py=".8rem"

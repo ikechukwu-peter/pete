@@ -15,7 +15,7 @@ export default function Blogs({ blogs }) {
   const { colorMode } = useColorMode();
 
   return (
-    <Box mt="2rem">
+    <Box>
       <Center>
         {" "}
         <Text

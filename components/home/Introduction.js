@@ -4,7 +4,7 @@ import {
   Heading,
   Text,
   Link,
-  Image,
+  Image as ChakraImage,
   Button,
   useColorModeValue,
   DarkMode,
@@ -15,18 +15,21 @@ import {
   AiOutlineMail,
   AiOutlineDownload,
 } from "react-icons/ai";
+import Image from "next/image";
 import Typewriter from "typewriter-effect";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
 import CountUp from "react-countup";
+import developer from "/public/developer.svg";
+import webdev from "/public/webdev.svg";
 
 export default function Introduction() {
   return (
     <>
       <Flex
         bg={useColorModeValue("theme.100", "theme.500")}
-        py={{ base: "1rem", md: "4rem" }}
+        py={{ base: "1rem", md: "2rem" }}
         align={{ base: "center", md: "flex-start" }}
         justify={{ base: "center", md: "space-between" }}
         w="100%"
@@ -213,12 +216,16 @@ export default function Introduction() {
             </DarkMode>
           </Flex>
         </Box>
-        <Box display={["none", "none", "flex", "flex"]} w="50%">
+        <Box display={["none", "none", "block", "block"]} w="50%">
           <Image
-            src="/developer.svg"
             alt="A developer writing code"
-            w="80%"
-            h="auto"
+            width="60%"
+            layout="responsive"
+            placeholder="blur"
+            src={developer}
+            height={"35%"}
+            as={ChakraImage}
+            blurDataURL="empty"
           />
         </Box>
       </Flex>
@@ -277,16 +284,15 @@ export default function Introduction() {
             }
           </Text>
         </Box>
-        <Box
-          w={{ base: "100%", md: "50%" }}
-          d={["flex", "flex", "flex", "flex"]}
-          py="2rem"
-        >
+        <Box w={{ base: "100%", md: "50%" }} d={"block"} py="2rem">
           <Image
-            src="/webdev.svg"
-            w={["100%", "100%", "80%", "90%"]}
-            h={["100%", "100%", "100%", "50%"]}
+            layout="responsive"
+            src={webdev}
+            width={"60%"}
+            height={"35%"}
             alt="A man sitting and relaxing"
+            as={ChakraImage}
+            placeholder="empty"
           />
         </Box>
       </Flex>

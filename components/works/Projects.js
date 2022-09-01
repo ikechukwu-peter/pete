@@ -3,7 +3,7 @@ import {
   Center,
   Text,
   Link,
-  Image,
+  Image as ChakraImage,
   SimpleGrid,
   Stack,
   useColorMode,
@@ -11,41 +11,48 @@ import {
 import { AiFillEye } from "react-icons/ai";
 import { BsBook } from "react-icons/bs";
 import NextLink from "next/link";
+import Image from "next/image";
+import webzerve from "/public/webzerve.png";
+import weaverbuxx from "/public/weaverbuxx.png";
+import portfolio from "/public/portfolio.png";
+import nip from "/public/nip.png";
+import hqistore from "/public/hqistore.png";
+import woodin from "/public/woodin.png";
 
 const projects = [
   {
-    cover: "/webzerve.png",
+    cover: webzerve,
     title: "Webzerve",
     url: "https://webzerve.vercel.app",
     tools: "NodeJs, TypeScript, NextJs",
   },
   {
-    cover: "/weaverbuxx.png",
+    cover: weaverbuxx,
     title: "Weaverbuxx",
     url: "https://weaverbuxx.com",
     tools: "NodeJs, TypeScript, , NextJs",
   },
   {
-    cover: "/portfolio.png",
+    cover: portfolio,
     title: "Portfolio ",
     url: "https://pete.vercel.com",
     tools: "NextJs, ChakraUI",
   },
   {
-    cover: "/nip.png",
+    cover: nip,
     title: "Nip ",
     url: "https://nipurl.herokuapp.com",
     tools: "NodeJs, TypeScript",
   },
   {
-    cover: "/hqistore.png",
+    cover: hqistore,
     title: "HQI Store",
     url: "https://hqistore.com",
     tools: "NodeJs, TypeScript, ReactJs, Redux",
   },
 
   {
-    cover: "woodin.png",
+    cover: woodin,
     title: "Woodin",
     url: "https://wood-omega.vercel.app/",
     tools: "JavaScript, HTML, CSS",
@@ -87,7 +94,15 @@ export default function Projects() {
             >
               <Box d="flex" flexDirection="column" alignItems="center" w="100%">
                 <Box w="100%">
-                  <Image src={cover} alt={title} />
+                  <Image
+                    layout="responsive"
+                    placeholder="blur"
+                    src={cover}
+                    alt={title}
+                    width="100%"
+                    height={"100%"}
+                    as={ChakraImage}
+                  />
                 </Box>
               </Box>
               <Box
@@ -108,7 +123,6 @@ export default function Projects() {
                     <NextLink href={"projects/" + title} passHref>
                       <Stack
                         align={"center"}
-                        //   justify="center"
                         direction="row"
                         as={Link}
                         isExternal={false}

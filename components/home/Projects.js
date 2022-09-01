@@ -3,7 +3,7 @@ import {
   Text,
   Link,
   Button,
-  Image,
+  Image as ChakraImage,
   Flex,
   Stack,
   useColorMode,
@@ -11,16 +11,19 @@ import {
 import { AiFillEye } from "react-icons/ai";
 import NextLink from "next/link";
 import { BsBook } from "react-icons/bs";
+import Image from "next/image";
+import webzerve from "/public/webzerve.png";
+import weaverbuxx from "/public/weaverbuxx.png";
 
 const projects = [
   {
-    cover: "/webzerve.png",
+    cover: webzerve,
     title: "Webzerve",
     url: "https://webzerve.vercel.app",
     tools: "NodeJs, TypeScript, NextJs",
   },
   {
-    cover: "/weaverbuxx.png",
+    cover: weaverbuxx,
     title: "Weaverbuxx",
     url: "https://weaverbuxx.com",
     tools: "NodeJs, TypeScript, , NextJs",
@@ -92,8 +95,16 @@ export default function Projects() {
               borderColor={colorMode === "dark" ? "theme.600" : "theme.700"}
             >
               <Box d="flex" flexDirection="column" alignItems="center" w="100%">
-                <Box w="100%">
-                  <Image src={cover} alt={title} />
+                <Box w="100%" display={"block"}>
+                  <Image
+                    layout="responsive"
+                    placeholder="blur"
+                    src={cover}
+                    alt={title}
+                    width="100%"
+                    height={"100%"}
+                    as={ChakraImage}
+                  />
                 </Box>
               </Box>
               <Box
