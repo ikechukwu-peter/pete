@@ -49,18 +49,11 @@ export default function Introduction() {
             textAlign={{ base: "center", md: "left" }}
           >
             {"I'm "}
-<<<<<<< HEAD
             <Heading display={"inline"} color="theme.300" as="span">
               Peter
             </Heading>
           </Heading>
 
-=======
-            <Heading display={"inline"} color="theme.300">
-              Peter
-            </Heading>
-          </Heading>
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
           <Box
             fontWeight={600}
             fontSize={["1.2rem", "2rem", "2rem", "2rem"]}
@@ -226,11 +219,7 @@ export default function Introduction() {
             alt="A developer writing code"
             w="80%"
             h="auto"
-<<<<<<< HEAD
           />
-=======
-          ></Image>
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
         </Box>
       </Flex>
 
@@ -239,11 +228,7 @@ export default function Introduction() {
         align={{ base: "center", md: "center" }}
         justify={{ base: "center", md: "space-between" }}
         w="100%"
-<<<<<<< HEAD
         p="1rem"
-=======
-        p="1.5rem"
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
         borderRadius={"2rem"}
         direction={[
           "column-reverse",
@@ -302,11 +287,7 @@ export default function Introduction() {
             w={["100%", "100%", "80%", "90%"]}
             h={["100%", "100%", "100%", "50%"]}
             alt="A man sitting and relaxing"
-<<<<<<< HEAD
           />
-=======
-          ></Image>
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
         </Box>
       </Flex>
     </>

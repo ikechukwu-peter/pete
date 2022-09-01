@@ -96,8 +96,6 @@ export default function Projects() {
               >
                 <Stack>
                   <Text>{title}</Text>
-
-                  {/* <Text>{tools}</Text> */}
                 </Stack>
                 <Box>
                   <Stack
@@ -145,15 +143,7 @@ export default function Projects() {
                       <Text>Live Preview</Text>
 
                       <AiFillEye display={"inline"} />
-                      <Link
-                        href={url}
-                        isExternal={true}
-                        _hover={{
-                          textDecor: "none",
-                        }}
-                      >
-                        Live Preview
-                      </Link>
+                      <Text>Live Preview</Text>
                     </Stack>
                   </Stack>
                 </Box>

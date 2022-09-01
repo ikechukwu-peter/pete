@@ -46,11 +46,7 @@ export default function Contact() {
 
   return (
     <Box mt="2rem">
-<<<<<<< HEAD
       <Center>
-=======
-      <Center mt="4rem">
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
         <Heading color={useColorModeValue("theme.500", "theme.100")}>
           {"I'd love to hear from you!"}
         </Heading>

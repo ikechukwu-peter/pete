@@ -7,18 +7,16 @@ import {
   Link,
   Button,
   Image,
-  DarkMode,
   useColorMode,
   useColorModeValue,
   Divider,
 } from "@chakra-ui/react";
-import { BiCloudDownload } from "react-icons/bi";
 import NextLink from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
 
-export default function About() {
+export default function AboutMe() {
   const { colorMode } = useColorMode();
   return (
     <Box mt="4rem">

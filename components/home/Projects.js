@@ -11,7 +11,6 @@ import {
   SimpleGrid,
   Flex,
   Stack,
-<<<<<<< HEAD
   useColorMode,
 } from "@chakra-ui/react";
 import { AiFillEye } from "react-icons/ai";
@@ -36,13 +35,6 @@ const projects = [
 export default function Projects() {
   const { colorMode } = useColorMode();
 
-=======
-} from "@chakra-ui/react";
-import { AiFillEye } from "react-icons/ai";
-import NextLink from "next/link";
-
-export default function Projects() {
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
   return (
     <Box mt="2rem">
       <Flex justify={"space-between"} align="center">
@@ -61,10 +53,7 @@ export default function Projects() {
             _focus={{
               border: "none",
             }}
-<<<<<<< HEAD
             mr=".4rem"
-=======
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
           >
             <Button
               color="theme.100"
@@ -88,7 +77,6 @@ export default function Projects() {
         justify={"space-between"}
         align="center"
         mt="2rem"
-<<<<<<< HEAD
         gap="1.5rem"
         direction={{ base: "column", md: "row" }}
       >
@@ -146,7 +134,6 @@ export default function Projects() {
                     </Stack>
                     <Stack
                       align={"center"}
-                      //   justify="center"
                       direction="row"
                       as={Link}
                       href={url}
@@ -163,99 +150,6 @@ export default function Projects() {
               </Box>
             </Box>
           ))}
-=======
-        gap="2rem"
-        direction={{ base: "column", md: "row" }}
-      >
-        <Box
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-          }}
-          w="100%"
-          // pb="4rem"
-          rounded="xl"
-          borderWidth={"2px"}
-        >
-          <Image
-            src="/about.svg"
-            alt="Webzerve picture"
-            w="50%"
-            objectFit={"contain"}
-          />
-
-          <Box bg="theme.600" p="1rem">
-            <HStack>
-              <Text>Blog</Text>
-
-              <HStack>
-                <Text>Hello</Text>
-              </HStack>
-            </HStack>
-            <Box>
-              <Stack
-                align={"center"}
-                justify="center"
-                direction="row"
-                as={Link}
-                _hover={{
-                  textDecor: "none",
-                }}
-              >
-                <AiFillEye display={"inline"} />
-                <Text>Live Preview</Text>
-              </Stack>
-            </Box>
-          </Box>
-        </Box>
-        <Box
-          height="auto"
-          transitionProperty="transform"
-          transitionDuration="2s"
-          transitionTimingFunction="ease"
-          _hover={{
-            transform: "scale(1.1)",
-          }}
-          w="100%"
-          // pb="4rem"
-          rounded="xl"
-          borderWidth={"2px"}
-        >
-          <Image
-            src="/about.svg"
-            alt="Webzerve picture"
-            w="50%"
-            objectFit={"contain"}
-          />
-
-          <Box bg="theme.600" p="1rem">
-            <HStack>
-              <Text>Blog</Text>
-
-              <HStack>
-                <Text>Hello</Text>
-              </HStack>
-            </HStack>
-            <Box>
-              <Stack
-                align={"center"}
-                justify="center"
-                direction="row"
-                as={Link}
-                _hover={{
-                  textDecor: "none",
-                }}
-              >
-                <AiFillEye display={"inline"} />
-                <Text>Live Preview</Text>
-              </Stack>
-            </Box>
-          </Box>
-        </Box>
->>>>>>> 992a393b7814f3a904e2cb734fd39c1db18b713c
       </Flex>
     </Box>
   );
