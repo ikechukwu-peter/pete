@@ -11,7 +11,7 @@ export default function useMail() {
       let res = await axios({
         method: "POST",
         url: "/api/mail",
-        payload,
+        data: payload,
       });
 
       const { hide } = cogoToast.success(`${res.data.success}`, {
@@ -22,7 +22,7 @@ export default function useMail() {
       });
     } catch (error) {
       console.log(error);
-      let errorResponse = error.response
+      let errorResponse = !!error.response.errorMessage
         ? error.response.errorMessage
         : "Check your internet connection";
 
