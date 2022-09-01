@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { Suspense, useEffect, useState } from "react";
+import Script from "next/script";
+import { useEffect, useState } from "react";
 const Header = dynamic(() => import("../components/Header"));
 const Footer = dynamic(() => import("../components/Footer"));
 import { ScrollToTop } from "../components/ScrollToTop";
@@ -20,11 +21,14 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleStart = (url) => {
+      if (window.Tawk_API) {
+        window.Tawk_API.hideWidget();
+      }
       return url !== router.asPath && setLoading(true);
     };
     const handleComplete = (url) => {
-      console.log(url, router.asPath);
       // return url === router.asPath && setLoading(false);
+      window.Tawk_API.showWidget();
       setLoading(false);
     };
     router.events.on("routeChangeStart", handleStart);
@@ -50,6 +54,19 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
               <ScrollToTop />
               <Footer />
+              <Script id="tawk" strategy="lazyOnload">
+                {`
+                    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                    (function(){
+                    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                    s1.async=true;
+                    s1.src='https://embed.tawk.to/63108a0637898912e96697a4/1gbs9mb3k';
+                    s1.charset='UTF-8';
+                    s1.setAttribute('crossorigin','*');
+                    s0.parentNode.insertBefore(s1,s0);
+                    })();
+              `}
+              </Script>
             </>
           )}
         </>
