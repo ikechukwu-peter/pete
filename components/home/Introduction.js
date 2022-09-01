@@ -16,6 +16,7 @@ import {
   AiOutlineDownload,
 } from "react-icons/ai";
 import Image from "next/image";
+import NextLink from "next/link";
 import Typewriter from "typewriter-effect";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
@@ -83,18 +84,20 @@ export default function Introduction() {
             </Text>
             <Text
               fontWeight={600}
-              fontSize={[".6rem", ".6rem", ".8rem", "1rem"]}
+              fontSize={["1rem", "1rem", "1rem", "1.3rem"]}
               color={useColorModeValue("theme.500", "theme.700")}
               textAlign={{ base: "center", md: "left" }}
             >
-              <Link
-                color="theme.300"
-                _hover={{
-                  textDecor: "none",
-                }}
-              >
-                Know More <Icon as={AiOutlineLink} pt=".4rem" />
-              </Link>
+              <NextLink href="/about" passHref>
+                <Link
+                  color="theme.300"
+                  _hover={{
+                    textDecor: "none",
+                  }}
+                >
+                  Know More <Icon as={AiOutlineLink} pt=".4rem" />
+                </Link>
+              </NextLink>
               about me
             </Text>
 
