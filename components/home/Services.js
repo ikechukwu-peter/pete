@@ -73,10 +73,10 @@ export default function Services() {
               d="flex"
               flexDirection="column"
               alignItems="center"
-              textAlign="center"
+              // justifyContent={"center"}
             >
-              <Box w="50%">
-                <Image src={img} alt={title} />
+              <Box w={{ base: "100%", md: "50%" }}>
+                <Image src={img} alt={title} h="80%" w="80%" />
               </Box>
 
               <Heading fontSize="1.8rem" my="1rem" color="theme.400">
