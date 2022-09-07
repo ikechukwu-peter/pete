@@ -25,7 +25,7 @@ export default function Footer() {
       )
       .then((result) => {
         console.log(result);
-        setVisits(result.value);
+        setVisits(result?.data?.value);
       });
   }, []);
 
@@ -36,6 +36,8 @@ export default function Footer() {
   const { colorMode } = useColorMode();
 
   let date = new Date().getFullYear();
+
+  console.log(visits);
   return (
     <Box className={styles.footer} w="100%">
       <Box bg={useColorModeValue("theme.100", "theme.500")} w="100%">

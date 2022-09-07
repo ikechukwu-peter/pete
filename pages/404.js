@@ -1,6 +1,4 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
-
 import {
   Button,
   Flex,
@@ -11,13 +9,13 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import styles from "../styles/Home.module.css";
-import Loader from "../components/loader/Loader";
+import Layout from "../components/layout/Layout";
 
-export default function About() {
+function NotFound() {
   return (
-    <>
+    <Layout>
       <Head>
-        <title>Ikechukwu Peter Portfolio || About Me</title>
+        <title>Ikechukwu Peter Portfolio || Not Found</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -64,6 +62,8 @@ export default function About() {
           </NextLink>
         </Flex>
       </main>
-    </>
+    </Layout>
   );
 }
+
+export default NotFound;

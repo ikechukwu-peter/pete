@@ -236,7 +236,7 @@ export default function AboutMe() {
             Ikechukwu Peter
           </Link>
           , a Full Stack Developer, Technical Writer, and a passionate learner.
-          I am pursuing B.Science in Computer Science at{" "}
+          {/* I am pursuing B.Science in Computer Science at{" "}
           <Link
             _hover={{
               textDecor: "none",
@@ -248,11 +248,12 @@ export default function AboutMe() {
           >
             National Open University of Nigeria
           </Link>
-          , Abuja, Nigeria. I have worked on a wide range of technologies and
-          have worked on projects ranging from small to large scale. I am a
-          self-motivated and self-driven individual who is always looking for
-          new challenges and opportunities. I love participating in hackathons
-          and engaging in communities.
+          , Abuja, Nigeria. I have worked on a wide range of technologies and */}
+          I have worked on a wide range of technologies and have worked on
+          projects ranging from small to large scale. I am a self-motivated and
+          self-driven individual who is always looking for new challenges and
+          opportunities. I love participating in hackathons and engaging in
+          communities.
         </Text>
       </Box>
     </Box>

@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-const Header = dynamic(() => import("../components/Header"));
-const Footer = dynamic(() => import("../components/Footer"));
 import { ScrollToTop } from "../components/ScrollToTop";
 import theme from "../theme/theme";
 import "../styles/globals.css";
@@ -50,10 +47,9 @@ function MyApp({ Component, pageProps }) {
             <Loader />
           ) : (
             <>
-              <Header />
               <Component {...pageProps} />
+
               <ScrollToTop />
-              <Footer />
               <Script id="tawk" strategy="lazyOnload">
                 {`
                     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

@@ -11,7 +11,7 @@ Visit - [Pete](https://pete.vercel.app)
 Made with
 
 - NextJs
--
+- ChakraUI
 
 Deployed with
 

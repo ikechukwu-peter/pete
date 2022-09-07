@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import {  Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
-const Loader = dynamic(() => import("../components/loader/Loader"));
+import Layout from "../components/layout/Layout";
+const ContentLoader = dynamic(() =>
+  import("../components/loader/ContentLoader")
+);
 const Introduction = dynamic(() => import("../components/home/Introduction"), {
   suspense: true,
   ssr: true,
@@ -17,9 +19,10 @@ const Services = dynamic(() => import("../components/home/Services"), {
   suspense: true,
   ssr: true,
 });
-export default function Home() {
-  return (
-    <Suspense fallback={<Loader />}>
+
+const Home = () => (
+  <Layout>
+    <Suspense fallback={<ContentLoader />}>
       <Head>
         <title>Ikechukwu Peter Portfolio</title>
         <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
@@ -42,6 +45,7 @@ export default function Home() {
         </Flex>
       </main>
     </Suspense>
+  </Layout>
+);
 
-  );
-}
+export default Home;
