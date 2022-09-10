@@ -254,7 +254,7 @@ export default function Introduction() {
           flexDir="column"
           w={{ base: "100%", md: "50%" }}
         >
-          <Heading
+          {/* <Heading
             fontWeight={600}
             color={"theme.100"}
             mb=".3rem"
@@ -269,7 +269,7 @@ export default function Introduction() {
             color={"theme.100"}
           >
             completed projects
-          </Text>
+          </Text> */}
           <Text
             fontWeight={600}
             fontSize={["1.2rem", "1.4rem", "1.4rem", "1.8rem"]}
