@@ -129,6 +129,7 @@ export default function Projects() {
                         _hover={{
                           textDecor: "none",
                         }}
+                        fontSize={".8rem"}
                       >
                         <BsBook />
                         <Text>Details</Text>
@@ -144,6 +145,7 @@ export default function Projects() {
                       }}
                       href={url}
                       isExternal={true}
+                      fontSize={".8rem"}
                     >
                       <AiFillEye display={"inline"} />
                       <Text>Live Preview</Text>
