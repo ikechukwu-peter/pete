@@ -22,8 +22,27 @@ function About() {
     <Layout>
       <Suspense fallback={<ContentLoader />}>
         <Head>
-          <title>Ikechukwu Peter Portfolio || About Me</title>
+          <title>Ikechukwu Peter || About Me</title>
+
+          <meta property="og:type" content="About" />
+
+          <meta property="og:site_name" content="pete.vercel.app" />
+
+          <meta property="og:url" content="https://pete.vercel.app" />
           <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
+          <meta
+            property="og:title"
+            content="About - Ikechukwu Peter Web developer"
+          />
+          <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
+          <meta name="description" content={" Ikechukwu Peter"} />
+          <meta name="description" content={" Peter Ikechukwu  "} />
+          <meta
+            name="keywords"
+            content="website, websites, web developement, javascript, react, reactjs, node, nodejs, software, software engineer, full stack developer, full-stack developer, frontend, frontend developer, backend, backend developer"
+          />
+          <meta name="author" content="Ikechukwu Peter Chinedu" />
+          <meta name="description" content={" Web developer  "} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
