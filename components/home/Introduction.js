@@ -21,7 +21,6 @@ import Typewriter from "typewriter-effect";
 import { FaGithub } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
 import { SiInstagram } from "react-icons/si";
-import CountUp from "react-countup";
 import developer from "/public/developer.svg";
 import webdev from "/public/webdev.svg";
 
