@@ -164,14 +164,14 @@ export default function Introduction() {
                   bg={"theme.300"}
                   textDecor="none"
                   _hover={{
-                    bg: "purple.500",
+                    bg: "theme.300",
                   }}
                   _focus={{
-                    bg: "purple.800",
+                    bg: "theme.300",
                     border: "none",
                   }}
                   _active={{
-                    bg: "purple.800",
+                    bg: "theme.300",
                     border: "none",
                   }}
                   boxShadow={" 2px 2px 1px 1px  #ff5403"}

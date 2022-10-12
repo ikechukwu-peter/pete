@@ -24,7 +24,6 @@ export default function Footer() {
         `https://api.countapi.xyz/hit/pete.vercel.app/${process.env.NEXT_PUBLIC_COUNTAPI_KEY}`
       )
       .then((result) => {
-        console.log(result);
         setVisits(result?.data?.value);
       });
   }, []);

@@ -31,13 +31,29 @@ function Works() {
             content="Works - Ikechukwu Peter Web developer"
           />
 
-          <meta name="description" content={" Ikechukwu Peter's Portfolio "} />
-          <meta name="description" content={" Ikechukwu Peter"} />
-          <meta name="description" content={" Peter Ikechukwu  "} />
+          <meta
+            name="description"
+            content={
+              " Ikechukwu Peter's Portfolio,Ikechkwu Peter, Peter Ikechukwu portfolio website"
+            }
+          />
+
           <meta
             name="keywords"
-            content="website, websites, web developement, javascript, react, reactjs, node, nodejs, software, software engineer, full stack developer, full-stack developer, frontend, frontend developer, backend, backend developer"
+            content="ikechukwu peter, ikechukwu peter chinedu, chinedu, website, websites, web developement, javascript, react, reactjs, node, nodejs, software, software engineer, full stack developer, full-stack developer, frontend, frontend developer, backend, backend developer"
           />
+
+          <meta property="twitter:card" content="summary" />
+          <meta
+            property="twitter:url"
+            content={"https://twitter.com/pete_iyke"}
+          />
+          <meta property="twitter:title" content={"Ikechukwu Peter Chinedu"} />
+          <meta
+            property="twitter:description"
+            content={"I am a  software engineer, I enjoy writing #code"}
+          />
+
           <meta name="author" content="Ikechukwu Peter Chinedu" />
           <meta name="description" content={" Web developer  "} />
           <link rel="icon" href="/favicon.ico" />

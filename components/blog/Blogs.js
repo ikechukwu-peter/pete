@@ -3,11 +3,12 @@ import {
   Center,
   Text,
   Link,
-  Image,
+  Image as ChakraImage,
   SimpleGrid,
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { AiFillEye } from "react-icons/ai";
 import { BsCalendarDate } from "react-icons/bs";
 
@@ -43,12 +44,19 @@ export default function Blogs({ blogs }) {
               rounded="md"
               border="2px"
               borderColor={colorMode === "dark" ? "theme.600" : "theme.700"}
-              // as={Link}
-              // href={url}
             >
               <Box d="flex" flexDirection="column" alignItems="center" w="100%">
                 <Box w="100%">
-                  <Image src={thumbnail} alt={title} w="100%" />
+                  <Image
+                    layout="responsive"
+                    placeholder="blur"
+                    src={thumbnail}
+                    alt={title}
+                    blurDataURL={`/_next/image?url=${thumbnail}&w=16&q=1`}
+                    width="100%"
+                    height={"100%"}
+                    as={ChakraImage}
+                  />
                 </Box>
               </Box>
               <Box
