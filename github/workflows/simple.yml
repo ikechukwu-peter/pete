@@ -1,0 +1,23 @@
+name: PortfolioPipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lintTest:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Install Dependecies
+        run: |
+          echo "Running Installing Dependencies..."
+          yarn run install
+      - name: Run Linting
+        run: |
+          echo "Running Linting tests..."
+          yarn run lint
+        env:
+          CI: true
