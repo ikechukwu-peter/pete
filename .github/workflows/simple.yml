@@ -29,3 +29,4 @@ jobs:
       - name: Deployment
         run: |
         echo "Deployment in Progress..."
+        yarn run build --if-present
