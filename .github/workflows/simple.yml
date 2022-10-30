@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Deployment
         run: |
-          working-directory: ./portfolio
+          echo "Running Installing Dependencies..."
+          yarn install
+        run: |
           echo "Deployment in Progress..."
           yarn run build --if-present
