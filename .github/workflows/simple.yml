@@ -28,6 +28,6 @@ jobs:
     steps:
       - name: Deployment
         run: |
-          cd pete/pete
+          working-directory: ./portfolio
           echo "Deployment in Progress..."
           yarn run build --if-present
