@@ -47,7 +47,7 @@ const projects = [
   {
     cover: hqistore,
     title: "HQI Store",
-    url: "https://hqistore.com",
+    url: "https://hqi-store.vercel.app/",
     tools: "NodeJs, TypeScript, ReactJs, Redux",
   },
 
@@ -159,23 +159,3 @@ export default function Projects() {
     </Box>
   );
 }
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
