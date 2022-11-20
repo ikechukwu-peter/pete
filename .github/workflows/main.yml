@@ -32,4 +32,5 @@ jobs:
           yarn install
 
           echo "Deployment in Progress..."
+          cd pete/pete
           yarn run build --if-present
