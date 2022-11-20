@@ -18,6 +18,7 @@ import portfolio from "/public/portfolio.png";
 import nip from "/public/nip.png";
 import hqistore from "/public/hqistore.png";
 import woodin from "/public/woodin.png";
+import cella from "/public/cella.png";
 
 const projects = [
   {
@@ -37,6 +38,12 @@ const projects = [
     title: "Portfolio ",
     url: "https://pete.vercel.com",
     tools: "NextJs, ChakraUI",
+  },
+  {
+    cover: cella,
+    title: "Cella",
+    url: "https://cella.vercel.app",
+    tools: "NodeJs, TypeScript",
   },
   {
     cover: nip,

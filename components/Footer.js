@@ -118,7 +118,7 @@ export default function Footer() {
               </Link>
             </Flex>
           </Flex>
-          <VStack
+          {/* <VStack
             align={{ base: "center", md: "left" }}
             color={colorMode === "dark" ? "theme.100" : "theme.500"}
             pb="1rem"
@@ -147,7 +147,7 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-          </VStack>
+          </VStack> */}
         </Box>
       </Box>
       <Box bg="theme.600" w="100%" h="100%">
