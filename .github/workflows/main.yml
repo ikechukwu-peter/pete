@@ -20,7 +20,7 @@ jobs:
           echo "Running Linting tests..."
           yarn run lint
         env:
-          CI: true
+          CI: false
   deploy:
     name: Deployment
     runs-on: ubuntu-latest
@@ -30,7 +30,5 @@ jobs:
         run: |
           echo "Running Installing Dependencies..."
           yarn install
-          ls
-          cd /pete/pete
           echo "Deployment in Progress..."
           yarn run build --if-present
