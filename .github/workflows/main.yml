@@ -30,6 +30,7 @@ jobs:
         run: |
           echo "Running Installing Dependencies..."
           yarn install
-
+          ls
+          cd /pete/pete
           echo "Deployment in Progress..."
           yarn run build --if-present
