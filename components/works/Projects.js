@@ -45,12 +45,12 @@ const projects = [
     url: "https://cella.vercel.app",
     tools: "NodeJs, TypeScript",
   },
-  {
-    cover: nip,
-    title: "Nip ",
-    url: "https://nipurl.herokuapp.com",
-    tools: "NodeJs, TypeScript",
-  },
+  // {
+  //   cover: nip,
+  //   title: "Nip ",
+  //   url: "https://nipurl.herokuapp.com",
+  //   tools: "NodeJs, TypeScript",
+  // },
   {
     cover: hqistore,
     title: "HQI Store",
