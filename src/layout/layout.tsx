@@ -5,16 +5,11 @@ const Header = dynamic(() => import("@/navigation").then((mod) => mod.Header), {
   suspense: true,
   ssr: true,
 });
-// const Footer = dynamic(() => import("../Footer"), {
-//   suspense: true,
-//   ssr: true,
-// });
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <Suspense fallback={<div>Loading</div>}>
     <Header />
     {children}
-    {/* <Footer /> */}
   </Suspense>
 );
 

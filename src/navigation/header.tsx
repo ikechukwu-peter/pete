@@ -52,7 +52,8 @@ export const Header = () => {
       h={20}
       bg="brand.700"
       color="brand.300"
-      p={4}
+      py={4}
+      px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
       pos="sticky"
       top={0}
     >
