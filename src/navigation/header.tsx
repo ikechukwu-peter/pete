@@ -23,17 +23,7 @@ import { BsChevronDown } from "react-icons/bs";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { CgMenuMotion } from "react-icons/cg";
-//LINKS on my header
-const baseLinks = [
-  { name: "About Me", to: "/about" },
-  { name: "Works", to: "/works" },
-  { name: "Contact", to: "/contact" },
-];
-
-const courseLinks = [
-  { name: "Video", to: "/video" },
-  { name: "Blog", to: "/blog" },
-];
+import { baseLinks, courseLinks } from "@/data/links";
 
 export const Header = () => {
   const { pathname } = useRouter();
@@ -56,8 +46,14 @@ export const Header = () => {
       px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
       pos="sticky"
       top={0}
+      zIndex={999}
     >
-      <Flex w="100%" justify="space-between" align="center">
+      <Flex
+        w="100%"
+        justify="space-between"
+        align="center"
+        maxW={"container.xl"}
+      >
         <NextLink href="/">
           <Flex
             direction={"column"}
@@ -154,6 +150,7 @@ export const Header = () => {
                         {courseLinks.map(({ name, to }) => (
                           <AccordionPanel pb={4} key={name}>
                             <Box
+                              as={NextLink}
                               fontWeight={600}
                               _hover={{
                                 color: "brand.400",
@@ -162,6 +159,8 @@ export const Header = () => {
                               w="100%"
                               color="brand.300"
                               textAlign={"left"}
+                              target="_blank"
+                              href={to}
                             >
                               {name}
                             </Box>
@@ -206,6 +205,7 @@ export const Header = () => {
                     key={name + index}
                     as={NextLink}
                     href={to}
+                    target="_blank"
                   >
                     <Box
                       fontWeight={600}

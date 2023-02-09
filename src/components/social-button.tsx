@@ -22,8 +22,10 @@ export const SocialButton = ({
       display={"inline-flex"}
       alignItems={"center"}
       justifyContent={"center"}
-      transition={"background 0.3s ease"}
+      transition={"background 1.3s ease"}
       _hover={{ bg: "brand.400" }}
+      target="_blank"
+      color="brand.700"
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
