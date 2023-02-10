@@ -5,17 +5,19 @@ export const SocialButton = ({
   children,
   label,
   href,
+  isTool = false,
 }: {
   children: ReactNode;
   label: string;
   href: string;
+  isTool?: boolean;
 }) => {
   return (
     <chakra.button
       bg="brand.300"
       rounded={"full"}
-      w={8}
-      h={8}
+      w={isTool ? 20 : 10}
+      h={isTool ? 20 : 10}
       cursor={"pointer"}
       as={"a"}
       href={href}
@@ -23,9 +25,10 @@ export const SocialButton = ({
       alignItems={"center"}
       justifyContent={"center"}
       transition={"background 1.3s ease"}
-      _hover={{ bg: "brand.400" }}
+      _hover={{ bg: "brand.400", color: "brand.800" }}
       target="_blank"
-      color="brand.700"
+      color={"brand.700"}
+      fontSize={isTool ? "2rem" : "1rem"}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}

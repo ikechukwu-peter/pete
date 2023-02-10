@@ -1,9 +1,18 @@
 import Head from "next/head";
 import NextLink from "next/link";
-import Layout from "@/layout/layout";
+
+import { IconType } from "react-icons";
 import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import Layout from "@/layout/layout";
 import { SocialButton } from "@/components/social-button";
-import { socialLinks } from "@/data/links";
+import {
+  socialLinks,
+  languages,
+  frontend,
+  backend,
+  databases,
+  others,
+} from "@/data/links";
 
 export default function About() {
   return (
@@ -48,24 +57,133 @@ export default function About() {
             color="brand.300"
           >
             {
-              "I love problem-solving, rap and EDM. When not working or futzing around with code I play chess, watch movies or play video games. I also speak sarcasm."
+              "I love problem-solving,  I am a self-motivated and self-driven individual who is always looking for new challenges and opportunities. When not engaged with programming activities, I play indoor games, listen to music and watch comedies."
             }
           </Heading>{" "}
-          *
           <Box my="1.3rem" color="brand.300">
             <Heading>Languages I speak.</Heading>
+            <Flex gap="1rem" wrap={"wrap"} my="1rem">
+              {languages.map(
+                ({
+                  label,
+                  href,
+                  Icon,
+                }: {
+                  label: string;
+                  href: string;
+                  Icon: IconType;
+                }) => (
+                  <SocialButton
+                    key={label + href}
+                    label={label}
+                    href={href}
+                    isTool
+                  >
+                    <Icon />
+                  </SocialButton>
+                )
+              )}
+            </Flex>
           </Box>
           <Box my="1.3rem" color="brand.300">
             <Heading>Frontend</Heading>
+            <Flex gap="1rem" wrap={"wrap"} my="1rem">
+              {frontend.map(
+                ({
+                  label,
+                  href,
+                  Icon,
+                }: {
+                  label: string;
+                  href: string;
+                  Icon: IconType;
+                }) => (
+                  <SocialButton
+                    key={label + href}
+                    label={label}
+                    href={href}
+                    isTool
+                  >
+                    <Icon />
+                  </SocialButton>
+                )
+              )}
+            </Flex>
           </Box>
           <Box my="1.3rem" color="brand.300">
             <Heading>Backend</Heading>
+            <Flex gap="1rem" wrap={"wrap"} my="1rem">
+              {backend.map(
+                ({
+                  label,
+                  href,
+                  Icon,
+                }: {
+                  label: string;
+                  href: string;
+                  Icon: IconType;
+                }) => (
+                  <SocialButton
+                    key={label + href}
+                    label={label}
+                    href={href}
+                    isTool
+                  >
+                    <Icon />
+                  </SocialButton>
+                )
+              )}
+            </Flex>
           </Box>
           <Box my="1.3rem" color="brand.300">
-            <Heading>Database</Heading>
+            <Heading>Databases</Heading>
+            <Flex gap="1rem" wrap={"wrap"} my="1rem">
+              {databases.map(
+                ({
+                  label,
+                  href,
+                  Icon,
+                }: {
+                  label: string;
+                  href: string;
+                  Icon: IconType;
+                }) => (
+                  <SocialButton
+                    key={label + href}
+                    label={label}
+                    href={href}
+                    isTool
+                  >
+                    <Icon />
+                  </SocialButton>
+                )
+              )}
+            </Flex>
           </Box>
           <Box my="1.3rem" color="brand.300">
             <Heading>Others</Heading>
+            <Flex gap="1rem" wrap={"wrap"} my="1rem">
+              {others.map(
+                ({
+                  label,
+                  href,
+                  Icon,
+                }: {
+                  label: string;
+                  href: string;
+                  Icon: IconType;
+                }) => (
+                  <SocialButton
+                    key={label + href}
+                    label={label}
+                    href={href}
+                    isTool
+                  >
+                    <Icon />
+                  </SocialButton>
+                )
+              )}
+            </Flex>
           </Box>
           <Box my="1.3rem" color="brand.300">
             <Heading fontWeight={600} fontSize="1rem">
