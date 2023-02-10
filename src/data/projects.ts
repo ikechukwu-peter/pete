@@ -1,3 +1,4 @@
+import { IPROJECT } from "./../types/projects.d";
 import {
   SiHtml5,
   SiCss3,
@@ -14,64 +15,64 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 
-export const projects = [
+export const projects: IPROJECT[] = [
   {
     title: "Foodie",
-    imgSrc: "",
+    imgSrc: "/foodie.jpg",
     url: "https://foodie-beta-eight.vercel.app/",
     skills: [
       {
         techTitle: "TypeScript",
-        tech: SiTypescript,
+        Icon: SiTypescript,
         color: "#3178C6",
       },
       {
         techTitle: "Reactjs",
-        tech: SiReact,
+        Icon: SiReact,
         color: "#61DAFB",
       },
     ],
   },
   {
     title: "Webzerve",
-    imgsrc: "/webzerve.png",
+    imgSrc: "/webzerve.jpg",
     url: "https://webzerve.vercel.app",
     skills: [
       {
         techTitle: "TypeScript",
-        tech: SiTypescript,
+        Icon: SiTypescript,
         color: "#3178C6",
       },
       {
         techTitle: "Nextjs",
-        tech: SiNextdotjs,
+        Icon: SiNextdotjs,
         color: "#000000",
       },
       {
         techTitle: "Nestjs",
-        tech: SiNestjs,
+        Icon: SiNestjs,
         color: "#E10098",
       },
     ],
   },
   {
-    title: "Weaverbuxx",
-    imgsrc: "/weaverbuxx.png",
-    url: "https://weaverbuxx.com",
+    title: "HQIStore",
+    imgSrc: "/hqistore.jpg",
+    url: "https://hqistore.com",
     skills: [
       {
         techTitle: "JavaScript",
-        tech: SiJavascript,
+        Icon: SiJavascript,
         color: "#F7DF1E",
       },
       {
         techTitle: "React",
-        tech: SiReact,
+        Icon: SiReact,
         color: "#61DAFB",
       },
       {
         techTitle: "Nodejs",
-        tech: SiNodedotjs,
+        Icon: SiNodedotjs,
         color: "#339933",
       },
     ],

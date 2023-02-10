@@ -14,8 +14,8 @@ import {
   SiGraphql,
   SiGithub,
   SiGitlab,
+  SiNextdotjs,
 } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
 import { GiSailboat } from "react-icons/gi";
 import { FaNodeJs } from "react-icons/fa";
 
@@ -86,7 +86,7 @@ export const frontend = [
   },
   {
     label: "Next",
-    Icon: TbBrandNextjs,
+    Icon: SiNextdotjs,
     href: "https://nextjs.org/",
   },
 ];

@@ -18,6 +18,7 @@ import { socialLinks } from "@/data/links";
 import { FormField } from "@/components/form-field";
 import { ISENDMAIL } from "@/types/mail";
 import { validateEmail } from "@/utils";
+import { useMail } from "@/hooks";
 
 const resolver: Resolver<ISENDMAIL> = async (values) => {
   return {
@@ -56,7 +57,7 @@ const resolver: Resolver<ISENDMAIL> = async (values) => {
 };
 
 export default function Contact() {
-  const loading = false;
+  const { loading, sendMail } = useMail();
 
   const {
     register,
@@ -64,7 +65,8 @@ export default function Contact() {
     formState: { errors },
   } = useForm<ISENDMAIL>({ resolver });
 
-  const onSubmit = handleSubmit(async (data) => console.log(data));
+  const onSubmit = handleSubmit(async (data) => await sendMail(data));
+
   return (
     <Layout>
       <Head>

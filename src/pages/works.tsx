@@ -1,12 +1,11 @@
 import Head from "next/head";
-import NextLink from "next/link";
-import dynamic from "next/dynamic";
-import Layout from "@/layout/layout";
-import { Box, Button, Flex, Heading, Link, SimpleGrid } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { SocialButton } from "@/components/social-button";
 import { socialLinks } from "@/data/links";
 import { Card } from "@/components/card";
 import { projects } from "@/data/projects";
+import Layout from "@/layout/layout";
+
 // const Card = dynamic(() => import("@/components").then((mod) => mod.Card), {
 //   suspense: true,
 //   ssr: true,
@@ -37,18 +36,8 @@ export default function Works() {
           maxW="container.xl"
         >
           <Box w="100%" mb="2rem">
-            <Heading
-              textAlign="center"
-              color="brand.300"
-              textUnderlineOffset={6}
-              textDecor="underline"
-              textDecorationColor={"brand.400"}
-            >
-              Some Projects
-            </Heading>
-
             <Box
-              mt="6rem"
+              mt="3rem"
               p={["0.1rem 0.3rem", "0.3rem 0.5rem", "1rem 2rem", "1rem 2rem"]}
             >
               <SimpleGrid
@@ -62,7 +51,14 @@ export default function Works() {
                 ))}
               </SimpleGrid>
             </Box>
-            <Card />
+
+            <Flex gap="1rem" my="1.2rem">
+              {socialLinks.map(({ url, Icon, name }) => (
+                <SocialButton key={url} href={url} label={name}>
+                  <Icon />
+                </SocialButton>
+              ))}
+            </Flex>
           </Box>
         </Flex>
       </Box>
