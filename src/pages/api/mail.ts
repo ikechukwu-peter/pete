@@ -7,11 +7,11 @@ type ReqData = {
   html?: string;
 };
 
-const sendEmail = async (options: ReqData) => {
+const sendEmail = async (options: any) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
   const msg: MailDataRequired = {
-    to: process.env.EMAIL_TO,
-    from: process.env.EMAIL_FROM || "",
+    to: process.env.EMAIL_TO as string,
+    from: (process.env.EMAIL_FROM as string) || "",
     subject: options.subject,
     text: options.text,
     html: options.html,

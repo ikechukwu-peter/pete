@@ -15,7 +15,7 @@ export const Card = ({ title, imgSrc, url, skills }: IPROJECT) => {
       p="1rem 1.2rem"
       mr={{ base: "0", lg: "1rem" }}
     >
-      <NextLink href={"works/" + title}>
+      <NextLink href={url} target="_blank">
         <Image src={imgSrc} alt={title} width={400} height={400} priority />
         <Flex className={styles.boxflex} justifyContent="space-evenly">
           {skills.map(({ color, Icon, techTitle }) => {
