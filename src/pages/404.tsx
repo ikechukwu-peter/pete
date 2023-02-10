@@ -44,7 +44,7 @@ function NotFound() {
 
         <meta name="author" content="Ikechukwu Peter Chinedu" />
         <meta name="description" content={" Web developer  "} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/pete.png" />
       </Head>
 
       <Flex
