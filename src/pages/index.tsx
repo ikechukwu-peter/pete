@@ -137,7 +137,7 @@ export default function Home() {
               src={"/pete.png"}
               alt="Ikechukwu's Picture"
               width={400}
-              height={400}
+              height={500}
               priority
               rounded="md"
             />

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import NextLink from "next/link";
-
+import { AiOutlineDownload } from "react-icons/ai";
 import { IconType } from "react-icons";
-import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link } from "@chakra-ui/react";
 import Layout from "@/layout/layout";
 import { SocialButton } from "@/components/social-button";
 import {
@@ -60,6 +60,39 @@ export default function About() {
               "I love problem-solving,  I am a self-motivated and self-driven individual who is always looking for new challenges and opportunities. When not engaged with programming activities, I play indoor games, listen to music and watch comedies."
             }
           </Heading>{" "}
+          <Link
+            href="/IkechukwuPeter.pdf"
+            download="IkechukwuPeterResume"
+            isExternal
+            _hover={{
+              textDecor: "none",
+            }}
+          >
+            <Button
+              color="brand.300"
+              bg={"transparent"}
+              borderWidth="2px"
+              borderColor={"brand.400"}
+              boxShadow={" 1px 1px 1px  rgb(8,145,178)"}
+              textDecor="none"
+              _hover={{
+                bg: "brand.400",
+              }}
+              _focus={{
+                bg: "brand.400",
+                border: "none",
+              }}
+              _active={{
+                bg: "brand.400",
+                border: "none",
+              }}
+              mb={["2rem", "2rem", "3rem", "4rem"]}
+              transition="background 1s ease"
+              rightIcon={<AiOutlineDownload />}
+            >
+              Download Resume
+            </Button>
+          </Link>
           <Box my="1.3rem" color="brand.300">
             <Heading>Languages I speak.</Heading>
             <Flex gap="1rem" wrap={"wrap"} my="1rem">
