@@ -86,7 +86,7 @@ export const projects: IPROJECT[] = [
   {
     title: "HQIStore",
     imgSrc: "/hqistore.jpg",
-    url: "https://hqistore.com",
+    url: "https://hqi-store.vercel.app",
     skills: [
       {
         techTitle: "JavaScript",
