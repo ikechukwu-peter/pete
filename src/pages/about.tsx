@@ -2,7 +2,7 @@ import Head from "next/head";
 import NextLink from "next/link";
 import { AiOutlineDownload } from "react-icons/ai";
 import { IconType } from "react-icons";
-import { Box, Button, Flex, Heading, Link } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Layout from "@/layout/layout";
 import { SocialButton } from "@/components/social-button";
 import {
@@ -48,18 +48,17 @@ export default function About() {
               {"A software engineer with a passion for technology."}{" "}
             </Heading>
           </Box>
-          <Heading
-            as="p"
-            fontSize={{ base: "1rem" }}
+          <Text
+            fontSize={["1.2rem", "1.5rem", "1.5rem", "1.5rem"]}
             fontWeight="500"
             w={{ base: "100%", md: "60%", lg: "50%" }}
             my="1.3rem"
             color="brand.300"
           >
             {
-              "I love problem-solving,  I am a self-motivated and self-driven individual who is always looking for new challenges and opportunities. When not engaged with programming activities, I play indoor games, listen to music and watch comedies."
+              "I love problem-solving, I am a self-motivated and self-driven individual who is always looking for new challenges and opportunities. When not engaged with programming activities, I play indoor games, listen to music and watch comedies."
             }
-          </Heading>{" "}
+          </Text>{" "}
           <Link
             href="/IkechukwuPeter.pdf"
             download="IkechukwuPeterResume"
