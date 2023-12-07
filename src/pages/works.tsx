@@ -27,7 +27,7 @@ export default function Works() {
         bg="brand.700"
         h="100vh"
         py={4}
-        px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
+        // px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
         pt="2rem"
       >
         <Flex
@@ -52,7 +52,7 @@ export default function Works() {
               </SimpleGrid>
             </Box>
 
-            <Flex gap="1rem" my="1.2rem">
+            <Flex gap="1rem" my="1.2rem" ml="2rem">
               {socialLinks.map(({ url, Icon, name }) => (
                 <SocialButton key={url} href={url} label={name}>
                   <Icon />

@@ -18,6 +18,71 @@ import {
 
 export const projects: IPROJECT[] = [
   {
+    title: "Bridge | A fintech app",
+    imgSrc: "/brydge.jpg",
+    url: "https://brydgehq.co",
+    skills: [
+      {
+        techTitle: "TypeScript",
+        Icon: SiTypescript,
+        color: "#3178C6",
+      },
+      {
+        techTitle: "Reactjs",
+        Icon: SiReact,
+        color: "#61DAFB",
+      },
+      {
+        techTitle: "Nextjs",
+        Icon: SiNextdotjs,
+        color: "#000000",
+      },
+      {
+        techTitle: "Nodejs",
+        Icon: SiNodedotjs,
+        color: "#339933",
+      },
+      {
+        techTitle: "Express",
+        Icon: SiExpress,
+        color: "#333333",
+      },
+    ],
+  },
+
+  {
+    title: "Ridges | A hotel booking app",
+    imgSrc: "/ridges.jpg",
+    url: "https://ridges-website.vercel.app",
+    skills: [
+      {
+        techTitle: "TypeScript",
+        Icon: SiTypescript,
+        color: "#3178C6",
+      },
+      {
+        techTitle: "Nextjs",
+        Icon: SiNextdotjs,
+        color: "#000000",
+      },
+      {
+        techTitle: "Reactjs",
+        Icon: SiReact,
+        color: "#61DAFB",
+      },
+      {
+        techTitle: "Nodejs",
+        Icon: SiNodedotjs,
+        color: "#339933",
+      },
+      {
+        techTitle: "Express",
+        Icon: SiExpress,
+        color: "#333333",
+      },
+    ],
+  },
+  {
     title: "Nip | URL Shortener",
     imgSrc: "/short.jpg",
     url: "https://nip-psi.vercel.app",
@@ -45,7 +110,7 @@ export const projects: IPROJECT[] = [
     ],
   },
   {
-    title: "Foodie",
+    title: "Foodie | A food recipe app",
     imgSrc: "/foodie.jpg",
     url: "https://foodie-beta-eight.vercel.app/",
     skills: [
@@ -83,26 +148,26 @@ export const projects: IPROJECT[] = [
       },
     ],
   },
-  {
-    title: "HQIStore",
-    imgSrc: "/hqistore.jpg",
-    url: "https://hqi-store.vercel.app",
-    skills: [
-      {
-        techTitle: "JavaScript",
-        Icon: SiJavascript,
-        color: "#F7DF1E",
-      },
-      {
-        techTitle: "React",
-        Icon: SiReact,
-        color: "#61DAFB",
-      },
-      {
-        techTitle: "Nodejs",
-        Icon: SiNodedotjs,
-        color: "#339933",
-      },
-    ],
-  },
+  // {
+  //   title: "HQIStore",
+  //   imgSrc: "/hqistore.jpg",
+  //   url: "https://hqi-store.vercel.app",
+  //   skills: [
+  //     {
+  //       techTitle: "JavaScript",
+  //       Icon: SiJavascript,
+  //       color: "#F7DF1E",
+  //     },
+  //     {
+  //       techTitle: "React",
+  //       Icon: SiReact,
+  //       color: "#61DAFB",
+  //     },
+  //     {
+  //       techTitle: "Nodejs",
+  //       Icon: SiNodedotjs,
+  //       color: "#339933",
+  //     },
+  //   ],
+  // },
 ];

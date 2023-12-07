@@ -1,4 +1,4 @@
-import { Box, Flex, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, Heading, Tooltip } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
 import { IPROJECT } from "@/types/projects";
@@ -36,6 +36,13 @@ export const Card = ({ title, imgSrc, url, skills }: IPROJECT) => {
           })}
         </Flex>
       </NextLink>
+      <Heading
+        py=".5rem"
+        color="brand.300"
+        fontSize={{ base: ".5rem", md: ".6rem", lg: ".8rem" }}
+      >
+        {title}
+      </Heading>
     </Box>
   );
 };
