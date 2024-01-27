@@ -22,7 +22,7 @@ export const SiteHeadContents = ({
       <link rel="icon" href={Images.heroImage.url} />
       <meta
         name="keywords"
-        content={`${fullName}, Software Engineer, Web Developer, Full Stack Developer, React, JavaScript, TypeScript, Portfolio, Website, Web app`}
+        content={`${fullName}, Software Engineer, Web Developer, Full Stack Developer, React, JavaScript, TypeScript, Portfolio, Website, Web app, websites, web developement, javascript, react, reactjs, node, nodejs, software, software engineer, full stack developer, full-stack developer, frontend, frontend developer, backend, backend developer`}
       />
 
       {/* Open Graph Tags for Social Media */}
@@ -37,6 +37,7 @@ export const SiteHeadContents = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+      <meta property="twitter:url" content={"https://twitter.com/pete_iyke"} />
 
       {/* Additional SEO Enhancements */}
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

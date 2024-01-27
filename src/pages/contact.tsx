@@ -1,4 +1,3 @@
-import Head from "next/head";
 import NextLink from "next/link";
 import Layout from "@/layout/layout";
 import {
@@ -7,7 +6,6 @@ import {
   Flex,
   Heading,
   Input,
-  Link,
   Spinner,
   Textarea,
 } from "@chakra-ui/react";
@@ -17,9 +15,8 @@ import { SocialButton } from "@/components/social-button";
 import { socialLinks } from "@/data/links";
 import { FormField } from "@/components/form-field";
 import { ISENDMAIL } from "@/types/mail";
-import { Images, SiteHeadContents, validateEmail } from "@/utils";
+import { SiteHeadContents, validateEmail } from "@/utils";
 import { useMail } from "@/hooks";
-import { HeroImage } from "@/components/hero-image";
 import { SiteButton } from "@/components/site-button";
 
 const resolver: Resolver<ISENDMAIL> = async (values) => {
