@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-
 import styles from "./ui-loader.module.css";
 
 export const UILoader = () => {

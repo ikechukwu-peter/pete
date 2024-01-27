@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "@/theming/colors";
-import { Ubuntu } from "@next/font/google";
+import { Ubuntu } from "next/font/google";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
