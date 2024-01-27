@@ -43,7 +43,6 @@ export const Header = () => {
       bg="brand.700"
       color="brand.300"
       py={4}
-      px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
       pos="sticky"
       top={0}
       zIndex={999}
@@ -55,32 +54,19 @@ export const Header = () => {
         maxW={"container.xl"}
       >
         <NextLink href="/">
-          <Flex
-            direction={"column"}
+          <Box
+            as="h2"
+            fontSize={{ base: "1rem", lg: "1.5rem" }}
+            shadow="xl"
+            textTransform="uppercase"
             _hover={{
               color: "brand.400",
             }}
             fontWeight={{ base: "500", md: "700" }}
             gap="0"
           >
-            <Box
-              as="h2"
-              fontSize={{ base: "1rem" }}
-              shadow="xl"
-              textTransform="uppercase"
-            >
-              Iyke
-            </Box>
-            <Box
-              as="h2"
-              fontSize={{ base: "1rem" }}
-              shadow="xl"
-              textTransform="uppercase"
-              pl="1rem"
-            >
-              Peter
-            </Box>
-          </Flex>
+            Ikechukwu.
+          </Box>
         </NextLink>
 
         {isMobile ? (
@@ -195,6 +181,7 @@ export const Header = () => {
                 bg="transparent"
                 _hover={{ color: "brand.400" }}
                 _active={{ color: "brand.400" }}
+                color={pathname === "/courses" ? "brand.400" : "brand.300"}
               >
                 Courses
               </MenuButton>

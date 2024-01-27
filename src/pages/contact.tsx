@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NextLink from "next/link";
 import Layout from "@/layout/layout";
 import {
   Box,
@@ -65,7 +64,7 @@ export default function Contact() {
     formState: { errors },
   } = useForm<ISENDMAIL>({ resolver });
 
-  const onSubmit = handleSubmit(async (data) => await sendMail(data));
+  const onSubmit = handleSubmit(async (data: any) => await sendMail(data));
 
   return (
     <Layout>

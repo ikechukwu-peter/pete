@@ -6,11 +6,6 @@ import { Card } from "@/components/card";
 import { projects } from "@/data/projects";
 import Layout from "@/layout/layout";
 
-// const Card = dynamic(() => import("@/components").then((mod) => mod.Card), {
-//   suspense: true,
-//   ssr: true,
-// });
-
 export default function Works() {
   return (
     <Layout>

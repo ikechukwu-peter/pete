@@ -16,8 +16,8 @@ export const SocialButton = ({
     <chakra.button
       bg="brand.300"
       rounded={"full"}
-      w={isTool ? 20 : 10}
-      h={isTool ? 20 : 10}
+      w={isTool ? 16 : 10}
+      h={isTool ? 16 : 10}
       cursor={"pointer"}
       as={"a"}
       href={href}
@@ -28,7 +28,7 @@ export const SocialButton = ({
       _hover={{ bg: "brand.400", color: "brand.800" }}
       target="_blank"
       color={"brand.700"}
-      fontSize={isTool ? "2rem" : "1rem"}
+      fontSize={isTool ? "1.5rem" : "1rem"}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
