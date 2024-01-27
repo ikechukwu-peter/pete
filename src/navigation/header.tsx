@@ -43,7 +43,7 @@ export const Header = () => {
       bg="brand.700"
       color="brand.300"
       py={4}
-      pos="sticky"
+      pos={"sticky"}
       top={0}
       zIndex={999}
     >
@@ -53,7 +53,7 @@ export const Header = () => {
         align="center"
         maxW={"container.xl"}
       >
-        <NextLink href="/">
+        <NextLink href={"/"}>
           <Box
             as="h2"
             fontSize={{ base: "1rem", lg: "1.5rem" }}

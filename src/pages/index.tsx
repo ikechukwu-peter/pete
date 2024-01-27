@@ -2,11 +2,11 @@
 // import Image from "next/image";
 import NextLink from "next/link";
 import Layout from "@/layout/layout";
-import { Box, Button, Flex, Heading, chakra, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 // import Typewriter from "typewriter-effect";
 import { useAnimation } from "@codechem/chakra-ui-animations";
 import { SocialButton } from "@/components/social-button";
-import { socialLinks } from "@/data/links";
+import { baseLinks, socialLinks } from "@/data/links";
 import { HeroImage } from "@/components/hero-image";
 import { Images, SiteHeadContents } from "@/utils";
 import { SiteButton } from "@/components/site-button";
@@ -109,7 +109,7 @@ export default function Home() {
             </Text>
 
             <Flex gap="1rem" my="1.2rem">
-              <NextLink href="/contact">
+              <NextLink href={baseLinks[2].to}>
                 <SiteButton title={"Talk to Me"} />
               </NextLink>
             </Flex>
