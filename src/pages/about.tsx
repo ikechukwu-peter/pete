@@ -111,7 +111,7 @@ export default function About() {
             variants={slideInLeftVariants}
           >
             <Link
-              href="/IkechukwuPeter.pdf"
+              href={process.env.NEXT_PUBLIC_RESUME_LINK}
               download="IkechukwuPeterResume"
               isExternal
               _hover={{
