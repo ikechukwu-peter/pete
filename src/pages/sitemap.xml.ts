@@ -34,7 +34,7 @@ function generateSiteMap() {
 export async function getServerSideProps({ res }: { res: any }) {
   const sitemap = generateSiteMap();
 
-  res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Content-Type", "application/xml");
   res.write(sitemap);
   res.end();
 
