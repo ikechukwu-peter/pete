@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Visit - [Pete](https://pete.vercel.app)
+Visit - [Ikechukwu Peter](https://ikechukwupeter.com)
 
 <img width="960" alt="Screenshot 2022-01-16 154645" src="./public/screenshot.jpg">
 

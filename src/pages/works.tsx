@@ -1,10 +1,10 @@
 import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
-import { SocialButton } from "@/components/social-button";
-import { socialLinks } from "@/data/links";
 import { Card } from "@/components/card";
 import { projects } from "@/data/projects";
 import Layout from "@/layout/layout";
 import { SiteHeadContents } from "@/utils";
+import { SocialButtons } from "@/components/social-buttons";
+import { CustomBox } from "@/components/animation/custom-elements";
 
 export default function Works() {
   return (
@@ -23,19 +23,23 @@ export default function Works() {
               pt="2rem"
               pb="4rem"
             >
-              {projects.map((project) => (
-                <Card key={project.url + project.title} {...project} />
+              {projects.map((project, index) => (
+                <CustomBox
+                  key={project.url + project.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  // @ts-ignore no problem in operation, although type error appears.
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  whileTap={{ scale: 0.9, y: 5 }}
+                >
+                  <Card {...project} />
+                </CustomBox>
               ))}
             </SimpleGrid>
           </Box>
 
-          <Flex gap="1rem" my="1.2rem" ml="2rem">
-            {socialLinks.map(({ url, Icon, name }) => (
-              <SocialButton key={url} href={url} label={name}>
-                <Icon />
-              </SocialButton>
-            ))}
-          </Flex>
+          <SocialButtons />
         </Box>
       </Flex>
     </Layout>
