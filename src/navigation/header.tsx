@@ -24,6 +24,8 @@ import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { CgMenuMotion } from "react-icons/cg";
 import { baseLinks, courseLinks } from "@/data/links";
+import { CustomBox } from "@/components/animation/custom-elements";
+import { Logo } from "@/components/logo";
 
 export const Header = () => {
   const { pathname } = useRouter();
@@ -53,21 +55,7 @@ export const Header = () => {
         align="center"
         maxW={"container.xl"}
       >
-        <NextLink href={"/"}>
-          <Box
-            as="h2"
-            fontSize={{ base: "1rem", lg: "1.5rem" }}
-            shadow="xl"
-            textTransform="uppercase"
-            _hover={{
-              color: "brand.400",
-            }}
-            fontWeight={{ base: "500", md: "700" }}
-            gap="0"
-          >
-            Ikechukwu.
-          </Box>
-        </NextLink>
+        <Logo />
 
         {isMobile ? (
           <>
@@ -97,27 +85,37 @@ export const Header = () => {
                 <DrawerBody mt="4rem">
                   <Flex as="ul" gap={3} direction={{ base: "column" }}>
                     {baseLinks.map(({ name, to }, index) => (
-                      <NextLink
-                        href={to}
-                        passHref
+                      <CustomBox
                         key={name + index}
-                        onClick={onClose}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        // @ts-ignore no problem in operation, although type error appears.
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                        whileHover={{ scale: 1.1 }}
                       >
-                        <Box
-                          fontWeight={600}
-                          _hover={{
-                            color: "brand.400",
-                          }}
-                          p={2}
-                          color={pathname === to ? "brand.400" : "brand.300"}
-                        >
-                          {name}
-                        </Box>
-                      </NextLink>
+                        <NextLink href={to} passHref onClick={onClose}>
+                          <Box
+                            fontWeight={600}
+                            _hover={{
+                              color: "brand.400",
+                            }}
+                            p={2}
+                            color={pathname === to ? "brand.400" : "brand.300"}
+                          >
+                            {name}
+                          </Box>
+                        </NextLink>
+                      </CustomBox>
                     ))}
                     <Accordion defaultIndex={[0]} allowMultiple>
                       <AccordionItem border="none" p="-1px">
-                        <h2>
+                        <CustomBox
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          // @ts-ignore no problem in operation, although type error appears.
+                          transition={{ duration: 0.5, delay: 0.2 }}
+                          whileHover={{ scale: 1.1 }}
+                        >
                           <AccordionButton p="2">
                             <Box
                               as="span"
@@ -131,26 +129,35 @@ export const Header = () => {
                             </Box>
                             <AccordionIcon />
                           </AccordionButton>
-                        </h2>
+                        </CustomBox>
 
-                        {courseLinks.map(({ name, to }) => (
-                          <AccordionPanel pb={4} key={name}>
-                            <Box
-                              as={NextLink}
-                              fontWeight={600}
-                              _hover={{
-                                color: "brand.400",
-                              }}
-                              bg={pathname === to ? "brand.500" : undefined}
-                              w="100%"
-                              color="brand.300"
-                              textAlign={"left"}
-                              target="_blank"
-                              href={to}
-                            >
-                              {name}
-                            </Box>
-                          </AccordionPanel>
+                        {courseLinks.map(({ name, to }, index) => (
+                          <CustomBox
+                            key={name}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            // @ts-ignore no problem in operation, although type error appears.
+                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            <AccordionPanel pb={4}>
+                              <Box
+                                as={NextLink}
+                                fontWeight={600}
+                                _hover={{
+                                  color: "brand.400",
+                                }}
+                                bg={pathname === to ? "brand.500" : undefined}
+                                w="100%"
+                                color="brand.300"
+                                textAlign={"left"}
+                                target="_blank"
+                                href={to}
+                              >
+                                {name}
+                              </Box>
+                            </AccordionPanel>
+                          </CustomBox>
                         ))}
                       </AccordionItem>
                     </Accordion>
@@ -162,48 +169,75 @@ export const Header = () => {
         ) : (
           <Flex as="ul" gap={3}>
             {baseLinks.map(({ name, to }, index) => (
-              <NextLink href={to} passHref key={name + index}>
-                <Box
-                  fontWeight={700}
-                  _hover={{ color: "brand.400" }}
-                  rounded="xl"
-                  p={2}
-                  color={pathname === to ? "brand.400" : "brand.300"}
-                >
-                  {name}
-                </Box>
-              </NextLink>
+              <CustomBox
+                key={name + index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                // @ts-ignore no problem in operation, although type error appears.
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+                whileTap={{ scale: 0.9, y: 5 }}
+              >
+                <NextLink href={to} passHref>
+                  <Box
+                    fontWeight={700}
+                    _hover={{ color: "brand.400" }}
+                    rounded="xl"
+                    p={2}
+                    color={pathname === to ? "brand.400" : "brand.300"}
+                  >
+                    {name}
+                  </Box>
+                </NextLink>
+              </CustomBox>
             ))}
             <Menu isLazy>
-              <MenuButton
-                as={Button}
-                rightIcon={<BsChevronDown />}
-                bg="transparent"
-                _hover={{ color: "brand.400" }}
-                _active={{ color: "brand.400" }}
-                color={pathname === "/courses" ? "brand.400" : "brand.300"}
+              <CustomBox
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                // @ts-ignore no problem in operation, although type error appears.
+                transition={{ duration: 0.5, delay: 0.6 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+                whileTap={{ scale: 0.9, y: 5 }}
               >
-                Courses
-              </MenuButton>
+                <MenuButton
+                  as={Button}
+                  rightIcon={<BsChevronDown />}
+                  bg="transparent"
+                  _hover={{ color: "brand.400" }}
+                  _active={{ color: "brand.400" }}
+                  color={pathname === "/courses" ? "brand.400" : "brand.300"}
+                >
+                  Courses
+                </MenuButton>
+              </CustomBox>
               <MenuList w="100%" bg="brand.700">
                 {courseLinks.map(({ name, to }, index) => (
-                  <MenuItem
-                    bg="brand.700"
+                  <CustomBox
                     key={name + index}
-                    as={NextLink}
-                    href={to}
-                    target="_blank"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    // @ts-ignore no problem in operation, although type error appears.
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <Box
-                      fontWeight={600}
-                      _hover={{ color: "brand.400" }}
-                      w="100%"
-                      color={pathname === to ? "brand.400" : "brand.300"}
-                      textAlign={"center"}
+                    <MenuItem
+                      bg="brand.700"
+                      as={NextLink}
+                      href={to}
+                      target="_blank"
                     >
-                      {name}
-                    </Box>
-                  </MenuItem>
+                      <Box
+                        fontWeight={600}
+                        _hover={{ color: "brand.400" }}
+                        w="100%"
+                        color={pathname === to ? "brand.400" : "brand.300"}
+                        textAlign={"center"}
+                      >
+                        {name}
+                      </Box>
+                    </MenuItem>
+                  </CustomBox>
                 ))}
               </MenuList>
             </Menu>

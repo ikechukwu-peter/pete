@@ -3,20 +3,23 @@
 import NextLink from "next/link";
 import Layout from "@/layout/layout";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-// import Typewriter from "typewriter-effect";
-import { useAnimation } from "@codechem/chakra-ui-animations";
-import { SocialButton } from "@/components/social-button";
 import { baseLinks, socialLinks } from "@/data/links";
 import { HeroImage } from "@/components/hero-image";
 import { Images, SiteHeadContents } from "@/utils";
 import { SiteButton } from "@/components/site-button";
+import { SocialButtons } from "@/components/social-buttons";
+import {
+  CustomBox,
+  CustomHeading,
+  CustomText,
+  letterVariants,
+  slideInRightVariants,
+  slideInLeftVariants,
+  staggerVariants,
+} from "@/components/animation/custom-elements";
+import { Greeting } from "@/components/greeting";
 
 export default function Home() {
-  const animation = useAnimation("flash", {
-    duration: 2000,
-    iterationCount: "infinite",
-  });
-
   // const ChakraImage = chakra(Image, {
   //   shouldForwardProp: (prop) =>
   //     ["src", "width", "height", "alt", "priority"].includes(prop),
@@ -32,44 +35,53 @@ export default function Home() {
         w="100%"
       >
         <Box w="100%" mt="5%">
-          <Box>
-            <Heading
-              fontWeight={"900"}
-              fontSize={{
-                base: "1.8rem",
-                md: "2rem",
-                lg: "2.3rem",
-                xl: "2.5rem",
-              }}
-              mb="1rem"
-              _hover={{
-                color: "brand.800",
-              }}
-              color="brand.300"
-            >
-              <Text as="span" animation={animation}>
-                Hi,{" "}
-              </Text>
-              {" I'm Ikechukwu Peter"}
-            </Heading>
-            <Heading
-              fontWeight={"800"}
-              fontSize={{
-                base: "1.2rem",
-                md: "1.6rem",
-                lg: "1.8rem",
-                xl: "2rem",
-              }}
-              color={"brand.400"}
-              _hover={{
-                color: "brand.300",
+          <CustomBox
+            initial="hidden"
+            animate="visible"
+            variants={slideInLeftVariants}
+          >
+            <Greeting />
+            <CustomBox
+              initial="hidden"
+              animate="visible"
+              variants={staggerVariants}
+              whileHover={{
+                textShadow: "0px 0px 8px rgba(8, 145, 178, 0.8)",
               }}
             >
-              {"Software/Product Engineer"}
-            </Heading>
-          </Box>
+              {Array.from("Software/Product Engineer").map((letter, index) => (
+                <CustomHeading
+                  key={index}
+                  fontWeight={"800"}
+                  fontSize={{
+                    base: "1.2rem",
+                    md: "1.6rem",
+                    lg: "1.8rem",
+                    xl: "2rem",
+                  }}
+                  color={"brand.400"}
+                  _hover={{
+                    color: "brand.300",
+                  }}
+                  display="inline-block"
+                  mr="4px"
+                  variants={letterVariants}
+                >
+                  {letter}
+                </CustomHeading>
+              ))}
+            </CustomBox>
+          </CustomBox>
 
-          <Box
+          <CustomBox
+            initial="hidden"
+            // animate="visible"
+            variants={slideInLeftVariants}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeInOut" },
+            }}
             fontWeight={700}
             fontSize={["1.2rem", "2rem", "2rem", "2rem"]}
             color="brand.300"
@@ -95,44 +107,79 @@ export default function Home() {
               solutions, I specialize in crafting products that deliver
               measurable results and user satisfaction.
             </Heading>
-          </Box>
+          </CustomBox>
 
           <Box>
-            <Text
+            <CustomText
+              initial="hidden"
+              variants={slideInLeftVariants}
+              animate={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 1.6, ease: "easeInOut" },
+              }}
               fontWeight={["600"]}
               fontSize={[".6rem", ".7rem", ".8rem", "1rem"]}
               color="brand.300"
+              _hover={{
+                color: "brand.400",
+                transition: "color 0.3s ease-in-out",
+              }}
             >
               {
                 "Let's turn your vision into reality and build software/product that not only works but also leaves a lasting impression."
               }
-            </Text>
+            </CustomText>
 
-            <Flex gap="1rem" my="1.2rem">
-              <NextLink href={baseLinks[2].to}>
-                <SiteButton title={"Talk to Me"} />
-              </NextLink>
-            </Flex>
+            <CustomBox
+              initial="hidden"
+              variants={slideInLeftVariants}
+              animate={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 2, ease: "easeInOut" },
+              }}
+            >
+              <Flex gap="1rem" my="1.2rem">
+                <NextLink href={baseLinks[2].to}>
+                  <SiteButton title={"Talk to Me"} />
+                </NextLink>
+              </Flex>
+            </CustomBox>
           </Box>
 
-          <Flex gap="1rem" my="1.2rem">
-            {socialLinks.map(({ url, Icon, name }) => (
-              <SocialButton key={url} href={url} label={name}>
-                <Icon />
-              </SocialButton>
-            ))}
-          </Flex>
+          <CustomBox
+            initial="hidden"
+            variants={slideInLeftVariants}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: { duration: 2.4, ease: "easeInOut" },
+            }}
+          >
+            <SocialButtons />
+          </CustomBox>
         </Box>
+
         <Flex w="100%" display={{ base: "none", md: "flex" }} justify="end">
           <Box w="100%"></Box>
-          <Box w="100%">
+          <CustomBox
+            initial="hidden"
+            variants={slideInRightVariants}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: { duration: 2.8, ease: "easeInOut" },
+            }}
+          >
+            {" "}
             <HeroImage
               url={Images.heroImage.url}
               alt={Images.heroImage.alt}
               width="100%"
               height="100%"
             />
-          </Box>
+          </CustomBox>
         </Flex>
       </Flex>
     </Layout>

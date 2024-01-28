@@ -1,4 +1,5 @@
-import { Box, chakra, Image } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
+import { CustomBox } from "./animation/custom-elements";
 // import Image from "next/image";
 
 // const ChakraImage = chakra(Image, {
@@ -20,7 +21,7 @@ export const HeroImage = ({
   rounded?: string;
 }) => {
   return (
-    <Box
+    <CustomBox
       position="relative"
       width="100%"
       height="80%"
@@ -28,6 +29,8 @@ export const HeroImage = ({
         opacity: 0.8,
       }}
       filter={"brightness(0.8)"}
+      whileHover={{ opacity: 0.8, scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
       <Image
         borderRadius="50%"
@@ -38,6 +41,6 @@ export const HeroImage = ({
         height={height}
         rounded={rounded}
       />
-    </Box>
+    </CustomBox>
   );
 };
