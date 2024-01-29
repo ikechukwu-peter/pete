@@ -56,7 +56,7 @@ const resolver: Resolver<ISENDMAIL> = async (values) => {
 
 export default function Contact() {
   const [state, handleSubmit] = useFormspreeForm(
-    process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
+    process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
   );
 
   const {
