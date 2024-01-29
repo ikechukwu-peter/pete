@@ -6,16 +6,17 @@ import { useForm, Resolver } from "react-hook-form";
 import { FormField } from "@/components/form-field";
 import { ISENDMAIL } from "@/types/mail";
 import { SiteHeadContents, validateEmail } from "@/utils";
-import { useMail } from "@/hooks";
 import { SiteButton } from "@/components/site-button";
 import { SocialButtons } from "@/components/social-buttons";
 import {
   CustomBox,
   CustomHeading,
+  CustomText,
   slideInFromTopVariant,
   slideInLeftVariants,
   slideInRightVariants,
 } from "@/components/animation/custom-elements";
+import { useForm as useFormspreeForm } from "@formspree/react";
 
 const resolver: Resolver<ISENDMAIL> = async (values) => {
   return {
@@ -54,15 +55,21 @@ const resolver: Resolver<ISENDMAIL> = async (values) => {
 };
 
 export default function Contact() {
-  const { loading, sendMail } = useMail();
+  const [state, handleSubmit] = useFormspreeForm(
+    process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
+  );
 
   const {
     register,
-    handleSubmit,
+    handleSubmit: handleFormSubmit,
     formState: { errors },
+    reset,
   } = useForm<ISENDMAIL>({ resolver });
 
-  const onSubmit = handleSubmit(async (data: any) => await sendMail(data));
+  const onSubmit = async (data: any) => {
+    handleSubmit(data);
+    reset();
+  };
 
   return (
     <Layout>
@@ -76,7 +83,7 @@ export default function Contact() {
       >
         <Flex
           as="form"
-          onSubmit={onSubmit}
+          onSubmit={handleFormSubmit(onSubmit)}
           gap=".6rem"
           direction="column"
           w={{ base: "100%", md: "50%" }}
@@ -95,6 +102,21 @@ export default function Contact() {
           >
             {"Let's talk."}
           </CustomHeading>
+
+          {state.succeeded && (
+            <CustomText
+              initial="hidden"
+              animate={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.8, ease: "easeInOut" },
+              }}
+              variants={slideInLeftVariants}
+              color="brand.300"
+            >
+              Email sent successfully
+            </CustomText>
+          )}
           <CustomBox
             display="flex"
             flexDir="column"
@@ -203,8 +225,9 @@ export default function Contact() {
               _active={{
                 borderColor: "brand.300",
               }}
+              disabled={state.submitting}
             >
-              {loading ? (
+              {state.submitting ? (
                 <Spinner
                   thickness="4px"
                   speed="0.65s"
