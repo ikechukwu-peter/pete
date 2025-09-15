@@ -6,8 +6,6 @@ import {
   SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiApollographql,
-  SiGraphql,
   SiNestjs,
   SiGit,
   SiGithub,
@@ -82,33 +80,33 @@ export const projects: IPROJECT[] = [
       },
     ],
   },
-  {
-    title: "Nip | URL Shortener",
-    imgSrc: "/short.jpg",
-    url: "https://nip-psi.vercel.app",
-    skills: [
-      {
-        techTitle: "TypeScript",
-        Icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        techTitle: "Reactjs",
-        Icon: SiReact,
-        color: "#61DAFB",
-      },
-      {
-        techTitle: "Nodejs",
-        Icon: SiNodedotjs,
-        color: "#339933",
-      },
-      {
-        techTitle: "Express",
-        Icon: SiExpress,
-        color: "#333333",
-      },
-    ],
-  },
+  // {
+  //   title: "Nip | URL Shortener",
+  //   imgSrc: "/short.jpg",
+  //   url: "https://nip-psi.vercel.app",
+  //   skills: [
+  //     {
+  //       techTitle: "TypeScript",
+  //       Icon: SiTypescript,
+  //       color: "#3178C6",
+  //     },
+  //     {
+  //       techTitle: "Reactjs",
+  //       Icon: SiReact,
+  //       color: "#61DAFB",
+  //     },
+  //     {
+  //       techTitle: "Nodejs",
+  //       Icon: SiNodedotjs,
+  //       color: "#339933",
+  //     },
+  //     {
+  //       techTitle: "Express",
+  //       Icon: SiExpress,
+  //       color: "#333333",
+  //     },
+  //   ],
+  // },
   {
     title: "Foodie | A food recipe app",
     imgSrc: "/foodie.jpg",
