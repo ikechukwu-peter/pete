@@ -4,7 +4,7 @@ import { Images } from "./images";
 const fullName = "Ikechukwu Peter";
 
 export const SiteHeadContents = ({
-  title = ` ${fullName} | Software/Product Engineer`,
+  title = ` ${fullName} | Software Engineer`,
   description = `Learn more about ${fullName}, a passionate software engineer building impactful solutions.`,
   imageUrl = "https://pbs.twimg.com/profile_images/1485062031787151362/k1rOVg6E_400x400.jpg",
   siteURL = "https://ikechukwupeter.com",
@@ -18,46 +18,14 @@ export const SiteHeadContents = ({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href={Images.heroImage.url} />
-      <meta
-        name="keywords"
-        content={`${fullName}, Software Engineer, Web Developer, Full Stack Developer, React, JavaScript, TypeScript, Portfolio, Website, Web app, websites, web developement, javascript, react, reactjs, node, nodejs, software, software engineer, full stack developer, full-stack developer, frontend, frontend developer, backend, backend developer`}
-      />
-
-      {/* Open Graph Tags for Social Media */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={siteURL} />
-      <meta property="og:type" content="website" />
-
-      {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
-      <meta property="twitter:url" content={"https://twitter.com/pete_iyke"} />
-
-      {/* Additional SEO Enhancements */}
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <meta http-equiv="Content-Language" content="en" />
-      <link rel="canonical" href={siteURL} />
-      <meta name="author" content={fullName} />
-      <meta name="robots" content="index, follow" />
-
-      {/* Structured Data (JSON-LD) */}
-      <script type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": ${fullName},
-            "url": "${siteURL}",
-            "image": "${imageUrl}"
-          }
-        `}
-      </script>
     </Head>
   );
 };

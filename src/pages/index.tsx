@@ -1,187 +1,71 @@
-// import Head from "next/head";
-// import Image from "next/image";
-import NextLink from "next/link";
 import Layout from "@/layout/layout";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import { baseLinks, socialLinks } from "@/data/links";
-import { HeroImage } from "@/components/hero-image";
-import { Images, SiteHeadContents } from "@/utils";
-import { SiteButton } from "@/components/site-button";
-import { SocialButtons } from "@/components/social-buttons";
-import {
-  CustomBox,
-  CustomHeading,
-  CustomText,
-  letterVariants,
-  slideInRightVariants,
-  slideInLeftVariants,
-  staggerVariants,
-} from "@/components/animation/custom-elements";
-import { Greeting } from "@/components/greeting";
+import { SiteHeadContents } from "@/utils";
+import NextLink from "next/link";
 
 export default function Home() {
-  // const ChakraImage = chakra(Image, {
-  //   shouldForwardProp: (prop) =>
-  //     ["src", "width", "height", "alt", "priority"].includes(prop),
-  // });
-
   return (
     <Layout>
       <SiteHeadContents />
-      <Flex
-        justify="space-between"
-        direction={{ base: "column", md: "row" }}
-        maxW="container.xl"
-        w="100%"
-      >
-        <Box w="100%" mt="5%">
-          <CustomBox
-            initial="hidden"
-            animate="visible"
-            variants={slideInLeftVariants}
-          >
-            <Greeting />
-            <CustomBox
-              initial="hidden"
-              animate="visible"
-              variants={staggerVariants}
-              whileHover={{
-                textShadow: "0px 0px 8px rgba(8, 145, 178, 0.8)",
-              }}
+      <div className="space-y-12">
+        {/* Hero Section */}
+        <section className="text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            Senior Software Engineer & Content Creator
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            I build high-performance, scalable software solutions that solve
+            real-world problems. Let's turn your vision into a reality.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <NextLink
+              href="/contact"
+              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              {Array.from("Software/Product Engineer").map((letter, index) => (
-                <CustomHeading
-                  key={index}
-                  fontWeight={"800"}
-                  fontSize={{
-                    base: "1.2rem",
-                    md: "1.6rem",
-                    lg: "1.8rem",
-                    xl: "2rem",
-                  }}
-                  color={"brand.400"}
-                  _hover={{
-                    color: "brand.300",
-                  }}
-                  display="inline-block"
-                  mr="4px"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </CustomHeading>
-              ))}
-            </CustomBox>
-          </CustomBox>
-
-          <CustomBox
-            initial="hidden"
-            // animate="visible"
-            variants={slideInLeftVariants}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.2, ease: "easeInOut" },
-            }}
-            fontWeight={700}
-            fontSize={["1.2rem", "2rem", "2rem", "2rem"]}
-            color="brand.300"
-            textAlign={{ base: "left", md: "left" }}
-            my="2rem"
-            w="100%"
-            sx={{
-              background:
-                "radial-gradient(68.73% 68.73% at 50% 50%, #ffffff  0%, rgb(8 145 178) 42.71%, #FFFFFF 100%)",
-              "-webkit-background-clip": "text",
-              "-webkit-text-fill-color": "transparent",
-              "background-clip": "text",
-              "text-fill-color": "transparent",
-              transition: "text-shadow 0.3s ease-out", // Add transition for the text-shadow property
-              _hover: {
-                textShadow: "0 0 1px rgba(255, 255, 255, 0.8)", // Set the text-shadow on hover
-              },
-            }}
-          >
-            <Heading fontSize={["1rem", "1.1rem", "1.2rem", "1.3rem"]}>
-              I will take your software/product journey to new heights, guiding
-              it through the development cycle. With a passion for impactful
-              solutions, I specialize in crafting products that deliver
-              measurable results and user satisfaction.
-            </Heading>
-          </CustomBox>
-
-          <Box>
-            <CustomText
-              initial="hidden"
-              variants={slideInLeftVariants}
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 1.6, ease: "easeInOut" },
-              }}
-              fontWeight={["600"]}
-              fontSize={[".6rem", ".7rem", ".8rem", "1rem"]}
-              color="brand.300"
-              _hover={{
-                color: "brand.400",
-                transition: "color 0.3s ease-in-out",
-              }}
+              Get in touch
+            </NextLink>
+            <NextLink
+              href="/works"
+              className="text-sm font-semibold leading-6 text-gray-900"
             >
-              {
-                "Let's turn your vision into reality and build software/product that not only works but also leaves a lasting impression."
-              }
-            </CustomText>
+              View my work <span aria-hidden="true">→</span>
+            </NextLink>
+          </div>
+        </section>
 
-            <CustomBox
-              initial="hidden"
-              variants={slideInLeftVariants}
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 2, ease: "easeInOut" },
-              }}
-            >
-              <Flex gap="1rem" my="1.2rem">
-                <NextLink href={baseLinks[2].to}>
-                  <SiteButton title={"Talk to Me"} />
-                </NextLink>
-              </Flex>
-            </CustomBox>
-          </Box>
-
-          <CustomBox
-            initial="hidden"
-            variants={slideInLeftVariants}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 2.4, ease: "easeInOut" },
-            }}
-          >
-            <SocialButtons />
-          </CustomBox>
-        </Box>
-
-        <Flex w="100%" display={{ base: "none", md: "flex" }} justify="end">
-          <Box w="100%"></Box>
-          <CustomBox
-            initial="hidden"
-            variants={slideInRightVariants}
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 2.8, ease: "easeInOut" },
-            }}
-          >
-            {" "}
-            <HeroImage
-              url={Images.heroImage.url}
-              alt={Images.heroImage.alt}
-              width="100%"
-              height="100%"
-            />
-          </CustomBox>
-        </Flex>
-      </Flex>
+        {/* Featured Work Section */}
+        <section>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+            Featured Work
+          </h2>
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+            {/* Project 1 */}
+            <div className="group relative">
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                {/* Replace with your project image */}
+                <img
+                  src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg"
+                  alt="Project 1"
+                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                />
+              </div>
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-gray-700">
+                    <a href="#">
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      Project Title 1
+                    </a>
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    Brief description of the project and the technologies used.
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* Add more projects here */}
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 }

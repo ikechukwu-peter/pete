@@ -1,249 +1,94 @@
-import {
-  Box,
-  Flex,
-  Button,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  useMediaQuery,
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-} from "@chakra-ui/react";
-import { BsChevronDown } from "react-icons/bs";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import { CgMenuMotion } from "react-icons/cg";
-import { baseLinks, courseLinks } from "@/data/links";
-import { CustomBox } from "@/components/animation/custom-elements";
+import { baseLinks } from "@/data/links";
 import { Logo } from "@/components/logo";
 
 export const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { pathname } = useRouter();
 
-  // ssr-friendly media query with fallback
-  const [isMobile] = useMediaQuery("(max-width: 600px)", {
-    ssr: true,
-    fallback: false,
-  });
-
-  const { isOpen, onClose, onToggle } = useDisclosure();
-
   return (
-    <Box
-      w="100%"
-      h={20}
-      bg="brand.700"
-      color="brand.300"
-      py={4}
-      pos={"sticky"}
-      top={0}
-      zIndex={999}
-    >
-      <Flex
-        w="100%"
-        justify="space-between"
-        align="center"
-        maxW={"container.xl"}
+    <header className="bg-white">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
       >
-        <Logo />
-
-        {isMobile ? (
-          <>
-            {!isOpen && (
-              <Box
-                as="span"
-                onClick={onToggle}
-                aria-label="open menu"
-                color="brand.300"
-                fontWeight={700}
-                fontSize={{ base: "2rem" }}
-              >
-                <CgMenuMotion />
-              </Box>
-            )}
-
-            <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-              <DrawerOverlay />
-              <DrawerContent bg="brand.700">
-                <DrawerCloseButton
-                  bg="brand.200"
-                  borderRadius="50%"
-                  color="brand.300"
-                  fontWeight="2rem"
-                />
-
-                <DrawerBody mt="4rem">
-                  <Flex as="ul" gap={3} direction={{ base: "column" }}>
-                    {baseLinks.map(({ name, to }, index) => (
-                      <CustomBox
-                        key={name + index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        // @ts-ignore no problem in operation, although type error appears.
-                        transition={{ duration: 0.5, delay: index * 0.2 }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <NextLink href={to} passHref onClick={onClose}>
-                          <Box
-                            fontWeight={600}
-                            _hover={{
-                              color: "brand.400",
-                            }}
-                            p={2}
-                            color={pathname === to ? "brand.400" : "brand.300"}
-                          >
-                            {name}
-                          </Box>
-                        </NextLink>
-                      </CustomBox>
-                    ))}
-                    <Accordion defaultIndex={[0]} allowMultiple>
-                      <AccordionItem border="none" p="-1px">
-                        <CustomBox
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          // @ts-ignore no problem in operation, although type error appears.
-                          transition={{ duration: 0.5, delay: 0.2 }}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          <AccordionButton p="2">
-                            <Box
-                              as="span"
-                              flex="1"
-                              textAlign="left"
-                              color="brand.300"
-                              w="100%"
-                              fontWeight={600}
-                            >
-                              Courses
-                            </Box>
-                            <AccordionIcon />
-                          </AccordionButton>
-                        </CustomBox>
-
-                        {courseLinks.map(({ name, to }, index) => (
-                          <CustomBox
-                            key={name}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            // @ts-ignore no problem in operation, although type error appears.
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                            whileHover={{ scale: 1.1 }}
-                          >
-                            <AccordionPanel pb={4}>
-                              <Box
-                                as={NextLink}
-                                fontWeight={600}
-                                _hover={{
-                                  color: "brand.400",
-                                }}
-                                bg={pathname === to ? "brand.500" : undefined}
-                                w="100%"
-                                color="brand.300"
-                                textAlign={"left"}
-                                target="_blank"
-                                href={to}
-                              >
-                                {name}
-                              </Box>
-                            </AccordionPanel>
-                          </CustomBox>
-                        ))}
-                      </AccordionItem>
-                    </Accordion>
-                  </Flex>
-                </DrawerBody>
-              </DrawerContent>
-            </Drawer>
-          </>
-        ) : (
-          <Flex as="ul" gap={3}>
-            {baseLinks.map(({ name, to }, index) => (
-              <CustomBox
-                key={name + index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                // @ts-ignore no problem in operation, although type error appears.
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.9, y: 5 }}
-              >
-                <NextLink href={to} passHref>
-                  <Box
-                    fontWeight={700}
-                    _hover={{ color: "brand.400" }}
-                    rounded="xl"
-                    p={2}
-                    color={pathname === to ? "brand.400" : "brand.300"}
+        <div className="flex lg:flex-1">
+          <NextLink href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <Logo />
+          </NextLink>
+        </div>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
+          {baseLinks.map((link) => (
+            <NextLink
+              key={link.name}
+              href={link.to}
+              className={`text-sm font-semibold leading-6 ${
+                pathname === link.to ? "text-indigo-600" : "text-gray-900"
+              }`}
+            >
+              {link.name}
+            </NextLink>
+          ))}
+        </div>
+      </nav>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
+        <div className="fixed inset-0 z-10" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <NextLink href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <Logo />
+            </NextLink>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {baseLinks.map((link) => (
+                  <NextLink
+                    key={link.name}
+                    href={link.to}
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                      pathname === link.to
+                        ? "text-indigo-600"
+                        : "text-gray-900"
+                    } hover:bg-gray-50`}
                   >
-                    {name}
-                  </Box>
-                </NextLink>
-              </CustomBox>
-            ))}
-            <Menu isLazy>
-              <CustomBox
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                // @ts-ignore no problem in operation, although type error appears.
-                transition={{ duration: 0.5, delay: 0.6 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.9, y: 5 }}
-              >
-                <MenuButton
-                  as={Button}
-                  rightIcon={<BsChevronDown />}
-                  bg="transparent"
-                  _hover={{ color: "brand.400" }}
-                  _active={{ color: "brand.400" }}
-                  color={pathname === "/courses" ? "brand.400" : "brand.300"}
-                >
-                  Courses
-                </MenuButton>
-              </CustomBox>
-              <MenuList w="100%" bg="brand.700">
-                {courseLinks.map(({ name, to }, index) => (
-                  <CustomBox
-                    key={name + index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    // @ts-ignore no problem in operation, although type error appears.
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <MenuItem
-                      bg="brand.700"
-                      as={NextLink}
-                      href={to}
-                      target="_blank"
-                    >
-                      <Box
-                        fontWeight={600}
-                        _hover={{ color: "brand.400" }}
-                        w="100%"
-                        color={pathname === to ? "brand.400" : "brand.300"}
-                        textAlign={"center"}
-                      >
-                        {name}
-                      </Box>
-                    </MenuItem>
-                  </CustomBox>
+                    {link.name}
+                  </NextLink>
                 ))}
-              </MenuList>
-            </Menu>
-          </Flex>
-        )}
-      </Flex>
-    </Box>
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+    </header>
   );
 };

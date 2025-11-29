@@ -1,323 +1,116 @@
-import NextLink from "next/link";
 import Layout from "@/layout/layout";
-import { Box, Button, Flex, Input, Spinner, Textarea } from "@chakra-ui/react";
+import { SiteHeadContents } from "@/utils";
+import { useForm } from "@formspree/react";
 import { FiSend } from "react-icons/fi";
-import { useForm, Resolver } from "react-hook-form";
-import { FormField } from "@/components/form-field";
-import { ISENDMAIL } from "@/types/mail";
-import { SiteHeadContents, validateEmail } from "@/utils";
-import { SiteButton } from "@/components/site-button";
-import { SocialButtons } from "@/components/social-buttons";
-import {
-  CustomBox,
-  CustomHeading,
-  CustomText,
-  slideInFromTopVariant,
-  slideInLeftVariants,
-  slideInRightVariants,
-} from "@/components/animation/custom-elements";
-import { useForm as useFormspreeForm } from "@formspree/react";
-
-const resolver: Resolver<ISENDMAIL> = async (values) => {
-  return {
-    values: !!values ? values : {},
-    errors:
-      !values.email.trim() || !validateEmail(values.email)
-        ? {
-            email: {
-              type: "required",
-              message: "Valid email address is required.",
-            },
-          }
-        : {} && !values.name.trim()
-          ? {
-              name: {
-                type: "required",
-                message: "name is required.",
-              },
-            }
-          : {} && !values.message.trim()
-            ? {
-                message: {
-                  type: "required",
-                  message: "message is required",
-                },
-              }
-            : {} && !values.subject.trim()
-              ? {
-                  subject: {
-                    type: "required",
-                    message: "subject is required",
-                  },
-                }
-              : {},
-  };
-};
 
 export default function Contact() {
-  const [state, handleSubmit] = useFormspreeForm(
-    process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "",
+  const [state, handleSubmit] = useForm(
+    process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
   );
-
-  const {
-    register,
-    handleSubmit: handleFormSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ISENDMAIL>({ resolver });
-
-  const onSubmit = async (data: any) => {
-    handleSubmit(data);
-    reset();
-  };
 
   return (
     <Layout>
       <SiteHeadContents title="Ikechukwu Peter | Contact" />
-      <Flex
-        justify="space-between"
-        direction={{ base: "column", md: "row" }}
-        maxW="container.xl"
-        w="100%"
-        mt="4rem"
-      >
-        <Flex
-          as="form"
-          onSubmit={handleFormSubmit(onSubmit)}
-          gap=".6rem"
-          direction="column"
-          w={{ base: "100%", md: "50%" }}
+      <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Contact Me
+          </h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of an amazing team.
+          </p>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-16 max-w-xl sm:mt-20"
         >
-          <CustomHeading
-            initial="hidden"
-            animate="visible"
-            variants={slideInFromTopVariant}
-            fontWeight={600}
-            fontSize="1.2rem"
-            color="brand.300"
-            my=".3rem"
-            _hover={{
-              color: "brand.400",
-            }}
-          >
-            {"Let's talk."}
-          </CustomHeading>
-
-          {state.succeeded && (
-            <CustomText
-              initial="hidden"
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 0.8, ease: "easeInOut" },
-              }}
-              variants={slideInLeftVariants}
-              color="brand.300"
-            >
-              Email sent successfully
-            </CustomText>
-          )}
-          <CustomBox
-            display="flex"
-            flexDir="column"
-            gap="1rem"
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.4, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-          >
-            <FormField error={errors.name?.message}>
-              <Input
-                bg="brand.500"
-                borderColor="brand.800"
-                borderWidth="2px"
-                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
-                focusBorderColor="brand.300"
-                _placeholder={{
-                  color: "brand.300",
-                  fontSize: ".8rem",
-                }}
-                color="brand.300"
-                type="text"
-                placeholder="Enter your name"
-                {...register("name")}
-              />
-            </FormField>
-            <FormField error={errors.email?.message}>
-              <Input
-                borderColor="brand.800"
-                borderWidth="2px"
-                bg="brand.500"
-                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
-                focusBorderColor="brand.300"
-                _placeholder={{
-                  color: "brand.300",
-                  fontSize: ".8rem",
-                }}
-                color="brand.300"
-                type="email"
-                placeholder="Enter your email address"
-                {...register("email")}
-              />
-            </FormField>
-            <FormField error={errors.subject?.message}>
-              <Input
-                borderColor="brand.800"
-                borderWidth="2px"
-                bg="brand.500"
-                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
-                focusBorderColor="brand.300"
-                _placeholder={{
-                  color: "brand.300",
-                  fontSize: ".8rem",
-                }}
-                color="brand.300"
-                type="text"
-                placeholder="Enter your mail subject"
-                {...register("subject")}
-              />
-            </FormField>
-            <FormField error={errors.message?.message}>
-              <Textarea
-                borderColor="brand.800"
-                borderWidth="2px"
-                placeholder="Enter your mail subject"
-                {...register("message")}
-                resize="vertical"
-                bg="brand.500"
-                fontSize={["1.1rem", "1.1rem", "1.2rem", "1.3rem"]}
-                focusBorderColor="brand.300"
-                _placeholder={{
-                  color: "brand.300",
-                  fontSize: ".8rem",
-                }}
-                size="md"
-                color="brand.300"
-              />
-            </FormField>
-          </CustomBox>
-          <CustomBox
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.8, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-          >
-            <Button
-              size="lg"
-              w="100%"
-              mt="1rem"
-              color="brand.300"
-              bg={"brand.600"}
-              _hover={{
-                bg: "brand.400",
-              }}
-              rightIcon={<FiSend />}
-              type="submit"
-              _focus={{
-                borderColor: "brand.300",
-              }}
-              _active={{
-                borderColor: "brand.300",
-              }}
-              disabled={state.submitting}
-            >
-              {state.submitting ? (
-                <Spinner
-                  thickness="4px"
-                  speed="0.65s"
-                  emptyColor="gray.200"
-                  color={"brand.300"}
-                  size="md"
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-semibold leading-6 text-gray-900"
+              >
+                Full name
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  autoComplete="name"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-              ) : (
-                "Send"
-              )}
-            </Button>
-          </CustomBox>
-        </Flex>
-
-        <Flex w="100%" display={{ base: "block", md: "flex" }} justify="end">
-          <Box w="100%"></Box>
-          <Box w="100%">
-            <Box my="1.3rem" color="brand.300" w={{ base: "100%", md: "100%" }}>
-              <CustomHeading
-                fontWeight={600}
-                fontSize={{
-                  base: "1.8rem",
-                  md: "2rem",
-                  lg: "2.3rem",
-                  xl: "2.5rem",
-                }}
-                _hover={{
-                  color: "brand.400",
-                }}
-                initial="hidden"
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: 2.2, ease: "easeInOut" },
-                }}
-                variants={slideInRightVariants}
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                Interested in working together?
-              </CustomHeading>
-              <CustomHeading
-                fontWeight={600}
-                fontSize={{
-                  base: ".6rem",
-                  md: ".8rem",
-                  lg: "1rem",
-                  xl: "1.2rem",
-                }}
-                my="1rem"
-                _hover={{
-                  color: "brand.400",
-                }}
-                initial="hidden"
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: 2.6, ease: "easeInOut" },
-                }}
-                variants={slideInRightVariants}
+                Email
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autoComplete="email"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                Feel free to contact me for any project or collaboration.
-              </CustomHeading>
-            </Box>
-            <CustomBox
-              initial="hidden"
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 2.9, ease: "easeInOut" },
-              }}
-              variants={slideInRightVariants}
+                Subject
+              </label>
+              <div className="mt-2.5">
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-semibold leading-6 text-gray-900"
+              >
+                Message
+              </label>
+              <div className="mt-2.5">
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={4}
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  defaultValue={""}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="mt-10">
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              <NextLink href="mailto:ikechukwupeter1999@gmail.com">
-                <SiteButton title="Mail Me!" />
-              </NextLink>
-            </CustomBox>
-
-            <CustomBox
-              initial="hidden"
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 3.1, ease: "easeInOut" },
-              }}
-              variants={slideInRightVariants}
-            >
-              <SocialButtons />
-            </CustomBox>
-          </Box>
-        </Flex>
-      </Flex>
+              {state.submitting ? "Sending..." : "Send"}
+              <FiSend className="ml-2 h-5 w-5" />
+            </button>
+          </div>
+          {state.succeeded && (
+            <p className="mt-4 text-center text-green-600">
+              Thanks for your message! I'll get back to you soon.
+            </p>
+          )}
+        </form>
+      </div>
     </Layout>
   );
 }
