@@ -1,47 +1,60 @@
-import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
-import { Card } from "@/components/card";
-import { projects } from "@/data/projects";
 import Layout from "@/layout/layout";
 import { SiteHeadContents } from "@/utils";
-import { SocialButtons } from "@/components/social-buttons";
-import { CustomBox } from "@/components/animation/custom-elements";
+import { projects } from "@/data/projects";
+import Image from "next/image";
 
 export default function Works() {
   return (
     <Layout>
       <SiteHeadContents title="Ikechukwu Peter | Works" />
-      <Flex
-        justify="space-between"
-        direction={{ base: "column", md: "row" }}
-        maxW="container.xl"
-      >
-        <Box w="100%" mb="2rem">
-          <Box p={["0.1rem 0.3rem", "0.3rem 0.5rem", "1rem 2rem", "1rem 2rem"]}>
-            <SimpleGrid
-              columns={[1, 1, 2, 3, 3]}
-              spacing="40px"
-              pt="2rem"
-              pb="4rem"
-            >
-              {projects.map((project, index) => (
-                <CustomBox
-                  key={project.url + project.title}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  // @ts-ignore no problem in operation, although type error appears.
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.9, y: 5 }}
-                >
-                  <Card {...project} />
-                </CustomBox>
-              ))}
-            </SimpleGrid>
-          </Box>
+      <div className="bg-white">
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+            My Work
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            Here are some of the projects I&apos;m proud to have worked on. Each one
+            represents a unique challenge and a successful solution.
+          </p>
 
-          <SocialButtons />
-        </Box>
-      </Flex>
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {projects.map((project) => (
+              <div key={project.title} className="group relative">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                  <Image
+                    src={project.imgSrc}
+                    alt={project.title}
+                    width={500}
+                    height={500}
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
+                </div>
+                <div className="mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">
+                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true" className="absolute inset-0" />
+                        {project.title}
+                      </a>
+                    </h3>
+                    <div className="mt-1 flex flex-wrap">
+                      {project.skills.map((skill) => (
+                        <span
+                          key={skill.techTitle}
+                          className="inline-flex items-center rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600 mr-2 mb-2"
+                        >
+                          <skill.Icon className="w-4 h-4 mr-1" style={{ color: skill.color }} />
+                          {skill.techTitle}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

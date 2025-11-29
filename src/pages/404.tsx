@@ -1,60 +1,36 @@
-import { Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Layout from "@/layout/layout";
 import { SiteHeadContents } from "@/utils";
 
-function NotFound() {
+export default function FourOhFour() {
   return (
     <Layout>
-      <SiteHeadContents title="Ikechukwu Peter Portfolio || Not Found" />
-
-      <Flex
-        direction={"column"}
-        align="center"
-        justify={"center"}
-        as="main"
-        zIndex={10}
-        w="100%"
-        bg="brand.700"
-        px={{ base: "1.5rem", md: "2rem", lg: "3rem" }}
-        pt="2rem"
-        pos="relative"
-        minH="100vh"
-        border="1px solid transparent"
-      >
-        <Heading
-          display="inline-block"
-          as="h2"
-          size="2xl"
-          bgGradient="linear(to-r, brand.300, brand.400)"
-          backgroundClip="text"
-        >
-          404
-        </Heading>
-        <Text fontSize="18px" mt={3} mb={2} color="brand.300">
-          Page Not Found
-        </Text>
-        <Text color={"gray.500"} mb={6}>
-          {"The page you're looking for does not seem to exist"}
-        </Text>
-
-        <NextLink href="/" passHref>
-          <Button
-            as={Link}
-            _hover={{
-              textDecoration: "none",
-              bg: "brand.400",
-            }}
-            bg={"brand.600"}
-            color="brand.300"
-            variant="solid"
-          >
-            Go to Home
-          </Button>
-        </NextLink>
-      </Flex>
+      <SiteHeadContents title="404: Page Not Found" />
+      <div className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div className="text-center">
+          <p className="text-base font-semibold text-indigo-600">404</p>
+          <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Page not found
+          </h1>
+          <p className="mt-6 text-base leading-7 text-gray-600">
+            Sorry, we couldn’t find the page you’re looking for.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <NextLink
+              href="/"
+              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Go back home
+            </NextLink>
+            <NextLink
+              href="/contact"
+              className="text-sm font-semibold text-gray-900"
+            >
+              Contact support <span aria-hidden="true">&rarr;</span>
+            </NextLink>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
-
-export default NotFound;

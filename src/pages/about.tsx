@@ -1,271 +1,82 @@
+import Layout from "@/layout/layout";
+import { SiteHeadContents } from "@/utils";
 import NextLink from "next/link";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Box, Flex, Link } from "@chakra-ui/react";
-import Layout from "@/layout/layout";
-import {
-  languages,
-  frontend,
-  backend,
-  databases,
-  others,
-  baseLinks,
-} from "@/data/links";
-import { SiteHeadContents } from "@/utils";
-import { SiteButton } from "@/components/site-button";
-import { Tools } from "@/components/tools";
-import { SocialButtons } from "@/components/social-buttons";
-import {
-  CustomBox,
-  CustomHeading,
-  CustomText,
-  slideInFromTopVariant,
-  slideInLeftVariants,
-} from "@/components/animation/custom-elements";
-import { Greeting } from "@/components/greeting";
 
 export default function About() {
   return (
     <Layout>
       <SiteHeadContents title={"Ikechukwu Peter | About"} />
-      <Flex
-        maxW="container.xl"
-        direction={{ base: "column", md: "row" }}
-        mb="2rem"
-      >
-        <Box w="100%">
-          <Box
-            fontWeight={700}
-            color="brand.300"
-            textAlign={{ base: "left" }}
-            mt="2rem"
-            w="100%"
-          >
-            <CustomBox
-              initial="hidden"
-              animate="visible"
-              variants={slideInFromTopVariant}
-            >
-              <Greeting />
-            </CustomBox>
-
-            <CustomHeading
-              initial="hidden"
-              variants={slideInFromTopVariant}
-              animate={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 1.2, ease: "easeInOut" },
-              }}
-              fontSize={{
-                base: "1.2rem",
-                md: "1.6rem",
-                lg: "1.8rem",
-                xl: "2rem",
-              }}
-              sx={{
-                background:
-                  "radial-gradient(68.73% 68.73% at 50% 50%, #ffffff  0%, rgb(8 145 178) 42.71%, #FFFFFF 100%)",
-                "-webkit-background-clip": "text",
-                "-webkit-text-fill-color": "transparent",
-                "background-clip": "text",
-                "text-fill-color": "transparent",
-                transition: "text-shadow 0.3s ease-out", // Add transition for the text-shadow property
-                _hover: {
-                  textShadow: "0 0 1px rgba(255, 255, 255, 0.8)", // Set the text-shadow on hover
-                },
-              }}
-            >
-              {
-                "A passionate software/product engineer building impactful solutions."
-              }{" "}
-            </CustomHeading>
-          </Box>
-          <CustomText
-            fontSize={["1rem", "1.1rem", "1.2rem", "1.3rem"]}
-            fontWeight="600"
-            my="1rem"
-            color="brand.300"
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.4, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-            _hover={{
-              color: "brand.400",
-              transition: "color 0.3s ease-in-out",
-            }}
-          >
-            {
-              "I'm a proactive problem-solver, passionate about taking on challenges and seizing opportunities. Beyond coding, I enjoy indoor games, music, and comedy."
-            }
-          </CustomText>{" "}
-          <CustomBox
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.6, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-          >
-            <Link
-              href={process.env.NEXT_PUBLIC_RESUME_LINK}
+      <div className="bg-white px-6 py-32 lg:px-8">
+        <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+          <p className="text-base font-semibold leading-7 text-indigo-600">
+            About Me
+          </p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            I&apos;m a Senior Software Engineer passionate about building impactful
+            solutions.
+          </h1>
+          <p className="mt-6 text-xl leading-8">
+            I&apos;m a proactive problem-solver, passionate about taking on
+            challenges and seizing opportunities. With a strong background in
+            both front-end and back-end development, I specialize in creating
+            high-performance, scalable software that delivers measurable
+            results and user satisfaction.
+          </p>
+          <div className="mt-10 max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+              My Skills
+            </h2>
+            <p className="mt-6">
+              I have experience with a wide range of technologies, including:
+            </p>
+            <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+              <li className="flex gap-x-3">
+                <span>
+                  <strong className="font-semibold text-gray-900">
+                    Languages:
+                  </strong>{" "}
+                  JavaScript, TypeScript, Python
+                </span>
+              </li>
+              <li className="flex gap-x-3">
+                <span>
+                  <strong className="font-semibold text-gray-900">
+                    Frontend:
+                  </strong>{" "}
+                  React, Next.js, Tailwind CSS, HTML, CSS
+                </span>
+              </li>
+              <li className="flex gap-x-3">
+                <span>
+                  <strong className="font-semibold text-gray-900">
+                    Backend:
+                  </strong>{" "}
+                  Node.js, Express, NestJS
+                </span>
+              </li>
+              <li className="flex gap-x-3">
+                <span>
+                  <strong className="font-semibold text-gray-900">
+                    Databases:
+                  </strong>{" "}
+                  PostgreSQL, MongoDB
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="mt-10 flex">
+            <NextLink
+              href={process.env.NEXT_PUBLIC_RESUME_LINK ?? ""}
               download="IkechukwuPeterResume"
-              isExternal
-              _hover={{
-                textDecor: "none",
-              }}
+              className="flex items-center rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              <SiteButton
-                title="Download Resume"
-                ButtonIcon={AiOutlineDownload}
-              />
-            </Link>
-          </CustomBox>
-          <Box display={{ base: "none", md: "block" }}>
-            <Box color="brand.300">
-              <CustomHeading
-                initial="hidden"
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: 1.8, ease: "easeInOut" },
-                }}
-                variants={slideInLeftVariants}
-                fontWeight={600}
-                fontSize="1rem"
-                _hover={{
-                  color: "brand.400",
-                  transition: "color 0.3s ease-in-out",
-                }}
-              >
-                Interested in working together?
-              </CustomHeading>
-              <CustomHeading
-                initial="hidden"
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: 2, ease: "easeInOut" },
-                }}
-                variants={slideInLeftVariants}
-                fontWeight={600}
-                fontSize="1rem"
-                my="1rem"
-                _hover={{
-                  color: "brand.400",
-                  transition: "color 0.3s ease-in-out",
-                }}
-              >
-                Feel free to contact me for any project or collaboration.
-              </CustomHeading>
-            </Box>
-            <CustomBox
-              initial="hidden"
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 2.2, ease: "easeInOut" },
-              }}
-              variants={slideInLeftVariants}
-            >
-              <NextLink href={baseLinks[2].to}>
-                <SiteButton title="Reach Out" />
-              </NextLink>
-            </CustomBox>
-
-            <CustomBox
-              // @ts-ignore no problem in operation, although type error appears.
-              transition={{ duration: 2.5, delay: 1 }} // Add a delay here
-            >
-              <SocialButtons />
-            </CustomBox>
-          </Box>
-        </Box>
-        <Flex w="100%" display={{ base: "block", md: "flex" }} justify="end">
-          <Box w="100%"></Box>
-          <Box w="100%">
-            <Tools
-              title="Languages I speak."
-              isTool
-              items={languages}
-              duration={2.7}
-            />
-            <Tools
-              title="Frontend Tools"
-              isTool
-              items={frontend}
-              duration={2.9}
-            />
-            <Tools
-              title="Backend Tools"
-              isTool
-              items={backend}
-              duration={3.1}
-            />
-            <Tools
-              title="Database Tools"
-              isTool
-              items={databases}
-              duration={3.4}
-            />
-            <Tools title="Other Tools" isTool items={others} duration={3.7} />
-          </Box>
-        </Flex>
-      </Flex>
-      <Box pb="2rem" display={{ base: "block", md: "none" }}>
-        <Box color="brand.300">
-          <CustomHeading
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 1.8, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-            fontWeight={600}
-            fontSize="1rem"
-          >
-            Interested in working together?
-          </CustomHeading>
-          <CustomHeading
-            initial="hidden"
-            animate={{
-              x: 0,
-              opacity: 1,
-              transition: { duration: 2, ease: "easeInOut" },
-            }}
-            variants={slideInLeftVariants}
-            fontWeight={600}
-            fontSize="1rem"
-            my="1rem"
-          >
-            Feel free to contact me for any project or collaboration.
-          </CustomHeading>
-        </Box>
-        <CustomBox
-          initial="hidden"
-          animate={{
-            x: 0,
-            opacity: 1,
-            transition: { duration: 2.2, ease: "easeInOut" },
-          }}
-          variants={slideInLeftVariants}
-        >
-          <NextLink href={baseLinks[2].to}>
-            <SiteButton title="Reach Out" />
-          </NextLink>
-        </CustomBox>
-
-        <CustomBox
-          // @ts-ignore no problem in operation, although type error appears.
-          transition={{ duration: 2.5, delay: 1 }} // Add a delay here
-        >
-          <SocialButtons />
-        </CustomBox>
-      </Box>
+              <AiOutlineDownload className="-ml-0.5 mr-1.5 h-5 w-5" />
+              Download Resume
+            </NextLink>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
