@@ -17,7 +17,7 @@ export default function Contact() {
             Contact Me
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            I'm always open to discussing new projects, creative ideas, or
+            I&apos;m always open to discussing new projects, creative ideas, or
             opportunities to be part of an amazing team.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function Contact() {
           </div>
           {state.succeeded && (
             <p className="mt-4 text-center text-green-600">
-              Thanks for your message! I'll get back to you soon.
+              Thanks for your message! I&apos;ll get back to you soon.
             </p>
           )}
         </form>

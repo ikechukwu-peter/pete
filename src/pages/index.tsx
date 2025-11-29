@@ -1,6 +1,7 @@
 import Layout from "@/layout/layout";
 import { SiteHeadContents } from "@/utils";
 import NextLink from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             I build high-performance, scalable software solutions that solve
-            real-world problems. Let's turn your vision into a reality.
+            real-world problems. Let&apos;s turn your vision into a reality.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <NextLink
@@ -42,9 +43,11 @@ export default function Home() {
             <div className="group relative">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 {/* Replace with your project image */}
-                <img
-                  src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg"
+                <Image
+                  src="https://picsum.photos/500"
                   alt="Project 1"
+                  width={500}
+                  height={500}
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
               </div>

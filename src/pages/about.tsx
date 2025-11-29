@@ -13,11 +13,11 @@ export default function About() {
             About Me
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            I'm a Senior Software Engineer passionate about building impactful
+            I&apos;m a Senior Software Engineer passionate about building impactful
             solutions.
           </h1>
           <p className="mt-6 text-xl leading-8">
-            I'm a proactive problem-solver, passionate about taking on
+            I&apos;m a proactive problem-solver, passionate about taking on
             challenges and seizing opportunities. With a strong background in
             both front-end and back-end development, I specialize in creating
             high-performance, scalable software that delivers measurable

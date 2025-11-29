@@ -1,6 +1,7 @@
 import Layout from "@/layout/layout";
 import { SiteHeadContents } from "@/utils";
 import { projects } from "@/data/projects";
+import Image from "next/image";
 
 export default function Works() {
   return (
@@ -12,7 +13,7 @@ export default function Works() {
             My Work
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            Here are some of the projects I'm proud to have worked on. Each one
+            Here are some of the projects I&apos;m proud to have worked on. Each one
             represents a unique challenge and a successful solution.
           </p>
 
@@ -20,9 +21,11 @@ export default function Works() {
             {projects.map((project) => (
               <div key={project.title} className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                  <img
+                  <Image
                     src={project.imgSrc}
                     alt={project.title}
+                    width={500}
+                    height={500}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>
