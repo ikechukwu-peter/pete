@@ -9,7 +9,7 @@ import { ContactSection } from "@/sections/contact";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div id="top" className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <HeroSection />
