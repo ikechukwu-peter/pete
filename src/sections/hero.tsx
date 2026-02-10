@@ -12,7 +12,7 @@ const HeroBackground = dynamic(
   () => import("@/components/3d/hero-background").then((mod) => mod.HeroBackground),
   {
     ssr: false,
-    loading: () => <div className="absolute inset-0 -z-10 bg-background/50" />,
+    loading: () => <div className="absolute inset-0 -z-10 bg-background" />,
   }
 );
 

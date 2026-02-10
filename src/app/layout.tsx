@@ -6,11 +6,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { ToastContainer } from "react-toastify";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const calistoga = Calistoga({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
