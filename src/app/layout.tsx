@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Ikechukwu Peter" }],
   creator: "Ikechukwu Peter",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://ikechukwupeter.com"),
+  alternates: {
+    canonical: "https://ikechukwupeter.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

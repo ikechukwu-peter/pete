@@ -2,11 +2,19 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { HeroBackground } from "@/components/3d/hero-background";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+
+const HeroBackground = dynamic(
+  () => import("@/components/3d/hero-background").then((mod) => mod.HeroBackground),
+  {
+    ssr: false,
+    loading: () => <div className="absolute inset-0 -z-10 bg-background/50" />,
+  }
+);
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
