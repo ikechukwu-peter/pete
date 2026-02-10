@@ -1,171 +1,51 @@
-import { IPROJECT } from "./../types/projects.d";
-import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiNestjs,
-  SiGit,
-  SiGithub,
-  SiExpo,
-  SiNodedotjs,
-  SiExpress,
-} from "react-icons/si";
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  demoUrl?: string;
+  repoUrl?: string;
+  tags: string[];
+  featured: boolean;
+};
 
-export const projects: IPROJECT[] = [
+export const projects: Project[] = [
   {
-    title: "Bridge | A fintech app",
-    imgSrc: "/brydge.jpg",
-    url: "https://brydgehq.co",
-    skills: [
-      {
-        techTitle: "TypeScript",
-        Icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        techTitle: "Reactjs",
-        Icon: SiReact,
-        color: "#61DAFB",
-      },
-      {
-        techTitle: "Nextjs",
-        Icon: SiNextdotjs,
-        color: "#000000",
-      },
-      {
-        techTitle: "Nodejs",
-        Icon: SiNodedotjs,
-        color: "#339933",
-      },
-      {
-        techTitle: "Express",
-        Icon: SiExpress,
-        color: "#333333",
-      },
-    ],
-  },
-
-  {
-    title: "Ridges | A hotel booking app",
-    imgSrc: "/ridges.jpg",
-    url: "https://ridges-website.vercel.app",
-    skills: [
-      {
-        techTitle: "TypeScript",
-        Icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        techTitle: "Nextjs",
-        Icon: SiNextdotjs,
-        color: "#000000",
-      },
-      {
-        techTitle: "Reactjs",
-        Icon: SiReact,
-        color: "#61DAFB",
-      },
-      {
-        techTitle: "Nodejs",
-        Icon: SiNodedotjs,
-        color: "#339933",
-      },
-      {
-        techTitle: "Express",
-        Icon: SiExpress,
-        color: "#333333",
-      },
-    ],
-  },
-  // {
-  //   title: "Nip | URL Shortener",
-  //   imgSrc: "/short.jpg",
-  //   url: "https://nip-psi.vercel.app",
-  //   skills: [
-  //     {
-  //       techTitle: "TypeScript",
-  //       Icon: SiTypescript,
-  //       color: "#3178C6",
-  //     },
-  //     {
-  //       techTitle: "Reactjs",
-  //       Icon: SiReact,
-  //       color: "#61DAFB",
-  //     },
-  //     {
-  //       techTitle: "Nodejs",
-  //       Icon: SiNodedotjs,
-  //       color: "#339933",
-  //     },
-  //     {
-  //       techTitle: "Express",
-  //       Icon: SiExpress,
-  //       color: "#333333",
-  //     },
-  //   ],
-  // },
-  {
-    title: "Foodie | A food recipe app",
-    imgSrc: "/foodie.jpg",
-    url: "https://foodie-beta-eight.vercel.app/",
-    skills: [
-      {
-        techTitle: "TypeScript",
-        Icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        techTitle: "Reactjs",
-        Icon: SiReact,
-        color: "#61DAFB",
-      },
-    ],
+    id: "bridge",
+    title: "Brydge",
+    description:
+      "A comprehensive fintech application facilitating seamless financial transactions. Built with modern web technologies to ensure security and performance.",
+    image: "/brydge.jpg",
+    demoUrl: "https://brydgehq.co",
+    tags: ["TypeScript", "React", "Next.js", "Node.js", "Express"],
+    featured: true,
   },
   {
+    id: "ridges",
+    title: "Ridges",
+    description:
+      "A user-friendly hotel booking platform allowing users to search, view, and book accommodations. Features a responsive design and intuitive booking flow.",
+    image: "/ridges.jpg",
+    demoUrl: "https://ridges-website.vercel.app",
+    tags: ["TypeScript", "Next.js", "React", "Node.js", "Express"],
+    featured: true,
+  },
+  {
+    id: "webzerve",
     title: "Webzerve",
-    imgSrc: "/webzerve.jpg",
-    url: "https://webzerve.vercel.app",
-    skills: [
-      {
-        techTitle: "TypeScript",
-        Icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        techTitle: "Nextjs",
-        Icon: SiNextdotjs,
-        color: "#000000",
-      },
-      {
-        techTitle: "Nestjs",
-        Icon: SiNestjs,
-        color: "#E10098",
-      },
-    ],
+    description: "API monitoring & analytics system.",
+    image: "/webzerve.jpg",
+    demoUrl: "https://webzerve.vercel.app",
+    tags: ["TypeScript", "Next.js", "NestJS"],
+    featured: true,
   },
-  // {
-  //   title: "HQIStore",
-  //   imgSrc: "/hqistore.jpg",
-  //   url: "https://hqi-store.vercel.app",
-  //   skills: [
-  //     {
-  //       techTitle: "JavaScript",
-  //       Icon: SiJavascript,
-  //       color: "#F7DF1E",
-  //     },
-  //     {
-  //       techTitle: "React",
-  //       Icon: SiReact,
-  //       color: "#61DAFB",
-  //     },
-  //     {
-  //       techTitle: "Nodejs",
-  //       Icon: SiNodedotjs,
-  //       color: "#339933",
-  //     },
-  //   ],
-  // },
+  {
+    id: "foodie",
+    title: "Foodie",
+    description: "A food recipe app.",
+    image: "/foodie.jpg",
+    demoUrl: "https://foodie-beta-eight.vercel.app/",
+    tags: ["TypeScript", "React"],
+    featured: false,
+  },
 ];
