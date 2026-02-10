@@ -40,15 +40,15 @@ export function Header() {
       )}
     >
       <Container className="flex h-16 items-center justify-between">
-        <Link 
-          href="#top" 
+        <Link
+          href="#top"
           className="text-xl font-bold font-serif tracking-tighter"
           onClick={(e) => {
             setIsOpen(false);
             // Ensure smooth scroll triggers even if we are already at the top or on the page
             if (window.location.pathname === "/") {
-               // The global smooth-scroll listener will handle the scrolling
-               // because href starts with #
+              // The global smooth-scroll listener will handle the scrolling
+              // because href starts with #
             }
           }}
         >
