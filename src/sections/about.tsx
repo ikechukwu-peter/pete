@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import Image from "next/image";
+import { yearsOfExperience } from "@/lib/career";
 
 export function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,10 +49,11 @@ export function AboutSection() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-serif">About Me</h2>
             <p className="text-lg text-muted-foreground">
               Hello, I'm <span className="font-semibold text-foreground">Ikechukwu Peter</span>. I
-              am a Full-stack Software Engineer with over 7 years of experience delivering scalable
-              fintech, e-commerce, and travel-tech platforms. I have a proven track record in
-              scaling apps to 500K+ users, reducing performance bottlenecks by 70%, and leading
-              engineering teams.
+              am a Full-stack Software Engineer with over{" "}
+              <span suppressHydrationWarning>{yearsOfExperience()}</span> years of experience
+              delivering scalable fintech, e-commerce, and travel-tech platforms. I have a proven
+              track record in scaling apps to 500K+ users, reducing performance bottlenecks by 70%,
+              and leading engineering teams.
             </p>
             <p className="text-lg text-muted-foreground">
               Passionate about AI-driven solutions, real-time collaboration, and product innovation.
@@ -61,7 +63,9 @@ export function AboutSection() {
 
             <div className="flex gap-4">
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-bold text-primary">7+</span>
+                <span className="text-3xl font-bold text-primary" suppressHydrationWarning>
+                  {yearsOfExperience()}+
+                </span>
                 <span className="text-sm text-muted-foreground">Years of Experience</span>
               </div>
               <div className="flex flex-col gap-1">

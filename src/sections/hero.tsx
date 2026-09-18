@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { yearsOfExperience } from "@/lib/career";
 
 const HeroBackground = dynamic(
   () => import("@/components/3d/hero-background").then((mod) => mod.HeroBackground),
@@ -66,9 +67,10 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-8 max-w-2xl text-lg text-muted-foreground sm:text-xl"
           >
-            Full-stack Software Engineer with 7+ years of experience delivering scalable fintech,
-            e-commerce, and travel-tech platforms. Specialized in React, Next.js, Node.js, and Cloud
-            Infrastructure.
+            Full-stack Software Engineer with{" "}
+            <span suppressHydrationWarning>{yearsOfExperience()}+</span> years of experience
+            delivering scalable fintech, e-commerce, and travel-tech platforms. Specialized in
+            React, Next.js, Node.js, and Cloud Infrastructure.
           </motion.p>
 
           <motion.div
