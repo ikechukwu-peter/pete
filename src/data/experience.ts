@@ -7,6 +7,14 @@ export type Experience = {
   achievements: string[];
 };
 
+/**
+ * Start of the professional timeline: the Kumba Ikuzo role, Mar 2020.
+ * "Years of experience" everywhere on the site is computed from this, so it
+ * cannot drift out of step with the roles listed below. If an earlier role is
+ * ever added, move this date with it.
+ */
+export const CAREER_START = { year: 2020, month: 3 };
+
 export const experiences: Experience[] = [
   {
     id: "vizual-travel",

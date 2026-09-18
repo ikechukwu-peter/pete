@@ -22,7 +22,7 @@
 
 ### Recruiter-Focused Positioning
 
-"Senior Full Stack Engineer with 5+ years of experience shipping production React/Node.js applications. Strong expertise in TypeScript, Next.js, and Cloud Infrastructure (AWS/GCloud/Docker). Proven track record of delivering scalable, high-performance systems and writing clean, maintainable code."
+"Senior Full Stack Engineer with 6+ years of experience shipping production React/Node.js applications. Strong expertise in TypeScript, Next.js, and Cloud Infrastructure (AWS/GCloud/Docker). Proven track record of delivering scalable, high-performance systems and writing clean, maintainable code."
 
 ### Client-Focused Positioning
 
