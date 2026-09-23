@@ -16,8 +16,10 @@ export type CaseStudyMeta = {
   year: string;
   status: string;
   stack: string[];
-  /** The social card and the projects grid: it carries the title itself. */
+  /** The projects grid thumbnail: it carries the title itself. */
   image: string;
+  /** 1200x630, the ratio Open Graph and Twitter actually crop to. */
+  ogImage: string;
   /** The page's own opening shot, where the title is already above it. */
   heroImage: { src: string; width: number; height: number; alt: string };
   liveUrl?: string;
@@ -49,6 +51,7 @@ export const caseStudies: Record<string, CaseStudyMeta> = {
       "Vercel",
     ],
     image: "/shardrop.png",
+    ogImage: "/og-shardrop.png",
     heroImage: {
       src: "/shardrop-transfer.png",
       width: 1728,

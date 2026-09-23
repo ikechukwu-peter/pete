@@ -36,13 +36,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       url,
       title: `${study.title} — ${study.tagline}`,
       description: study.summary,
-      images: [{ url: study.image, width: 1600, height: 900, alt: study.title }],
+      images: [{ url: study.ogImage, width: 1200, height: 630, alt: study.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${study.title} — ${study.tagline}`,
       description: study.summary,
-      images: [study.image],
+      images: [study.ogImage],
     },
   };
 }

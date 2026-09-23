@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Ikechukwu Peter Portfolio",
     images: [
       {
-        url: "/og-image.png", // Ensure this image exists or create a placeholder
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ikechukwu Peter - Senior Software Engineer",
