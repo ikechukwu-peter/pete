@@ -157,7 +157,12 @@ function WideDiagram() {
         <DiagramNode key={node.title} node={node} {...writeBoxes[i]} />
       ))}
 
-      <g className="stroke-amber-600 dark:stroke-amber-400" strokeWidth={1.5} markerEnd="url(#aura-arrow)" fill="none">
+      <g
+        className="stroke-amber-600 dark:stroke-amber-400"
+        strokeWidth={1.5}
+        markerEnd="url(#aura-arrow)"
+        fill="none"
+      >
         <line x1={156} y1={110} x2={178} y2={110} />
         <line x1={340} y1={110} x2={362} y2={110} />
         <line x1={530} y1={110} x2={552} y2={110} />
@@ -182,25 +187,49 @@ function WideDiagram() {
         <DiagramNode key={node.title} node={node} {...supportBoxes[i]} y={284} />
       ))}
 
-      <g className="stroke-border" strokeWidth={1.25} markerEnd="url(#aura-arrow-soft)" fill="none" strokeDasharray="3 3">
+      <g
+        className="stroke-border"
+        strokeWidth={1.25}
+        markerEnd="url(#aura-arrow-soft)"
+        fill="none"
+        strokeDasharray="3 3"
+      >
         <line x1={96} y1={168} x2={96} y2={280} />
         <text x={108} y={228} fontSize={10} className="fill-muted-foreground">
           QR scan POST
         </text>
       </g>
-      <g className="stroke-border" strokeWidth={1.25} markerEnd="url(#aura-arrow-soft)" fill="none" strokeDasharray="3 3">
+      <g
+        className="stroke-border"
+        strokeWidth={1.25}
+        markerEnd="url(#aura-arrow-soft)"
+        fill="none"
+        strokeDasharray="3 3"
+      >
         <line x1={280} y1={168} x2={284} y2={280} />
         <text x={292} y={228} fontSize={10} className="fill-muted-foreground">
           listings via CDN
         </text>
       </g>
-      <g className="stroke-border" strokeWidth={1.25} markerEnd="url(#aura-arrow-soft)" fill="none" strokeDasharray="3 3">
+      <g
+        className="stroke-border"
+        strokeWidth={1.25}
+        markerEnd="url(#aura-arrow-soft)"
+        fill="none"
+        strokeDasharray="3 3"
+      >
         <line x1={472} y1={168} x2={472} y2={280} />
         <text x={480} y={228} fontSize={10} className="fill-muted-foreground">
           verify session
         </text>
       </g>
-      <g className="stroke-border" strokeWidth={1.25} markerEnd="url(#aura-arrow-soft)" fill="none" strokeDasharray="3 3">
+      <g
+        className="stroke-border"
+        strokeWidth={1.25}
+        markerEnd="url(#aura-arrow-soft)"
+        fill="none"
+        strokeDasharray="3 3"
+      >
         <line x1={660} y1={168} x2={660} y2={280} />
         <text x={668} y={228} fontSize={10} className="fill-muted-foreground">
           expire · revert · reconcile
@@ -208,10 +237,12 @@ function WideDiagram() {
       </g>
 
       <text x={450} y={442} textAnchor="middle" fontSize={10.5} className="fill-muted-foreground">
-        Two independent signing secrets: JWT_SECRET (cookies) and TICKET_SECRET (QRs). Rotate with overlap.
+        Two independent signing secrets: JWT_SECRET (cookies) and TICKET_SECRET (QRs). Rotate with
+        overlap.
       </text>
       <text x={450} y={458} textAnchor="middle" fontSize={10.5} className="fill-muted-foreground">
-        Flash sale scaling order: 1. PgBouncer pool · 2. CDN SWR reads · 3. SQS FIFO per eventId · 4. Redis last.
+        Flash sale scaling order: 1. PgBouncer pool · 2. CDN SWR reads · 3. SQS FIFO per eventId ·
+        4. Redis last.
       </text>
     </svg>
   );
@@ -241,10 +272,7 @@ function Stacked({ node, accent: kind }: { node: Node; accent?: Node["accent"] }
 }
 
 function Arrow({ accent }: { accent?: "write" | "soft" }) {
-  const color =
-    accent === "write"
-      ? "text-amber-600 dark:text-amber-400"
-      : "text-muted-foreground";
+  const color = accent === "write" ? "text-amber-600 dark:text-amber-400" : "text-muted-foreground";
   return (
     <div className="flex justify-center py-1.5" aria-hidden="true">
       <svg width={12} height={16} viewBox="0 0 12 16" className={color}>
@@ -275,7 +303,8 @@ function StackedDiagram() {
       </div>
 
       <p className="mt-4 text-xs italic text-muted-foreground">
-        Everything above has to go through the CAS UPDATE on the Event row. Support systems never replace it.
+        Everything above has to go through the CAS UPDATE on the Event row. Support systems never
+        replace it.
       </p>
 
       <p className="mt-4 mb-2 text-xs font-medium text-muted-foreground">Support systems</p>
@@ -286,7 +315,8 @@ function StackedDiagram() {
       </div>
 
       <p className="mt-3 text-xs text-muted-foreground">
-        Flash sale scaling order: 1. PgBouncer pool · 2. CDN SWR reads · 3. SQS FIFO per eventId · 4. Redis last.
+        Flash sale scaling order: 1. PgBouncer pool · 2. CDN SWR reads · 3. SQS FIFO per eventId ·
+        4. Redis last.
       </p>
     </div>
   );
@@ -298,10 +328,12 @@ export function AuraArchitecture() {
       <WideDiagram />
       <StackedDiagram />
       <figcaption className="mt-4 border-t pt-4 text-sm text-muted-foreground">
-        Four tiers stacked so each catches what the one above missed: (1) a CAS <code className="text-xs">UPDATE … WHERE</code>{" "}
-        inside one transaction, (2) a DB-enforced unique <code className="text-xs">idempotencyKey</code>, (3) the schema's{" "}
-        <code className="text-xs">@@unique([eventId, ticketIndex])</code>, and (4) a reconciler that re-counts and writes a
-        corrective <code className="text-xs">CAPACITY_RECONCILED</code> AuditLog entry the moment drift is seen.
+        Four tiers stacked so each catches what the one above missed: (1) a CAS{" "}
+        <code className="text-xs">UPDATE … WHERE</code> inside one transaction, (2) a DB-enforced
+        unique <code className="text-xs">idempotencyKey</code>, (3) the schema's{" "}
+        <code className="text-xs">@@unique([eventId, ticketIndex])</code>, and (4) a reconciler that
+        re-counts and writes a corrective <code className="text-xs">CAPACITY_RECONCILED</code>{" "}
+        AuditLog entry the moment drift is seen.
       </figcaption>
     </figure>
   );
