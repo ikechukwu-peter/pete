@@ -7,11 +7,13 @@ import { projects } from "@/data/projects";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Terminal } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { hasCaseStudy } from "@/data/case-studies";
 
 function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
+  const studyUrl = hasCaseStudy(project.id) ? `/projects/${project.id}` : null;
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -31,15 +33,34 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
     >
       <Card className="flex h-full flex-col overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
         <div className="relative aspect-video overflow-hidden bg-muted">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 hover:scale-105"
-          />
+          {studyUrl ? (
+            <Link href={studyUrl} aria-label={`${project.title} case study`}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </Link>
+          ) : (
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+            />
+          )}
         </div>
         <CardHeader>
-          <CardTitle>{project.title}</CardTitle>
+          <CardTitle>
+            {studyUrl ? (
+              <Link href={studyUrl} className="transition-colors hover:text-primary">
+                {project.title}
+              </Link>
+            ) : (
+              project.title
+            )}
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex-1">
           <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
@@ -51,22 +72,38 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
             ))}
           </div>
         </CardContent>
-        <CardFooter className="gap-2">
-          {project.demoUrl && (
-            <Button size="sm" variant="outline" className="w-full" asChild>
-              <Link href={project.demoUrl} target="_blank">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
+        <CardFooter className="flex-col gap-2">
+          {studyUrl && (
+            <Button size="sm" className="w-full" asChild>
+              <Link href={studyUrl}>
+                Read the case study
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           )}
-          {project.repoUrl && (
-            <Button size="sm" variant="outline" className="w-full" asChild>
-              <Link href={project.repoUrl} target="_blank">
-                <Github className="mr-2 h-4 w-4" />
-                Code
-              </Link>
-            </Button>
+          <div className="flex w-full gap-2">
+            {project.demoUrl && (
+              <Button size="sm" variant="outline" className="w-full" asChild>
+                <Link href={project.demoUrl} target="_blank">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Live Demo
+                </Link>
+              </Button>
+            )}
+            {project.repoUrl && (
+              <Button size="sm" variant="outline" className="w-full" asChild>
+                <Link href={project.repoUrl} target="_blank">
+                  <Github className="mr-2 h-4 w-4" />
+                  Code
+                </Link>
+              </Button>
+            )}
+          </div>
+          {project.demoNote && (
+            <p className="flex w-full items-center text-xs text-muted-foreground">
+              <Terminal className="mr-2 h-3.5 w-3.5 shrink-0" />
+              {project.demoNote}
+            </p>
           )}
         </CardFooter>
       </Card>
