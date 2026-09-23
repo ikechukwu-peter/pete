@@ -10,9 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { caseStudies, caseStudySlugs } from "@/data/case-studies";
 import { ShardropStudy } from "@/components/case-studies/shardrop";
+import { AuraStudy } from "@/components/case-studies/aura";
 
 const bodies: Record<string, () => React.JSX.Element> = {
   shardrop: ShardropStudy,
+  aura: AuraStudy,
 };
 
 type Params = { params: Promise<{ slug: string }> };

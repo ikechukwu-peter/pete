@@ -62,6 +62,42 @@ export const caseStudies: Record<string, CaseStudyMeta> = {
     repoUrl: "https://github.com/ikechukwu-peter/shardrop",
     fullStudyUrl: "https://github.com/ikechukwu-peter/shardrop/blob/main/docs/case-study.md",
   },
+  aura: {
+    slug: "aura",
+    title: "Aura",
+    tagline:
+      "A ticketing platform with a four-tier oversell defense that guarantees no seat is sold twice.",
+    summary:
+      "A production-leaning event ticketing platform built to answer exactly one question: under flash-sale concurrency, how do you stop two people walking into a venue with the same seat number? Correctness comes from four stacked independent guardrails — CAS UPDATE … WHERE, DB-enforced idempotency keys, a schema-level unique seat index, and a self-healing reconciler — while signed QR tickets reject photo forgeries offline before any DB call.",
+    role: "Solo — architecture, implementation, UI, docs",
+    year: "2026",
+    status: "Portfolio · correctness core, docs, diagrams shipped",
+    stack: [
+      "TypeScript",
+      "Next.js",
+      "App Router",
+      "Server Actions",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase",
+      "JWT",
+      "bcryptjs",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Archify",
+    ],
+    image: "/aura.png",
+    ogImage: "/aura.png",
+    heroImage: {
+      src: "/aura.png",
+      width: 2286,
+      height: 1340,
+      alt: "Aura's home screen: an event grid, published event cards and a 10-minute held-seat flow backed by a four-tier oversell defense.",
+    },
+    liveUrl: "https://aura-ticket.vercel.app/",
+    repoUrl: "https://github.com/ikechukwu-peter/aura",
+    fullStudyUrl: "https://github.com/ikechukwu-peter/aura/blob/main/docs/CASE_STUDY.md",
+  },
 };
 
 export const caseStudySlugs = Object.keys(caseStudies);
