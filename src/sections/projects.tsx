@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ArrowRight, Terminal } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { hasCaseStudy } from "@/data/case-studies";
@@ -99,12 +99,6 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
               </Button>
             )}
           </div>
-          {project.demoNote && (
-            <p className="flex w-full items-center text-xs text-muted-foreground">
-              <Terminal className="mr-2 h-3.5 w-3.5 shrink-0" />
-              {project.demoNote}
-            </p>
-          )}
         </CardFooter>
       </Card>
     </motion.div>
