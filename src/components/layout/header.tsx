@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,6 +24,14 @@ export function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+
+  /**
+   * "#about" scrolls on the home page but means nothing on a case-study page.
+   * Off the home page the same item has to navigate there first; on it, the
+   * bare fragment is left alone so the smooth-scroll listener still handles it.
+   */
+  const hrefFor = (href: string) => (href.startsWith("#") && pathname !== "/" ? `/${href}` : href);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +50,7 @@ export function Header() {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link
-          href="#top"
+          href={pathname === "/" ? "#top" : "/"}
           className="text-xl font-bold font-serif tracking-tighter"
           onClick={(e) => {
             setIsOpen(false);
@@ -60,7 +69,7 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              href={hrefFor(item.href)}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.name}
@@ -112,7 +121,7 @@ export function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={hrefFor(item.href)}
                   onClick={() => setIsOpen(false)}
                   className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
