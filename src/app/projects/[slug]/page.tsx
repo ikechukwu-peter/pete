@@ -11,10 +11,12 @@ import { Button } from "@/components/ui/button";
 import { caseStudies, caseStudySlugs } from "@/data/case-studies";
 import { ShardropStudy } from "@/components/case-studies/shardrop";
 import { AuraStudy } from "@/components/case-studies/aura";
+import { PushupQuestStudy } from "@/components/case-studies/pushup-quest";
 
 const bodies: Record<string, () => React.JSX.Element> = {
   shardrop: ShardropStudy,
   aura: AuraStudy,
+  "pushup-quest": PushupQuestStudy,
 };
 
 type Params = { params: Promise<{ slug: string }> };
@@ -62,7 +64,7 @@ export default async function CaseStudyPage({ params }: Params) {
     description: study.summary,
     codeRepository: study.repoUrl,
     url: `https://ikechukwupeter.com/projects/${study.slug}`,
-    programmingLanguage: "TypeScript",
+    programmingLanguage: study.language ?? "TypeScript",
     author: { "@type": "Person", name: "Ikechukwu Peter" },
   };
 
@@ -151,10 +153,11 @@ export default async function CaseStudyPage({ params }: Params) {
                 className="w-full"
               />
             </div>
-            <figcaption className="mt-3 text-sm text-muted-foreground">
-              One tile per shard, green once its hash has been checked on arrival — amber if it had
-              to be resent.
-            </figcaption>
+            {study.heroCaption && (
+              <figcaption className="mt-3 text-sm text-muted-foreground">
+                {study.heroCaption}
+              </figcaption>
+            )}
           </figure>
 
           <div className="mt-16">
@@ -166,12 +169,9 @@ export default async function CaseStudyPage({ params }: Params) {
               <h2 className="font-serif text-xl font-bold tracking-tight sm:text-2xl">
                 There is a great deal more
               </h2>
-              <p className="mt-2 max-w-2xl text-muted-foreground">
-                The full study covers the rest: why OPFS rather than IndexedDB, why a content id is
-                a hash of the shard hashes, how folders became a loop instead of a new format, the
-                complete table of bugs and which layer of testing caught each one, and what is
-                deliberately not built.
-              </p>
+              {study.moreBlurb && (
+                <p className="mt-2 max-w-2xl text-muted-foreground">{study.moreBlurb}</p>
+              )}
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild>
                   <Link href={study.fullStudyUrl} target="_blank" rel="noreferrer">

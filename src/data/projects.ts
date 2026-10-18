@@ -22,6 +22,17 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "pushup-quest",
+    title: "Pushup Quest",
+    description:
+      "A pushup and squat RPG where the phone's camera counts the reps. MediaPipe's pose model runs on-device in WebAssembly; a depth signal from elbow angle and shoulder drop is gated on joints seen in frame, posture and planted hands, which took false reps to zero on replayed real footage. A patched MediaPipe and a strict CSP mean nothing it sees leaves the phone. Offline PWA, deployed.",
+    image: "/pushup-quest.jpg",
+    demoUrl: "https://pushup.ikechukwupeter.com",
+    repoUrl: "https://github.com/ikechukwu-peter/pushup-quest",
+    tags: ["JavaScript", "MediaPipe", "WebAssembly", "PWA", "Service Worker", "Web Security"],
+    featured: true,
+  },
+  {
     id: "bridge",
     title: "Brydge",
     description:
