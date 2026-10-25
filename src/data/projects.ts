@@ -11,6 +11,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "blast-radius",
+    title: "Blast Radius",
+    description:
+      "An architecture diagram that runs. Requests flow through your design as particles from a seeded simulation — rates through the graph plus sampled requests for real p99 — then you kill the database, partition the network or send 10x traffic and watch what survives. A rule-based reviewer grades it, five scripted incidents score it against SLOs and a budget, and a Supabase function re-runs the same engine so scores can't be forged. An open model on WebGPU explains the results, with no API key. Deployed.",
+    image: "/blast-radius.jpg",
+    demoUrl: "https://blastradius.ikechukwupeter.com",
+    repoUrl: "https://github.com/ikechukwu-peter/blast-radius",
+    tags: ["TypeScript", "React", "Simulation", "WebGPU", "WebLLM", "Supabase", "Deno", "Vitest"],
+    featured: true,
+  },
+  {
     id: "shardrop",
     title: "Shardrop",
     description:

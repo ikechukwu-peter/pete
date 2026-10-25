@@ -35,6 +35,48 @@ export type CaseStudyMeta = {
 };
 
 export const caseStudies: Record<string, CaseStudyMeta> = {
+  "blast-radius": {
+    slug: "blast-radius",
+    title: "Blast Radius",
+    tagline:
+      "An architecture diagram that runs — break it, score it, and ask an AI on your own GPU why it failed.",
+    summary:
+      "A browser system-design simulator. A seeded engine pushes request rates through the graph and samples requests for real p99, so failover, autoscaling, circuit breakers, retry storms and cache stampedes emerge instead of being scripted. A rule-based reviewer grades the design, a Supabase edge function re-runs the same engine so leaderboard scores can't be forged, and an open model on WebGPU explains results from the engine's own numbers.",
+    role: "Solo — product, scenarios, testing; code AI-assisted",
+    year: "2026",
+    status: "Deployed",
+    stack: [
+      "TypeScript",
+      "React",
+      "React Flow",
+      "zustand",
+      "WebLLM",
+      "WebGPU",
+      "Supabase",
+      "Postgres RLS",
+      "Deno",
+      "Vitest",
+      "Puppeteer",
+      "Archify",
+      "Vercel",
+    ],
+    image: "/blast-radius.jpg",
+    ogImage: "/og-blast-radius.jpg",
+    heroImage: {
+      src: "/blast-radius-screens.jpg",
+      width: 2400,
+      height: 1440,
+      alt: "Three screens: the editor mid-incident with the database failing over and error rate climbing, the on-device AI analyst explaining that the single API replica can't take 10x traffic, and a Black Friday challenge result scored 117 of 1000 with red bands where the SLO broke.",
+    },
+    heroCaption:
+      "Red particles and the jump in the error chart are the database failing over; the analyst on the right runs on the laptop's GPU; the challenge chart shades every second the design was outside its SLO.",
+    moreBlurb:
+      "The full study covers the rest: the honest trade-offs table, all eight decisions with the options that lost, every bug and what found it, the testing strategy, and what is deliberately not built.",
+    language: "TypeScript",
+    liveUrl: "https://blastradius.ikechukwupeter.com",
+    repoUrl: "https://github.com/ikechukwu-peter/blast-radius",
+    fullStudyUrl: "https://github.com/ikechukwu-peter/blast-radius/blob/main/docs/case-study.md",
+  },
   "pushup-quest": {
     slug: "pushup-quest",
     title: "Pushup Quest",

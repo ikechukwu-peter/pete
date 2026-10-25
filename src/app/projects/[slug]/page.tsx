@@ -12,11 +12,13 @@ import { caseStudies, caseStudySlugs } from "@/data/case-studies";
 import { ShardropStudy } from "@/components/case-studies/shardrop";
 import { AuraStudy } from "@/components/case-studies/aura";
 import { PushupQuestStudy } from "@/components/case-studies/pushup-quest";
+import { BlastRadiusStudy } from "@/components/case-studies/blast-radius";
 
 const bodies: Record<string, () => React.JSX.Element> = {
   shardrop: ShardropStudy,
   aura: AuraStudy,
   "pushup-quest": PushupQuestStudy,
+  "blast-radius": BlastRadiusStudy,
 };
 
 type Params = { params: Promise<{ slug: string }> };
