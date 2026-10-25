@@ -52,9 +52,9 @@ const numbers = [
       "challenges a reference design survives within budget — while 40 fixed replicas fails Black Friday on cost, so money alone doesn't win.",
   },
   {
-    figure: "52 + 17",
+    figure: "71 + 22",
     label:
-      "unit tests in about 3.5 seconds (91% coverage of the engine), plus 17 checks driving the production build in headless Chrome under the production CSP.",
+      "unit tests in about 4 seconds (91% coverage of the engine and drawing rules), plus 22 checks driving the production build in headless Chrome under the production CSP.",
   },
   {
     figure: "0",
@@ -129,10 +129,10 @@ export function BlastRadiusStudy() {
           ))}
         </div>
         <p className="mt-5 max-w-3xl text-sm text-muted-foreground">
-          The test suite was attacked before it was trusted. It passed 52 of 52 on its first run, so
-          I broke the engine on purpose: a dead cache that failed every request instead of passing
-          it to the database. The suite still passed — the test checked database load, not whether
-          requests succeeded. It checks both now, and re-breaking it makes it fail.
+          The test suite was attacked before it was trusted. It passed every test on its first run,
+          so I broke the engine on purpose: a dead cache that failed every request instead of
+          passing it to the database. The suite still passed — the test checked database load, not
+          whether requests succeeded. It checks both now, and re-breaking it makes it fail.
         </p>
       </section>
 
