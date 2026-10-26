@@ -41,7 +41,7 @@ export const caseStudies: Record<string, CaseStudyMeta> = {
     tagline:
       "An architecture diagram that runs — break it, score it, and ask an AI on your own GPU why it failed.",
     summary:
-      "A browser system-design simulator. A seeded engine pushes request rates through the graph and samples requests for real p99, so failover, autoscaling, circuit breakers, retry storms and cache stampedes emerge instead of being scripted. A rule-based reviewer grades the design, a Supabase edge function re-runs the same engine so leaderboard scores can't be forged, and an open model on WebGPU explains results from the engine's own numbers.",
+      "A browser system-design simulator. A seeded engine pushes request rates through the graph and samples requests for real p99, so failover, autoscaling, circuit breakers, retry storms and cache stampedes emerge instead of being scripted. A rule-based reviewer grades the design, a Supabase edge function re-runs the same engine so leaderboard scores can't be forged, and an open model on WebGPU explains results from the engine's own numbers. Designs can use official AWS, Azure and Google Cloud icons in stage columns, and export as share-ready MP4s encoded in the browser.",
     role: "Solo — product, scenarios, testing; code AI-assisted",
     year: "2026",
     status: "Deployed",
@@ -52,6 +52,7 @@ export const caseStudies: Record<string, CaseStudyMeta> = {
       "zustand",
       "WebLLM",
       "WebGPU",
+      "WebCodecs",
       "Supabase",
       "Postgres RLS",
       "Deno",
@@ -71,7 +72,7 @@ export const caseStudies: Record<string, CaseStudyMeta> = {
     heroCaption:
       "Red particles and the jump in the error chart are the database failing over; the analyst on the right runs on the laptop's GPU; the challenge chart shades every second the design was outside its SLO.",
     moreBlurb:
-      "The full study covers the rest: the honest trade-offs table, all eight decisions with the options that lost, every bug and what found it, the testing strategy, and what is deliberately not built.",
+      "The full study covers the rest: the honest trade-offs table, all ten decisions with the options that lost, every bug and what found it, the testing strategy, and what is deliberately not built.",
     language: "TypeScript",
     liveUrl: "https://blastradius.ikechukwupeter.com",
     repoUrl: "https://github.com/ikechukwu-peter/blast-radius",

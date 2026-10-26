@@ -38,6 +38,19 @@ const decisions = [
       </>
     ),
   },
+  {
+    title: "Share videos rendered in the tab, not on a server",
+    body: (
+      <>
+        The diagrams people share are posters with motion, so any design exports as a 16:9, 1:1 or
+        9:16 MP4. Screen recording runs in real time, drops frames and gives WebM, which X refuses;
+        a render server means a queue, a bill and designs leaving the browser. Instead a canvas
+        renderer draws each frame for a time <em>t</em> and WebCodecs encodes H.264 faster than real
+        time. The layout and timing are pure functions with their own tests, and the live preview
+        calls the same draw function as the encoder, so what you see is what you post.
+      </>
+    ),
+  },
 ];
 
 const numbers = [
@@ -52,9 +65,9 @@ const numbers = [
       "challenges a reference design survives within budget — while 40 fixed replicas fails Black Friday on cost, so money alone doesn't win.",
   },
   {
-    figure: "71 + 22",
+    figure: "96 + 29",
     label:
-      "unit tests in about 4 seconds (91% coverage of the engine and drawing rules), plus 22 checks driving the production build in headless Chrome under the production CSP.",
+      "unit tests in about 7 seconds (93% coverage of the engine and drawing rules), plus 29 checks driving the production build in headless Chrome under the production CSP, including rendering a video.",
   },
   {
     figure: "0",
@@ -100,7 +113,7 @@ export function BlastRadiusStudy() {
 
       <section>
         <h2 className="mb-6 font-serif text-2xl font-bold tracking-tight sm:text-3xl">
-          Three decisions worth defending
+          Four decisions worth defending
         </h2>
         <div className="space-y-5">
           {decisions.map((decision) => (
